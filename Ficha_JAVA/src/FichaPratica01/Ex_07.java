@@ -19,9 +19,8 @@ public class Ex_07 {
         System.out.print("Preço 3: ");
         price3 = input.nextDouble();
 
-        desc = (price1 + price2 + price3) * (0.10) ;
-        total = (price1 + price2 + price3) - desc;
+        total = (price1 + price2 + price3) * 0.9;
 
-        System.out.print("Preço com 10% de desconto: " + total);
+        System.out.print("Preço com 10% de desconto: " + total + "€");
     }
 }

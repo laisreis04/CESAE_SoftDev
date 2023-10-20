@@ -13,13 +13,14 @@ public class Ex_06 {
         val1 = input.nextInt();
         System.out.print("Valor 2: ");
         val2 = input.nextInt();
-
+ //Primeira Troca
         swap = val1;
         val1 = val2;
         val2 = swap;
 
         System.out.print("Swap Valor 1: " + val1 + "\nSwap Valor 2: " + swap);
 
+// Segunda troca sem swap
 
         val1 = val1 + val2;
         val2 = val1 - val2;
