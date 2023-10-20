@@ -7,22 +7,27 @@ public class Ex_06 {
 
         Scanner input = new Scanner(System.in);
 
-        //Declarar variaveis
-        int valueA, valueB;
+        int val1, val2, swap;
 
-        //Ler variaveis
-        valueB = valueA;
-        valueA = valueB;
-        System.out.print("Valor B: ");
+        System.out.print("Valor 1: ");
+        val1 = input.nextInt();
+        System.out.print("Valor 2: ");
+        val2 = input.nextInt();
 
-        System.out.print("Valor A: ");
-        valueA = valueB;
+        swap = val1;
+        val1 = val2;
+        val2 = swap;
+
+        System.out.print("Swap Valor 1: " + val1 + "\nSwap Valor 2: " + swap);
 
 
+        val1 = val1 + val2;
+        val2 = val1 - val2;
+        val1 = val1 - val2;
 
-        //calcular
 
-        //print
+        System.out.print("\nNova troca valor 1: " + val1 + "\nNova troca valor 2: " + val2);
+
 
 
     }

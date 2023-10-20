@@ -1,4 +1,54 @@
 package FichaPratica01;
 
+import java.util.Scanner;
+
 public class Ex_08 {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int musicMin1,musicSec1,musicMin2,musicSec2, musicMin3,musicSec3, musicMin4,musicSec4, musicMin5,musicSec5, minToSec,hora, min, sec, totalSec;
+
+        System.out.print("Minutos 1: ");
+        musicMin1 = input.nextInt();
+
+        System.out.print("Segundos 1: ");
+        musicSec1 = input.nextInt();
+
+        System.out.print("Minutos 2: ");
+        musicMin2 = input.nextInt();
+
+        System.out.print("Segundos 2: ");
+        musicSec2 = input.nextInt();
+
+        System.out.print("Minutos 3: ");
+        musicMin3 = input.nextInt();
+
+        System.out.print("Segundos 3: ");
+        musicSec3 = input.nextInt();
+
+        System.out.print("Minutos 4: ");
+        musicMin4 = input.nextInt();
+
+        System.out.print("Segundos 4: ");
+        musicSec4 = input.nextInt();
+
+        System.out.print("Minutos 5: ");
+        musicMin5 = input.nextInt();
+
+        System.out.print("Segundos 5: ");
+        musicSec5 = input.nextInt();
+
+
+        minToSec = (musicMin1 + musicMin2 + musicMin3 + musicMin4 + musicMin5) * 60;
+        totalSec = minToSec + (musicSec1 + musicSec2 + musicSec3 + musicSec4 + musicSec5);
+        sec = totalSec / 60;
+        min = sec * 60;
+        hora = min * 60;
+
+
+        System.out.print("Total do Álbum: "+ hora +"H" + min + "m" + sec + "s." );
+
+    }
 }
