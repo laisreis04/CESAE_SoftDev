@@ -47,18 +47,25 @@ public class Ex_08 {
         System.out.print("Segundos 5: ");
         musicSec5 = input.nextInt();
 
-
+// Tenho que transformar todos os minutos e segundos para usar apenas uma unidade de medida para calcular.
         minToSec = (musicMin1 + musicMin2 + musicMin3 + musicMin4 + musicMin5) * 60;
         totalSec = minToSec + (musicSec1 + musicSec2 + musicSec3 + musicSec4 + musicSec5);
 
         //Usar o modulo "resto" do que sobra e atribuir ao novo valor do total
 
+        //Calcular Hora
         hora = totalSec / 3600;
         totalSec = totalSec % 3600;
+        //Calcular minutos
         min = totalSec / 60;
+        //Calcular segundos
         totalSec = totalSec % 60;
         sec = totalSec;
 
+        //Outra forma:
+       /* hora = totalSec /3600;
+        min = (totalSec/ 60) - (hora*60);
+        sec = totalSec -(hora*3600) - (min*60);*/
 
         System.out.print("Total do Álbum: " + hora + "H" + min + "m" + sec + "s.");
 
