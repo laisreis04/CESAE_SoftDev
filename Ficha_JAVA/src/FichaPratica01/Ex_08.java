@@ -45,8 +45,11 @@ public class Ex_08 {
         totalSec = minToSec + (musicSec1 + musicSec2 + musicSec3 + musicSec4 + musicSec5);
 
         hora = totalSec / 3600;
-        min = hora % 60 ;
-        sec = min % 60;
+        totalSec = totalSec % 3600;
+        min = totalSec / 60 ;
+        totalSec = totalSec % 60;
+        sec = totalSec;
+
 
 
         System.out.print("Total do Álbum: "+ hora +"H" + min + "m" + sec + "s." );
