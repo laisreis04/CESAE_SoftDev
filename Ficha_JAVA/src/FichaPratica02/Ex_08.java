@@ -21,6 +21,12 @@ public class Ex_08 {
 
         media = (grade1*0.25 + grade2*0.35 + grade3*0.40) / (0.25 + 0.35 + 0.40);
 
+        if (media >= 9.5){
+            System.out.print("Parabéns, você foi aprovado! Sua média é : " + media);
+
+        }else{
+            System.out.print("Infelizmente não foi dessa vez, sua média foi de : " + media);
+        }
 
     }
 }
