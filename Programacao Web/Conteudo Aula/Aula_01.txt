@@ -28,3 +28,9 @@ ITENS DE RANKIAMENTO
 SHORTCUTS
 
     > Inserir cometário = crtl + ~   
+
+ICONES
+
+Icones para serem usados no website
+
+    > https://www.flaticon.com/

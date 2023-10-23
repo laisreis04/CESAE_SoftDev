@@ -1,0 +1,26 @@
+TRABALHO FINAL
+
+TEMA
+    > Betesga Skate Zine
+
+PÁGINAS
+
+    > HOME
+    > ABOUT 
+        > About the Magazine
+        > Blog
+    > EMPOWERMENT
+        > Ligação do skate com a saúde mental
+    > CONTACTOS
+    > FOOTER
+        > FAQ
+        > Privacy
+        > Rights
+
+
+
+PARA FAZER:
+    > Criar paleta de cores;
+    > Fazer o design de todas a as páginas;
+    > Criar vetores para a página;
+    
