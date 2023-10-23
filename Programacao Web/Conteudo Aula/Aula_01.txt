@@ -1,0 +1,30 @@
+Instalar Extenções (em casa)
+
+> Lorem ipsom - Para inserir textos mais rápido. 
+> Live Server - Para visualizar a página. 
+> HMTL e CSS Support
+> IntelliSense for CSS class names in HTML
+> HTMLHint
+> MobileView
+
+AVALIAÇÃO
+
+Qualitativo 40%
+Fichas Práticas - 60% 
+    > Trabalhos e Projetos
+
+
+Marketing
+
+    SEO - Pesquisa organica
+    SEM - Pesquisa paga
+
+ITENS DE RANKIAMENTO
+
+    > Ter a página segura (Https) 
+    > Outras página linkadas a minha página.
+
+
+SHORTCUTS
+
+    > Inserir cometário = crtl + ~   
