@@ -18,8 +18,10 @@ public class Ex_06 {
 
         if (value1 > value2){
             System.out.print("Maior valor: " + value1 + "\nMenor: valor: " + value2);
-        }else {
+        }else if(value2 > value1){
             System.out.print("Maior valor: " + value2 + "\nMenor valor: " + value1);
+        }else{
+            System.out.print("Números iguais: ");
         }
     }
 }

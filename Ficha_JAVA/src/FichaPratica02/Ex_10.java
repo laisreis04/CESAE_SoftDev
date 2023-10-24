@@ -8,7 +8,7 @@ public class Ex_10 {
 
         Scanner input =new Scanner(System.in);
 
-        double num1, num2, resultado, operador;
+        double num1, num2, resultado = 0;
 
 
         System.out.print("Bora calcular, essa é uma calculadora simples :)");
@@ -16,33 +16,38 @@ public class Ex_10 {
         System.out.print("\nInsira um número: ");
         num1 = input.nextDouble();
 
-        System.out.print("\nInsira o operador (+, -,/, *): ");
+        System.out.print("Insira o operador (+, -,/, *): ");
         String operador = input.next();
 
-        System.out.print("\nInsira um número: ");
+        System.out.print("Insira um número: ");
         num2 = input.nextDouble();
 
         switch (operador){
             case "+":
                 resultado = num1 + num2;
+                System.out.print("Resultado = " + resultado);
                 break;
 
             case "-":
                 resultado = num1 - num2;
+                System.out.print("Resultado = " + resultado);
                 break;
 
             case "/":
                 resultado = num1 / num2;
+                System.out.print("Resultado = " + resultado);
                 break;
 
             case "*":
                 resultado = num1 * num2;
+                System.out.print("Resultado = " + resultado);
                 break;
 
             default:
                 System.out.print("Operador inválido!");
+                break;
         }
-        System.out.print("Resultado = " + resultado);
+
     }
 
 }
