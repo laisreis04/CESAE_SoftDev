@@ -19,12 +19,12 @@ public class Ex_14 {
         System.out.print("Número C: ");
         num3 = input.nextInt();
 
-        if(num1 <= num2 && num1 <= num3) {
+        if(num1 <= num2 && num1 <= num3) { // if(a < b < c)
             menor = num1;
-            if (num2 <= num3) {
+            if (num2 <= num3) {  // a .. b ..c
                 medio = num2;
                 maior = num3;
-            } else {
+            } else {            // a.... c ... b
                 medio = num3;
                 maior = num2;
             }

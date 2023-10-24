@@ -21,7 +21,7 @@ public class Ex_11 {
         if(montante >=0){
             System.out.print("\nSeu saldo atual é de: " + saldoFinal);
         }else  {
-            System.out.print("Operação Inválida: " + saldo + "€\n");
+            System.out.print("Meu irmão, tá foda, você não tem essa grana :/. \nSaldo atual: " + saldo + "€\n");
         }
 
 

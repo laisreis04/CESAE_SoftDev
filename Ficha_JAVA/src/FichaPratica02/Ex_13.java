@@ -16,7 +16,7 @@ public class Ex_13 {
         System.out.print("Minutos: ");
         min = input.nextInt();
 
-        if(hora > 12){
+        if(hora >= 12){
             hora24 = hora - 12;
             System.out.print("São " + hora24+ ":" + min + " PM" );
         }else {
