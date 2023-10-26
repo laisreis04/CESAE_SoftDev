@@ -24,3 +24,41 @@ footer img{
     max-width: 30px;
     min-width: 30px;
 }
+
+body{
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7em;
+}
+
+.body_about{
+    overflow-x: hidden;
+    display: block;
+    margin: 8px;
+    display: flexbox;
+}
+
+p, li{
+    color: #666;
+
+}
+
+a{
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+}
+
+a:hover{
+    color:blueviolet;
+}
+
+/* INDEX*/
+
+#irParaOSite{
+    color: rgb(190, 116, 240);
+    font-size: small;
+}
+
+

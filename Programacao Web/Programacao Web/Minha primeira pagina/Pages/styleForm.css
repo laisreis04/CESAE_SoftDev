@@ -1,0 +1,15 @@
+/*Tabela*/
+
+table, th, td{
+    font-family: 'Roboto';
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid;
+    }
+
+table{
+    width: 75%;
+}
