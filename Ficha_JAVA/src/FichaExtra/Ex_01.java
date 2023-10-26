@@ -18,7 +18,7 @@ public class Ex_01 {
         }else{
             System.out.print("Maior de idade");
         }
-
+        
 
     }
 }
