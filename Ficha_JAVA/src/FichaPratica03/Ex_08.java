@@ -17,9 +17,6 @@ public class Ex_08 {
             sum = sum + numUser;
             System.out.println("Digite um número: ");
             numUser = input.nextInt();
-
-
-
             System.out.println("numUser: "+numUser);
             System.out.println("Sum: "+sum+"\n");
             }
