@@ -39,7 +39,7 @@ public class Ex_04 {
         repeatCol1 = 0;
 
         for(int a = 0; a <= repeatLine1; a++){
-            for(int c= 1; c <= repeatCol1  ; c++){
+            for(int c= 0; c <= repeatCol1  ; c++){
                 System.out.print(charater);
             }
             repeatCol1++;
