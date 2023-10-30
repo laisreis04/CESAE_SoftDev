@@ -18,7 +18,7 @@ public class Ex_12 {
 
         while(numStart <= numEnd){
             if (numStart % 5 == 0) {
-                System.out.println("Saida: " + numStart);
+                System.out.println(numStart);
             }
             numStart++;
         }

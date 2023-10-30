@@ -17,6 +17,6 @@ public class Ex_14 {
         conta = conta * fatorial;
         fatorial++;
         }
-        System.out.println("O fatorial do seu núemro é : " + conta);
+        System.out.println("O fatorial do seu número é : " + conta);
     }
 }
