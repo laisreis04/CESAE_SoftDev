@@ -29,6 +29,6 @@ public class Ex_02 {
                 System.out.println("Sair");
                     break;
             }
-        }while(opcao < 4);
+        }while(opcao != 4);
     }
 }

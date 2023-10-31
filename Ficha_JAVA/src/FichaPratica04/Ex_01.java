@@ -46,8 +46,11 @@ public class Ex_01 {
             System.out.println("Operador inválido!!!!");
                 break;
             }
-            System.out.println("Deseja continuar? (s/n): ");
+            do{
+                System.out.println("Deseja continuar? (s/n): ");
             conti = input.next();
+            }while( !conti.equals("s") && !conti.equals("n"));
+            
         } while (conti.equals("s"));
         
 

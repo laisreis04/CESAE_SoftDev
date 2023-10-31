@@ -4,8 +4,8 @@ public class Ex_04 {
 
     public static void main(String[] args) {
 
-        int repeatLine1, repeatCol1;
-        int repeatLine2, repeatCol2;
+        int repeatLine1, repeatCol1, spaceLine = 5;
+        
 
 
         String aste = "*";
@@ -39,13 +39,16 @@ public class Ex_04 {
         repeatCol1 = 0;
 
         for(int a = 0; a <= repeatLine1; a++){
-            for(int c= 0; c <= repeatCol1  ; c++){
-                System.out.print(charater);
+            for(int e = 0; e <= spaceLine; e++){
+                System.out.print(" ");
+            }for(int c= 0; c <= repeatCol1 ; c++){
+            System.out.print(charater);
             }
-            repeatCol1++;
+            repeatCol1+= 2;  //usado para incrementar  + 2 ao invés de 1 só;
             System.out.println();
+            spaceLine--;
         }
-
+        
 
 
     }

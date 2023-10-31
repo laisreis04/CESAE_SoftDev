@@ -2,11 +2,9 @@ package FichaExtra;
 
 import java.util.Scanner;
 
-public class Ex_05 {
+/*public class Ex_05 {
 
-    /**
-     * @param args
-     */
+    
     public static void main(String[] args) {
         
         Scanner input = new Scanner(System.in);
@@ -25,5 +23,4 @@ public class Ex_05 {
         if(num == 35){
             System.out.println("Acertou !!!!");
         }
-    }
-}
+    }*/
