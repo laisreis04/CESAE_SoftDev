@@ -1,15 +1,70 @@
-/*Tabela*/
 
-table, th, td{
-    font-family: 'Roboto';
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    padding: 5px;
-    font-size: 15px;
-    border: 1px solid;
-    }
-
-table{
-    width: 75%;
+/*HEADER*/
+header img{
+    width: 70%;
+    max-width: 600px;
+    min-width: 400px;
 }
+
+header, footer{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+    font-family: 'Roboto';
+    font-size: 15px;
+    line-height: 1.7em;
+}
+
+a:hover{
+    color:blueviolet;
+}
+
+/*BODY*/
+body{
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #666;
+}
+h2{
+    color: black;
+}
+
+/*FORM*/
+
+.caixa-do-form{
+    color: black;
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 15px;
+}
+
+input{
+    
+    border-color: #666;
+    padding: auto;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+textarea{
+    border-radius: 6px;
+    border-color: #666;
+    padding: auto;
+}
+
+/*FOOTER*/
+footer img{
+    width: 30px;
+    max-width: 30px;
+    min-width: 30px;
+}
+.iconFooter{
+    width: 50%;
+    max-width: 100px;
+    min-width: 50px;

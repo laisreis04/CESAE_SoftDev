@@ -8,9 +8,20 @@ header, footer{
     text-align: center;
 }
 
+#titleHomepage{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
 h2{
-    background-color: tomato;
-    color: white;
+    color: #000000;
+    margin: 0;
+    line-height: 54px;
+    text-transform: uppercase;
+    font-size: 48px;
+    font-weight: 700;
+    padding-left: 25px;
+    position: relative;
 }
 
 .iconFooter{
@@ -56,9 +67,42 @@ a:hover{
 
 /* INDEX*/
 
+.gridIndex{
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+
+}
+
 #irParaOSite{
     color: rgb(190, 116, 240);
     font-size: small;
+}
+
+#irParaOSite:hover{
+color: blue;
+}
+
+/*Botão*/
+button{
+    
+    color: black;
+    font-family: 'Roboto';
+    font-size: 15px;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+button:hover{
+    color: white;
+    font-weight: bold;
+}
+
+.buttonInscricao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 
