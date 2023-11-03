@@ -14,8 +14,13 @@ public class Ex_03 {
         for(int i = 0; i < 10;i++){
             System.out.print("Insira os números(" + i + "): ");
             array[i] = input.nextInt();
-            arrayNext = array[i];
+
             }
+
+
+        arrayNext = array[0];
+
+        
         for(int x = 0; x < 10; x++){
             System.out.println("O maior número é: " + arrayNext);
             }
