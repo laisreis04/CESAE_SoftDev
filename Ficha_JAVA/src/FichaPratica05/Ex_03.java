@@ -20,7 +20,7 @@ public class Ex_03 {
 
         arrayNext = array[0];
 
-        
+
         for(int x = 0; x < 10; x++){
             System.out.println("O maior número é: " + arrayNext);
             }
