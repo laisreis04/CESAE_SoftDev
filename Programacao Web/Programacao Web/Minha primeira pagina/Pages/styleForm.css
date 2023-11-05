@@ -1,15 +1,13 @@
-/*Tabela*/
+/*NavBar*/
 
-table, th, td{
-    font-family: 'Roboto';
-    margin-left: auto;
-    margin-right: auto;
+header img{
+    width: 70%;
+    max-width: 600px;
+    min-width: 400px;
+}
+
+header , footer{
     text-align: center;
-    padding: 5px;
-    font-size: 15px;
-    border: 1px solid;
-    }
-
-table{
-    width: 75%;
+    font-family: 'Roboto';
+    text-decoration: none;
 }
