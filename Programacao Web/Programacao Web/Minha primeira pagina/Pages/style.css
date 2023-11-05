@@ -65,7 +65,7 @@ a:hover{
     color:blueviolet;
 }
 
-/* INDEX*/
+
 
 .gridIndex{
     display: flex;
@@ -104,5 +104,23 @@ button:hover{
     justify-content: center;
 
 }
+
+/*ABOUT*/
+
+.body_about{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#lista-ordenada{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+
 
 
