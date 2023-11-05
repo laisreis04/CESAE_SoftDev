@@ -17,7 +17,7 @@ public class Ex_03 {
             System.out.println("Player 2 sua vez! Descubra o número: ");
             player2 = input.nextInt();
             }
-        }while (player2 != player1);
+        while (player2 != player1);
         
         System.out.println("Parabéns você acertou !!!");
     }

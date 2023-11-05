@@ -2,16 +2,20 @@ package FichaPratica05;
 
 import java.util.Scanner;
 
-/*public class Ex_01 {
+public class Ex_01 {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
-        int i = 0, array ;
+       int[] vetor = new int[10];
+       int contador = 0;
 
-        System.out.println("Insira um numero no Array: ");
-        array = input.nextInt();
+        for(int i = 0; i < 10; i++){
+            System.out.print("Inisra um número de (" + i + "): ");
+            vetor[i] = input.nextInt();
 
-        while([i] )
+        }
+
+
     }
-}*/
+}
