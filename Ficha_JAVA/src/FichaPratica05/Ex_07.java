@@ -12,7 +12,7 @@ public class Ex_07 {
         int maiorValor = 0;
 
         for (int i = 0; i < 10; i++) {
-            System.out.print("Digite um número: ");
+            System.out.print("Digite um número (" + i + "): ");
             array[i] = input.nextInt();
         }
 
