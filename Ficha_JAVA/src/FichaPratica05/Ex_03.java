@@ -9,25 +9,26 @@ public class Ex_03 {
         Scanner input = new Scanner(System.in);
 
         int[] array = new int[10];
-        int arrayNext = 0;
+        int maiorElemento = 0;
 
-        for(int i = 0; i < 10;i++){
+        for (int i = 0; i < 10; i++) {
             System.out.print("Insira os números(" + i + "): ");
             array[i] = input.nextInt();
 
-            }
-
-
-        arrayNext = array[0];
-
-
-        for(int x = 0; x < 10; x++){
-            System.out.println("O maior número é: " + arrayNext);
-            }
-
-
-
-
         }
+
+
+        maiorElemento = array[0];
+
+
+        for (int i = 0; i <10; i++) {
+            if(array[i]>maiorElemento){
+                System.out.println("Maior foi substituido por: "+array[i]);
+                maiorElemento=array[i];
+            }
+        }
+
+        System.out.println("O maior número: " + maiorElemento);
     }
+}
 

@@ -8,11 +8,11 @@ public class Ex_02 {
 
         Scanner input = new Scanner(System.in);
 
-        int[] vetor = new int[13];
+        int[] vetor = new int[12];
         int soma = 0;
 
-        for(int i = 1; i < 13; i++){
-            System.out.print("Insira seu salário do mês " + i + ":  ");
+        for(int i = 0; i < 12; i++){
+            System.out.print("Insira seu salário do mês " + (i+1) + ":  ");
             vetor[i]= input.nextInt();
             soma = soma + vetor[i];
         }
