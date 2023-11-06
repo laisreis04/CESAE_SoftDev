@@ -11,14 +11,14 @@ public class Ex_07 {
         int[] array = new int[10];
         int maiorValor = 0;
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < array.length; i++) {
             System.out.print("Digite um número (" + i + "): ");
             array[i] = input.nextInt();
         }
 
         maiorValor = array[0];
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (array[i] > maiorValor) {
                 maiorValor = array[i];
             }

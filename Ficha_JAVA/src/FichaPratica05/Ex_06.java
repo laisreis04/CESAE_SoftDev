@@ -12,15 +12,15 @@ public class Ex_06 {
         boolean crescente = true;
         int menorElemento = 0;
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < array.length; i++) {
             System.out.print("Insira os números(" + i + "): ");
             array[i] = input.nextInt();
         }
 
-        menorElemento = array[0];
+            //Condição dos numeros crescentes
 
-        for (int i = 0;i < 10; i++){
-            if(array[i] < menorElemento){
+        for (int i = 1;i < array.length; i++){
+            if(array[i] <= array[i - 1]){
                 crescente = false;
             }
 

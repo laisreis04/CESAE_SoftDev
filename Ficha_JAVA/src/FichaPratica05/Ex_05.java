@@ -11,11 +11,11 @@ public class Ex_05 {
         int[] array = new int[10];
         int soma=0 ,media = 0;
 
-        for(int i = 0; i<10;i++){
+        for(int i = 0; i<array.length;i++){
             System.out.print("Digite um número (" + i + "): ");
             array[i] = input.nextInt();
             soma = soma + array[i];
-            media = i;
+            media = array.length;
         }
         System.out.println("sua média é: " + soma/media);
     }
