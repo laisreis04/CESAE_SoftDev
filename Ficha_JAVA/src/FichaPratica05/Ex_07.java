@@ -9,7 +9,7 @@ public class Ex_07 {
         Scanner input = new Scanner(System.in);
 
         int[] array = new int[10];
-        int maiorValor = 0;
+        int maiorValor = -1;
 
         for (int i = 0; i < array.length; i++) {
             System.out.print("Digite um número (" + i + "): ");
