@@ -21,7 +21,7 @@ public class Ex_03 {
     /**
      * Método para avaliar se o número é positivo
      *
-     * @param num - Némro a ser avaliado
+     * @param num - Número a ser avaliado
      * @return - True - 0 ou Positivo || False - Negativo
      */
     public static boolean positivo(int num) {
@@ -68,8 +68,26 @@ public class Ex_03 {
         return false;
     }
 
+    /** Método para avaliar se o número é triangular.
+     * @param num - Numero que será avaliado
+     * @return True - se for triangular || False - senão for triangular
+     */
     public static boolean triangular(int num){
         
-    }
-}
+        int tri = 0;
 
+        
+       for(int s = 1; s < tri; s++){
+        if(s == num){
+            s = s + tri;
+            tri++;
+        }
+        return true;
+       }
+       return false;
+
+        }
+
+        }
+       
+    
