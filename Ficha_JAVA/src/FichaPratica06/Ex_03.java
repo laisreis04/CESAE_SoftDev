@@ -73,20 +73,18 @@ public class Ex_03 {
      * @return True - se for triangular || False - senão for triangular
      */
     public static boolean triangular(int num){
-        
-        int tri = 0;
 
-        
-       for(int s = 1; s < tri; s++){
-        if(s == num){
-            s = s + tri;
-            tri++;
-        }
-        return true;
-       }
-       return false;
+        int soma = 0;
 
+        for(int tri=1; tri < num; tri++){
+            soma = tri + soma;
+            if (soma == num) {
+                return true;
+            }
         }
+
+        return false;
+    }
 
         }
        

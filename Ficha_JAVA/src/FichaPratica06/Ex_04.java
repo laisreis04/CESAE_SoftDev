@@ -30,45 +30,50 @@ public class Ex_04 {
                 switch (opcao) {
                     case 1:
                         if(par(num)){
-                            System.out.println("É par !!");
+                            System.out.println("É par !!\n");
                         }else{
-                            System.out.println("Impar");
+                            System.out.println("Impar\n");
                         }
                         break;
 
                     case 2:
                     if (positivo(num)) {
-                        System.out.println("É positivo");
+                        System.out.println("É positivo\n");
                     }else{
-                        System.out.println("É negativo");
+                        System.out.println("É negativo\n");
                     }
                     break;
 
                     case 3:
                     if (primo(num)) {
-                        System.out.println("É primo");
+                        System.out.println("É primo\n");
                     }else{
-                        System.out.println("Não é primo");
+                        System.out.println("Não é primo\n");
                     }
                     break;
 
                     case 4:
                     if (perfeito(num)) {
-                        System.out.println("Uau esse numero é perfeito");
+                        System.out.println("Uau esse numero é perfeito\n");
                     }else{
-                        System.out.println("Bruuu, não é perfeito");
+                        System.out.println("Bruuu, não é perfeito\n");
                     }
                     break;
                     
                     case 5:
                     if (triangular(num)) {
-                        System.out.println("SIM !! É triangular!");
+                        System.out.println("SIM !! É triangular!\n");
                     }else{
-                        System.out.println("Opa... não é triangular");
+                        System.out.println("Opa... não é triangular\n");
                     }
                     break;
+
+                    case 6:
+                        System.out.println("Escolha uma nova opção: ");
+                        num = input.nextInt();
                 
                     default:
+                        System.out.println("Opção inválida\n");
                         break;
                 }
             
