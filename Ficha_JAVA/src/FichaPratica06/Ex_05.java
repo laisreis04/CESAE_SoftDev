@@ -22,6 +22,11 @@ public class Ex_05 {
         return maiorElemento;
     }
 
+    /**
+     * Função para avalaioar qual o menor elemento de uma array
+     * @param menor - Atributo para avalei o menor elemento
+     * @return - O menor elemento do array.
+     */
     public static int menor(int[] menor){
 
         int menorElemento;
@@ -34,5 +39,21 @@ public class Ex_05 {
             }
         }
         return menorElemento;
+    }
+
+    /**
+     * Função que avalia se o array está em ordem crescente ou decrescente
+     * @param ordem - Atributo para avalivar o array.
+     * @return - True - Crescente || False - Descescente
+     */
+    public static boolean crescente(int[] ordem){
+
+
+        for(int i = 1; i < ordem.length; i++){
+            if(ordem[i] <= ordem[i -1]){
+                return false;
+            }
+        }
+        return true;
     }
 }

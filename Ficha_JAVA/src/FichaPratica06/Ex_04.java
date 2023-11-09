@@ -71,6 +71,13 @@ public class Ex_04 {
                     case 6:
                         System.out.println("Escolha uma nova opção: ");
                         num = input.nextInt();
+                        break;
+
+                    case 7:
+                        System.out.println("Valeu, até a próxima!! ");
+
+                        break;
+
                 
                     default:
                         System.out.println("Opção inválida\n");

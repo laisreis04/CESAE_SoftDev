@@ -10,7 +10,7 @@ public class Ex_06 {
 
         int[] array = new int[10];
         boolean crescente = true;
-        int menorElemento = 0;
+
 
         for (int i = 0; i < array.length; i++) {
             System.out.print("Insira os números(" + i + "): ");
