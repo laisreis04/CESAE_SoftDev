@@ -1,0 +1,26 @@
+/* accordion */
+
+.accordion {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .accordion-item {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .accordion-header {
+    padding: 10px;
+    background-color: #f4f4f4;
+    cursor: pointer;
+  }
+  
+  .accordion-content {
+    display: none;
+    padding: 10px;
+  }
+  
+  .accordion-content.active {
+    display: block;
+  }
+  

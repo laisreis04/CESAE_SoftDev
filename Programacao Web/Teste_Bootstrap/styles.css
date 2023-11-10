@@ -1,0 +1,16 @@
+a{
+    color: purple;
+}
+
+nav{
+    color: aqua;
+}
+
+.accordion{
+color: aqua;
+}
+
+.nav-pills .nav-link.active{
+    background-color: blueviolet;
+
+}
