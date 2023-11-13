@@ -8,6 +8,11 @@
   .accordion-item {
     border-bottom: 1px solid #ccc;
   }
+
+  .accordion-item:hover[
+    color.accordion-item:hover[
+        color: black;
+  ]
   
   .accordion-header {
     padding: 10px;

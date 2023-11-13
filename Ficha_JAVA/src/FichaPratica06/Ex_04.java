@@ -69,7 +69,7 @@ public class Ex_04 {
                     break;
 
                     case 6:
-                        System.out.println("Escolha uma nova opção: ");
+                        System.out.println("Escolha um novo número: ");
                         num = input.nextInt();
                         break;
 
