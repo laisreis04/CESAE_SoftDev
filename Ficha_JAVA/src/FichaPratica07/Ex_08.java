@@ -26,15 +26,19 @@ public class Ex_08 {
 
         while(texto8.hasNextLine()){
             String linhas = texto8.nextLine();
-            String [] linhaArrays = linhas.split(" ");
+            String [] palavrasArrays = linhas.split(" ");
 
-            
 
-            if(linhaArrays[contaArray].equals(palavraChave)){
-                System.out.println(linhas);
-                novoFicheiro8.println(linhas);
+            // foi criado um loop para percorrer toda a linha
+            for(int i = 0;i< palavrasArrays.length;i++){
+                if(palavrasArrays[i].equals(palavraChave)){
+                    System.out.println(linhas);
+                    novoFicheiro8.println(linhas);
             }
-            contaArray ++;
+
+            }
+
+            contaArray++;
         }
         novoFicheiro8.close();
         texto8.close();

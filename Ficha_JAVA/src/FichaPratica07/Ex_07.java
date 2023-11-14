@@ -12,13 +12,13 @@ public class Ex_07 {
         Scanner texto7 = new Scanner(ficheiro7);
 
         int contadorLinhas = 0, contadorPalavras = 0;
-
+        String linha;
 
         while(texto7.hasNextLine()){
             contadorLinhas++;
-            String linha = texto7.nextLine();
-            String[] linhaTexto = linha.split("");
-            contadorPalavras += linhaTexto.length;
+            linha = texto7.nextLine();
+            String[] palavrasTexto = linha.split(" ");
+            contadorPalavras += palavrasTexto.length;
         }
         System.out.println("Número de linhas: " + contadorLinhas);
         System.out.println("Numero de palavras: " + contadorPalavras);
