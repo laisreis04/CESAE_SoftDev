@@ -21,7 +21,7 @@ public class Ex_03 {
 
         //para ler o ficheiro // para chamar o ficheiro que já existe para dentro do programa
         File ficheiroOriginal = new File("Ficha_JAVA/Ficheiros_07/exercicio_03.txt");
-        // File fichreiroOriginal2 = new File ("Ficha_JAVA/Ficheiros_07/exercicio_03_Alternativa01.txt");
+        File ficheiroOriginal2 = new File("Ficha_JAVA/Ficheiros_07/exercicio_03_Alternativa01.txt");
 
 
         //criar um novo ficheiro
@@ -30,6 +30,7 @@ public class Ex_03 {
 
         //Scanner - Para ler o  ficheiro
         Scanner maquinadeLer = new Scanner(ficheiroOriginal);
+        Scanner maquinadeLer2 = new Scanner(ficheiroOriginal2);
         // Scanner maquinadeLer2 = new Scanner(fichreiroOriginal2);
 
 
@@ -37,7 +38,8 @@ public class Ex_03 {
         PrintWriter maquinaEscrever = new PrintWriter(novoFicheiro);
         // PrintWriter maquinaEscrever2 = new PrintWriter(novoFicheiro);
 
-        String linhaAtual;
+        String linhaAtual, linhaAtual2;
+
 
 
         while (maquinadeLer.hasNextLine()) {
@@ -45,12 +47,13 @@ public class Ex_03 {
             maquinaEscrever.println(linhaAtual);
         }
 
-        // while(maquinadeLer2.hasNextLine()){
-        //     linhaAtual = maquinadeLer2.nextLine();
-        //     maquinaEscrever2.println(linhaAtual);
-        // }
+        while (maquinadeLer2.hasNextLine()){
+            linhaAtual2 = maquinadeLer2.nextLine();
+            maquinaEscrever.println(linhaAtual2);
+        }
 
         maquinaEscrever.close();
+        maquinadeLer2.close();
 
 
     }

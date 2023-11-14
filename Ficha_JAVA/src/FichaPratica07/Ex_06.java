@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Ex_06 {
 
-    /**
+    /**Verificar a pessoa mais velha do ficheiro
      * @param args
      * @throws FileNotFoundException
      */
@@ -16,24 +16,36 @@ public class Ex_06 {
 
         Scanner lerIdades = new Scanner(nomesIdades);
 
-        int idade, maisVelho = 0;
-        String nomes, nomeMaisVelho = "";
+        String nomePessoaMaisVelha = "";
+        int idadePessoaMaisVelha = 0;
 
-        while(lerIdades.hasNext()){
-                //para ler e verificar só os inteiros
-            nomes = lerIdades.next();
-            idade = lerIdades.nextInt();
 
-            if(idade > maisVelho){
-                maisVelho = idade;
-                nomeMaisVelho= nomes;
+
+
+       while (lerIdades.hasNextLine()){
+           String linha = lerIdades.nextLine();
+           String[] todasIdades = linha.split(",");
+
+           String nomes = todasIdades[0];
+           int idade = Integer.parseInt(todasIdades[1]);
+
+           if(idade > idadePessoaMaisVelha){
+               idadePessoaMaisVelha = idade;
+               nomePessoaMaisVelha = nomes;
+           }
+
+
+       }
+            System.out.println("A pessoa mais velha é o " + nomePessoaMaisVelha + " e a sua idade é " +
+                idadePessoaMaisVelha + " anos.");
+
+            lerIdades.close();
+
             }
-            }
-            System.out.println("A pessoa mais velha é: " + nomeMaisVelho + "e tem" + maisVelho + "anos");
-        lerIdades.close();
+
         }
         
         
-    }
+
     
 
