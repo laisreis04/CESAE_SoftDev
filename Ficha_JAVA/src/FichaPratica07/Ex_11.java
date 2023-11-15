@@ -48,15 +48,101 @@ public class Ex_11 {
     }
 
 
-    public static String[][] = lerFicheiroParaMatriz (String caminhoFicheiro){
+    public static String[][]  lerFicheiroParaMatriz (String caminhoFicheiro) throws FileNotFoundException{
 
         File ficheiro11 = new File ("Ficha_JAVA/Ficheiros_07/exercicio_11.csv");
         Scanner scanner = new Scanner(ficheiro11);
 
         int numLinhas = (contarLinhasFicheiro(caminhoFicheiro)) - 1;
 
+        //contar n de colunas
 
+        int numColunas = contarColunas(caminhoFicheiro, ",");
+
+        //declarar uma matriz com tamanho adequado 
+        String [][] matrizTotal = new String[numLinhas][numColunas];
+
+        String linhaAtual = scanner.nextLine();
+        int linhaMatriz = 0;
+
+        while(scanner.hasNextLine()){
+            linhaAtual = scanner.nextLine();
+            String[] itensLinha = linhaAtual.split(",");
+
+            for(int i = 0;i< itensLinha.length; i++){
+                matrizTotal[linhaMatriz][i] = itensLinha[i];
+            }
+            linhaMatriz++;
+        }
+        
+        return matrizTotal;
     }
+
+    /**
+     * Método para imprimir a matriz na consola
+     * @param matriz
+     */
+
+    public static void imprimirMatriz(String[][]matriz){
+
+        for(int linha = 0;linha < matriz.length;linha++){
+            for(int coluna = 0; coluna < matriz[0].length;coluna++){
+                System.out.print(matriz[linha][coluna] + "\t|\t");
+            }
+        }
+        System.out.println();
+    }
+
+    /**
+     * Método para encontar no ficheiro o  genero escolhido pelo user
+     * @param matrizTotal
+     * @param genero
+     */
+
+    public static void procurarGenero(String[][]matrizTotal, String genero){
+
+        for(int linha = 0; linha < matrizTotal.length;linha++){
+            if(matrizTotal[linha][2].equals(genero)){
+                System.out.println("Música: " + matrizTotal[linha][0]+ "\n" + "\tArtista: " + matrizTotal[linha][1]+ "\n\n");
+            }
+        }
+    }
+
+    /**
+     * Método para procurar o ARTISTA escolhido
+     * @param matrizTotal
+     * @param artista
+     */
+    public static void procurarArtista(String [][]matrizTotal, String artista){
+
+        for(int linha = 0; linha < matrizTotal.length;linha++){
+            if(matrizTotal[linha][1].equals(artista)){
+                System.out.println( "\tArtista: " + matrizTotal[linha][1]+ "\n" + "Música: " + matrizTotal[linha][0]+ "\n\n");
+            }
+        }
+    }
+
+    public static void musicaMaisLonga(String[][] matrizTotal, int segundos, int minutos){
+
+        int duracaoMudada = (minutos*100) + segundos;
+
+        int duracao;
+
+        for(int linha = 0; linha < matrizTotal.length;linha++){
+            String[][] duracaoString = matrizTotal[linha][3].split(":");
+            duracao = Integer.parseInt(duracaoString[0]*100) + Integer.parseInt(duracaoString[1]);
+
+            if(duracao <= duracaoMudada){
+                for( int i = 0; i < matrizTotal;i++){
+                    System.out.print(matrizTotal[linha][i]);
+                }
+                System.out.println();
+            }
+
+        }
+    }
+
+
 
     /* Menu do Programa
      * Foi criada função para diminuir o tamanho do main
@@ -66,7 +152,7 @@ public class Ex_11 {
        Scanner input = new Scanner(System.in);
 
         
-
+String [][] matrizTotal = lerFicheiroParaMatriz("Ficha_JAVA/Ficheiros_07/exercicio_11.csv");
       
 
         int opcao;
@@ -88,16 +174,31 @@ public class Ex_11 {
             switch (opcao) {
                 case 1:
                 System.out.print("******GÉNERO SELECIONADO*******\n Digite o género: " + "\n");
-                    String genero = input.next();
+                input.nextLine();
+                String genero = input.next();
+
+                procurarGenero(matrizTotal, genero);
 
                     
                     break;
 
                 case 2:
+                System.out.print("******ARTISTA SELECIONADO*******\n Digite o nome do artista: " + "\n");
+                input.nextLine();
+                String artista = input.next();
+
+                procurarArtista(matrizTotal, artista);
                 
                     break;
 
                 case 3:
+                System.out.print("******MÚSICA MAIS LONGA SELECIONADO*******\n Amusica mais longa é: " + "\n");
+                input.nextLine();
+                String musicaMais = input.next();
+
+                musicaMaisLonga(matrizTotal);
+
+                break;
         
                 /* Opção Invalida */
                 default:
@@ -107,9 +208,7 @@ public class Ex_11 {
 
         }while(opcao != 9);
 
-        scanner.close();
-        
-        input.close();
+       
     }
     
 }
