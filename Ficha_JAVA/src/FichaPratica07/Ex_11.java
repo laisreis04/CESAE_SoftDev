@@ -129,12 +129,14 @@ public class Ex_11 {
         int duracao;
 
         for(int linha = 0; linha < matrizTotal.length;linha++){
-            String[][] duracaoString = matrizTotal[linha][3].split(":");
-            duracao = Integer.parseInt(duracaoString[0]*100) + Integer.parseInt(duracaoString[1]);
+            String[] duracaoString = matrizTotal[linha][3].split(":");
+            minutos = (Integer.parseInt(duracaoString[0])*100);
+            segundos = Integer.parseInt(duracaoString[1]);
+            duracao =  minutos + segundos;
 
             if(duracao <= duracaoMudada){
-                for( int i = 0; i < matrizTotal;i++){
-                    System.out.print(matrizTotal[linha][i]);
+                for( int i = 0; i < matrizTotal[0].length;i++){
+                    System.out.print(matrizTotal[linha][i] + "\n");
                 }
                 System.out.println();
             }
@@ -154,6 +156,7 @@ public class Ex_11 {
         
 String [][] matrizTotal = lerFicheiroParaMatriz("Ficha_JAVA/Ficheiros_07/exercicio_11.csv");
       
+        
 
         int opcao;
        
@@ -192,11 +195,10 @@ String [][] matrizTotal = lerFicheiroParaMatriz("Ficha_JAVA/Ficheiros_07/exercic
                     break;
 
                 case 3:
-                System.out.print("******MÚSICA MAIS LONGA SELECIONADO*******\n Amusica mais longa é: " + "\n");
-                input.nextLine();
-                String musicaMais = input.next();
+                System.out.print("******MÚSICA MAIS LONGA SELECIONADO*******\n A musica mais longa é: " + "\n");
+                
 
-                musicaMaisLonga(matrizTotal);
+                musicaMaisLonga(matrizTotal, opcao, opcao);
 
                 break;
         
