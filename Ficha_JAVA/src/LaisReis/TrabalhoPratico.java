@@ -5,15 +5,20 @@ import java.util.Scanner;
 
 public class TrabalhoPratico {
 
+    
+    
     public static void main(String[] args) throws FileNotFoundException{
+        
         
         /**
          * Menu Principal - Escolha do Tipo de Utilizador
+         * Menu básico para o inicio do programa.
          */
+
 
          Scanner input = new Scanner(System.in);
 
-         int opcao;
+         int opcao, passwordAdmin, menuCliente;
 
          do{
             System.out.println("Escolha o tipo de utilizador: ");
@@ -25,12 +30,15 @@ public class TrabalhoPratico {
 
             switch (opcao) {
                 case 1:
-                    /*Função que direciona para o menu do cliente */
+                    System.out.println("***  MENU ADMINISTRADOR ***");
+                    passwordAdmin();
                     
                     break;
 
                 case 2:
-                /* Função que direciona para o menu do administrador */
+
+                // menuCliente();
+
                     break;
 
         
@@ -44,5 +52,36 @@ public class TrabalhoPratico {
          }while (opcao != 3); 
 
     }
+
+    /**
+     * Método para verificar se a senha esta ou não correta
+     * ps.: Usado apenas pelo Admin
+     * @throws FileNotFoundException
+     */
+
+    public static void passwordAdmin() throws FileNotFoundException{
+
+        Scanner input = new Scanner (System.in);
+
+        int menuA;
+
+        String passwordCorreta = "skateordie", passwordString;
+
+        System.out.println("Yo! Digite a sua senha");
+        passwordString = input.nextLine();
+
+        if(passwordString.equals(passwordCorreta)){
+
+            System.out.println("Password Coreta!");
+            menuA();
+        }else {
+            System.out.println("Nice try, mas a pass está errada");
+        }
+    }
+
+   /**
+    * Menu admin
+    */
+    // public static void menuA
     
 }
