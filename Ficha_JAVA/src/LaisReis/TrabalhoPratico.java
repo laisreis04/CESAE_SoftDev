@@ -253,16 +253,21 @@ public class TrabalhoPratico {
      */
     public static void estacionamentoCliente()throws FileNotFoundException{
 
-       int soma = 0, num= 0;
+       int numTriangular, num = 1;
        
-        while(num <= 121){
-            for(int tri = 1; soma < num; tri++){
-                soma += tri;
-                if(soma == num && soma % 5 == 0){
-                    System.out.println(num);
-                }
-            }
+       //Ciclo para numeros triangulares
+        while (num <= 121) {
+        numTriangular = (num*(num+1))/2;
+            //Um break para imprimir o numero só até 121
+        if(numTriangular > 121){
+            break;
         }
+            //Condição para avaliar se é multiplo de 5 e imprimir
+            if(numTriangular % 5 == 0){
+                System.out.println(numTriangular);
+        }
+        num++;
+       }
             
         }
 
@@ -454,8 +459,15 @@ public class TrabalhoPratico {
                    break;
 
                case 2:
+               System.out.println("***** VAGAS DISPONIVEIS *****");
                    estacionamentoCliente();
                    break;
+
+              case 3:
+              System.out.println("***** LISTA DE JOGOS *****");
+
+              break;
+
            }
        }while (opcao != 9);
 
