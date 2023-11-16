@@ -1,6 +1,7 @@
 package LaisReis;
 
 import java.io.FileNotFoundException;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.io.File;
 
@@ -8,6 +9,7 @@ public class TrabalhoPratico {
 
 
     /**
+     * CONTAR COLUNA
      * Método para CONTAR LINHAS no Ficheiro
      * @param caminhoFicheiroGS
      * @return
@@ -37,6 +39,7 @@ public class TrabalhoPratico {
     }
 
     /**
+     * CONTAR LINHA
      * Método para medir o tamanho de uma linha, dividir e CONTAR COLUNA.
      * @param caminhoFicheiroGS
      * @return
@@ -66,6 +69,7 @@ public class TrabalhoPratico {
     }
 
     /**
+     * FICHIERO -> MATRIZ
      * Método para "gravar" o ficheiro numa Matriz
      * @param caminhoFicheiroGS
      * @return
@@ -117,6 +121,7 @@ public class TrabalhoPratico {
     }
 
     /**
+     * IMPRESSORA
      * Método para imprimir o coneteúdo da Matriz
      * @param matriz
      * @throws FileNotFoundException
@@ -133,6 +138,7 @@ public class TrabalhoPratico {
     }
 
     /**
+     * TOTAL DE VENDAS $$$
      * Método para calcular o valor total em vendas
      * @param matrizTotal
      * @return
@@ -160,6 +166,7 @@ public class TrabalhoPratico {
     }
 
     /**
+     * CALCULAR LUCRO $$$
      * Método utilizado para calcular o lucro da empresa
      * @param matrizTotal
      * @return
@@ -187,6 +194,7 @@ public class TrabalhoPratico {
     }
 
     /**
+     * PROCURAR PELO ID DO CLIENTE
      * Método para procuar pelo ID do cliente
      * @param matrizTotal
      * @param idCliente
@@ -195,45 +203,72 @@ public class TrabalhoPratico {
     public static void procurarIdCliente (String [][] matrizTotal, String idCliente) throws FileNotFoundException{
 
 
+        //(for) - usado para ir de linha em linha para verificar todos os ID's
 
             for(int linha = 0;linha < matrizTotal.length;linha++){
                 if(matrizTotal[linha][1].equals(idCliente)){
+
+                    //Impressão do resultado da procura
                     System.out.println("Nome: "+ matrizTotal[linha][2] +  "\nContato:"+ matrizTotal[linha][3] + "\nEmail: "+ matrizTotal[linha][4]);
                     break;
                 }
             }
     }
 
-    public static void jogoMaisCaro (String[][] matrizTotal, String nomeJogo) throws FileNotFoundException{
+    /**
+     * JOGO MAIS CARO
+     * Método usado para verificar qual o jogo mais caro
+     * @param matrizTotal
+     * @throws FileNotFoundException
+     */
+    public static void jogoMaisCaro (String[][] matrizTotal) throws FileNotFoundException{
 
+    double valorJogo = 0, jogoMaisCaro;
+    String nomeAtual = "";
 
+    for (int linha = 0; linha < matrizTotal.length;linha++){
+        String jogoAtual = matrizTotal[linha][7];
 
-        for (int linha = 0; linha < matrizTotal.length;linha++){
-            String [] linhas = matrizTotal[linha][8].split(".");
-            if (linhas[0] < matrizTotal[linha][8])
+        //transformar a string em double
+
+        jogoMaisCaro = Double.parseDouble(matrizTotal[linha][8]);
+
+        //Verificar qual o jogo mais caro
+        if (valorJogo < jogoMaisCaro){
+            valorJogo = jogoMaisCaro;
+            nomeAtual = jogoAtual;
         }
-
+    }
+        System.out.println("O tesourinho da loja é: " + nomeAtual + "\nValor: " + valorJogo );
 
     }
 
     /**
+     * ESTACIONAMENTO
+     * Método para verificar os numeros triangulares
+     * @throws FileNotFoundException
+     */
+    public static int estacionamentoCliente()throws FileNotFoundException{
+
+        int tri = 0;
+
+        for( int i = 1;i < num; i++){
+            for (int j = 1; j)
+        }
+    }
+
+    /**
+     * MENU PRINCIPAL
      * Main para a menu principal e iniciar o programa
      * @param args
      * @throws FileNotFoundException
      */
 
     public static void main(String[] args) throws FileNotFoundException{
-        
-        
-        /**
-         * Menu Principal - Escolha do Tipo de Utilizador
-         * Menu básico para o inicio do programa.
-         */
-
 
          Scanner input = new Scanner(System.in);
 
-         int opcao, passwordAdmin, menuCliente;
+         int opcao;
 
          do{
              System.out.println("**********************************\n**********************************\n\n--------*** GAME START ***--------\n\n**********************************\n**********************************");
@@ -247,7 +282,7 @@ public class TrabalhoPratico {
             switch (opcao) {
                 case 1:
 
-                    // menuCliente();
+                    menuCliente();
                     break;
 
                 case 2:
@@ -270,6 +305,7 @@ public class TrabalhoPratico {
     }
 
     /**
+     * PASSWORD
      * Método para verificar se a senha esta ou não correta
      * ps.: Usado apenas pelo Admin
      * @throws FileNotFoundException
@@ -295,7 +331,13 @@ public class TrabalhoPratico {
         }
     }
 
-   public static void menuA () throws FileNotFoundException{
+    /**
+     * MENU ADMINISTRADOR
+     * Menu do Adminitrador depois de usar a senha correta
+     * @throws FileNotFoundException
+     */
+
+    public static void menuA () throws FileNotFoundException{
 
 
        String[][] matrizTotal = fichieroParaMatriz("Ficha_JAVA/Ficheiros_07/GameStart_V2.csv");
@@ -345,14 +387,64 @@ public class TrabalhoPratico {
                     break;
 
                 case 5:
+                    jogoMaisCaro(matrizTotal);
+                        break;
 
+                case 9:
+                    System.out.println("**** HASTA LA VISTA BABY ****");
+                    break;
 
-
-
+                default:
+                    System.out.println("Opção Inválida Dummy !");
+                    break;
             }
         }while (opcao != 9);
 
+   }
 
+    /**
+     * MENU CLIENTE
+     * @throws FileNotFoundException
+     */
+   public static void menuCliente() throws FileNotFoundException{
+
+       Scanner input = new Scanner(System.in);
+
+       int opcao;
+
+
+       do{
+           System.out.println("\n**********************\n**********************\n**** WELCOME ABOARD ****\n\n**********************\n**********************");
+
+           System.out.println("1. Insirir novo cliente");
+           System.out.println("2. Estacionamento");
+           System.out.println("3. Mostrar lista de jogos");
+           System.out.println("4. Procurar editora");
+            opcao = input.nextInt();
+
+           switch (opcao){
+
+               case 1:
+                   System.out.print("Nome: ");
+                   String nomeCliente = input.nextLine();
+                   nomeCliente = input.nextLine();
+
+                   System.out.print("Contato: ");
+                   long contatoCliente =input.nextInt();
+
+
+                   System.out.print("Email: ");
+                   String emailCliente = input.next();
+
+                   System.out.print("\nYeah! dados inseridos com sucesso!\n\n Nome: " + nomeCliente + "\nContato: " + contatoCliente + "\nEmail: " +emailCliente + "\n");
+
+                   break;
+
+               case 2:
+                   System.out.println("Os lugares vagos são: " + estacionamentoCliente());
+                   break;
+           }
+       }while (opcao != 9);
 
    }
     
