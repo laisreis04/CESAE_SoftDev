@@ -116,16 +116,111 @@ public class TrabalhoPratico {
         return matrizGS;
     }
 
+    /**
+     * Método para imprimir o coneteúdo da Matriz
+     * @param matriz
+     * @throws FileNotFoundException
+     */
     public static void imprimirMatriz (String [][] matriz) throws FileNotFoundException{
 
         for(int linha = 0; linha < matriz.length;linha++){
             for (int coluna = 0; coluna < matriz[0].length; coluna++){
-                System.out.println(matriz[linha][coluna] + "\t | \t") ;
+                System.out.print(matriz[linha][coluna] + "\t | \t") ;
             }
             System.out.println();
         }
 
     }
+
+    /**
+     * Método para calcular o valor total em vendas
+     * @param matrizTotal
+     * @return
+     * @throws FileNotFoundException
+     */
+    public static double calcularTotalVendas (String[][] matrizTotal) throws FileNotFoundException{
+
+
+        double soma=0;
+
+        for(int linha = 0; linha < matrizTotal.length;linha++){
+            String[] valorJogos = matrizTotal[linha][8].split(".");
+
+            //transformar em euros e centavos para depois somar
+
+            double euros = Double.parseDouble(matrizTotal[0][8]);
+            double centavos = Double.parseDouble(matrizTotal[1][8]);
+
+
+            soma += euros + centavos ;
+        }
+
+        System.out.print("Valor total de vendas: " + soma + "€\n\n");
+        return soma;
+    }
+
+    /**
+     * Método utilizado para calcular o lucro da empresa
+     * @param matrizTotal
+     * @return
+     * @throws FileNotFoundException
+     */
+    public static double totalLucros (String[][] matrizTotal) throws FileNotFoundException{
+
+        double soma=0;
+
+        for(int linha = 0; linha < matrizTotal.length;linha++){
+            String[] valorJogos = matrizTotal[linha][8].split(".");
+
+            //transformar matrizes em doubles
+
+            double euros = Double.parseDouble(matrizTotal[0][8]);
+            double centavos = Double.parseDouble(matrizTotal[1][8]);
+
+
+            soma += euros + centavos;
+
+        }
+
+        System.out.print("Total lucro: " + soma*0.2 + "€\n\n");
+        return soma;
+    }
+
+    /**
+     * Método para procuar pelo ID do cliente
+     * @param matrizTotal
+     * @param idCliente
+     * @throws FileNotFoundException
+     */
+    public static void procurarIdCliente (String [][] matrizTotal, String idCliente) throws FileNotFoundException{
+
+
+
+            for(int linha = 0;linha < matrizTotal.length;linha++){
+                if(matrizTotal[linha][1].equals(idCliente)){
+                    System.out.println("Nome: "+ matrizTotal[linha][2] +  "\nContato:"+ matrizTotal[linha][3] + "\nEmail: "+ matrizTotal[linha][4]);
+                    break;
+                }
+            }
+    }
+
+    public static void jogoMaisCaro (String[][] matrizTotal, String nomeJogo) throws FileNotFoundException{
+
+
+
+        for (int linha = 0; linha < matrizTotal.length;linha++){
+            String [] linhas = matrizTotal[linha][8].split(".");
+            if (linhas[0] < matrizTotal[linha][8])
+        }
+
+
+    }
+
+    /**
+     * Main para a menu principal e iniciar o programa
+     * @param args
+     * @throws FileNotFoundException
+     */
 
     public static void main(String[] args) throws FileNotFoundException{
         
@@ -141,6 +236,7 @@ public class TrabalhoPratico {
          int opcao, passwordAdmin, menuCliente;
 
          do{
+             System.out.println("**********************************\n**********************************\n\n--------*** GAME START ***--------\n\n**********************************\n**********************************");
             System.out.println("Escolha o tipo de utilizador: ");
 
             System.out.println("1. Cliente");
@@ -155,7 +251,7 @@ public class TrabalhoPratico {
                     break;
 
                 case 2:
-                    System.out.println("***  MENU ADMINISTRADOR ***");
+                    System.out.println("\n**********************************\n\n***  MENU ADMINISTRADOR ***\n\n**********************************");
                     passwordAdmin();
 
 
@@ -202,31 +298,56 @@ public class TrabalhoPratico {
    public static void menuA () throws FileNotFoundException{
 
 
-       File
+       String[][] matrizTotal = fichieroParaMatriz("Ficha_JAVA/Ficheiros_07/GameStart_V2.csv");
 
         Scanner input = new Scanner(System.in);
 
         int opcao;
 
         do{
-            System.out.println("**** MENU ADMINISTRADOR ****");
-            System.out.println("Escolha a opção");
+            System.out.println("\n**** MENU ADMINISTRADOR ****\n");
+            System.out.println("Escolha a opção\n");
 
             System.out.println("1. Lista de jogos, clientes e vendas");
             System.out.println("2. Total de Vendas");
             System.out.println("3. Lucros $$");
-            System.out.println("4. Dados do Cliente");
-            System.out.println("5. Golden Game :)");
+            System.out.println("4. Procurar cliente pelo ID");
+            System.out.println("5. Tesourinho da GameStart :)");
+            System.out.println("9. Sair, Bye!");
             opcao = input.nextInt();
 
-            System.out.println("9. Sair, Bye!");
+
 
             switch (opcao){
                 case 1:
-                    System.out.println(" *** LISTA *** ");
-                    imprimirMatriz(fichieroParaMatriz(matrizGS, ));
+                    System.out.println(" \n*** LISTA ***\n ");
+                    imprimirMatriz(matrizTotal);
 
                     break;
+
+                case 2:
+                    System.out.println("\n*** TOTAL EM VENDAS ***\n");
+                    calcularTotalVendas(matrizTotal);
+                    break;
+
+                    case 3:
+                        System.out.println("\n*** TOTAL DE LUCROS ***\n");
+                        totalLucros(matrizTotal);
+                        break;
+
+                case 4:
+                    System.out.println("\n*** PROCURAR CLIENTE ***\n");
+                    System.out.print("Digite o ID do cliente: ");
+                    input.nextLine();
+                    String idCliente = input.nextLine();
+
+                    procurarIdCliente(matrizTotal, idCliente);
+                    break;
+
+                case 5:
+
+
+
 
             }
         }while (opcao != 9);
