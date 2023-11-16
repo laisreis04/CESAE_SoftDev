@@ -118,6 +118,7 @@ public class TrabalhoPratico {
         }
 
         return matrizGS;
+        
     }
 
     /**
@@ -243,19 +244,30 @@ public class TrabalhoPratico {
 
     }
 
+
+
     /**
      * ESTACIONAMENTO
      * Método para verificar os numeros triangulares
      * @throws FileNotFoundException
      */
-    public static int estacionamentoCliente()throws FileNotFoundException{
+    public static void estacionamentoCliente()throws FileNotFoundException{
 
-        int tri = 0;
-
-        for( int i = 1;i < num; i++){
-            for (int j = 1; j)
+       int soma = 0, num= 0;
+       
+        while(num <= 121){
+            for(int tri = 1; soma < num; tri++){
+                soma += tri;
+                if(soma == num && soma % 5 == 0){
+                    System.out.println(num);
+                }
+            }
         }
-    }
+            
+        }
+
+        
+        
 
     /**
      * MENU PRINCIPAL
@@ -404,6 +416,7 @@ public class TrabalhoPratico {
 
     /**
      * MENU CLIENTE
+     * Menu direcionado para o cliente.
      * @throws FileNotFoundException
      */
    public static void menuCliente() throws FileNotFoundException{
@@ -441,7 +454,7 @@ public class TrabalhoPratico {
                    break;
 
                case 2:
-                   System.out.println("Os lugares vagos são: " + estacionamentoCliente());
+                   estacionamentoCliente();
                    break;
            }
        }while (opcao != 9);
