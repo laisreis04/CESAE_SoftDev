@@ -438,6 +438,7 @@ public class TrabalhoPratico {
            System.out.println("2. Estacionamento");
            System.out.println("3. Mostrar lista de jogos");
            System.out.println("4. Procurar editora");
+           System.out.println("9. Sair - Hasta la vista baby!");
             opcao = input.nextInt();
 
            switch (opcao){
