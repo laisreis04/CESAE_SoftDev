@@ -271,6 +271,37 @@ public class TrabalhoPratico {
             
         }
 
+    public static void jogosDaLoja (String[][]matrizTotal)throws FileNotFoundException{
+
+        
+        boolean jogoDuplicado = false;
+
+
+        //loop para ler a linha atual do ficheiro
+        for(int linha = 0; linha < matrizTotal.length;linha++){
+            String linhaAtual = matrizTotal[linha][7];
+
+            //Novo loop para ler a proxima linha
+           for(int linhaNova = 0; linhaNova < linha;linhaNova++){
+            
+            //Condição para veririfcar se o nome do jogo anterior é iguaal ao nome que está sendo lendo agora
+            if(matrizTotal[linhaNova][7].equals(linhaAtual)){
+                jogoDuplicado = true;
+                break;
+           }
+          
+            
+            }
+
+            //Se a linha atual for diferente do nome do jogo que está duplicado, ai eu imprimo
+            if(!jogoDuplicado){
+                System.out.println(linhaAtual);
+            }
+            
+        }
+
+    }
+
         
         
 
@@ -428,6 +459,8 @@ public class TrabalhoPratico {
 
        Scanner input = new Scanner(System.in);
 
+       String[][] matrizTotal = fichieroParaMatriz("Ficha_JAVA/Ficheiros_07/GameStart_V2.csv");
+       
        int opcao;
 
 
@@ -466,7 +499,7 @@ public class TrabalhoPratico {
 
               case 3:
               System.out.println("***** LISTA DE JOGOS *****");
-
+                jogosDaLoja(matrizTotal);
               break;
 
            }
