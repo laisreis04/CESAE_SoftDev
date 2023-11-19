@@ -147,7 +147,7 @@ public class TrabalhoPratico {
      */
     public static double calcularTotalVendas (String[][] matrizTotal) throws FileNotFoundException{
 
-        
+        int totalNVendas = 0;
         double soma=0;
 
       
@@ -158,13 +158,13 @@ public class TrabalhoPratico {
 
             double euros = Double.parseDouble(matrizTotal[0][8]);
             double centavos = Double.parseDouble(matrizTotal[1][8]);
-
+            totalNVendas = linha;
             soma += euros + centavos ;
             
         }
         
         
-        System.out.print("Valor total de vendas: " + soma + "€\n\n");
+        System.out.print("Valor total de vendas: " + soma + "€\n" + "Numero de vendas: " + totalNVendas + "\n");
         return soma;
     }
 
@@ -177,6 +177,7 @@ public class TrabalhoPratico {
      */
     public static double totalLucros (String[][] matrizTotal) throws FileNotFoundException{
 
+        
         double soma=0;
 
         for(int linha = 0; linha < matrizTotal.length;linha++){
@@ -187,12 +188,12 @@ public class TrabalhoPratico {
             double euros = Double.parseDouble(matrizTotal[0][8]);
             double centavos = Double.parseDouble(matrizTotal[1][8]);
 
-
+            
             soma += euros + centavos;
 
         }
 
-        System.out.print("Total lucro: " + soma*0.2 + "€\n\n");
+        System.out.print("Total lucro: " + soma*0.2 + "€\n\n" );
         return soma;
     }
 
