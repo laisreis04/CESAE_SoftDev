@@ -304,7 +304,6 @@ public class TrabalhoPratico {
 
     public static void nomesEditoras(String[][]matrizTotal, String procuraEditora)throws FileNotFoundException{
 
-        boolean nomeCategoriaDuplicado = false;
        
 
         //Rotina para pesquisar a editora pelo nome
@@ -316,24 +315,18 @@ public class TrabalhoPratico {
                     //Rotina para passar pelas categorias, e não imprimir o duplicado"
                     for(int linhaAtualCategoria = 0;linhaAtualCategoria < matrizTotal.length; linhaAtualCategoria++){
                         String categoriaAtual = matrizTotal[linhaAtualCategoria][6];
-                        for(int proximaCategoria = 0;proximaCategoria < linhaAtualCategoria; proximaCategoria++){
-                            if (matrizTotal[proximaCategoria][6].equals(categoriaAtual)) {
-                                nomeCategoriaDuplicado = true;
-                                break;
-                            }
-                            }
-                            //Imprimir apenas as categorias que foram pesquisadas
-                            if(!nomeCategoriaDuplicado){
-                                else if(nomeCategoriaDuplicado.equals(procuraEditora)){
-
-                                }
-                        }
+                        if (categoriaAtual.equals(procuraEditora)) {
+                            System.out.println("categoria: " + categoriaAtual);
+                        
+                           
+                         
                     }   
                     
                 }
 
                 
             }
+        }
         
         
 
