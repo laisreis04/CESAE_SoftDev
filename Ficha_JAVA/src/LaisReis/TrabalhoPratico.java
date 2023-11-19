@@ -273,7 +273,7 @@ public class TrabalhoPratico {
 
     public static void jogosDaLoja (String[][]matrizTotal)throws FileNotFoundException{
 
-        
+        //para poder imprimir apenas o neme de um jogo, uso a opção false;
         boolean jogoDuplicado = false;
 
 
@@ -299,6 +299,43 @@ public class TrabalhoPratico {
             }
             
         }
+
+    }
+
+    public static void nomesEditoras(String[][]matrizTotal, String procuraEditora)throws FileNotFoundException{
+
+        boolean nomeCategoriaDuplicado = false;
+       
+
+        //Rotina para pesquisar a editora pelo nome
+
+        for(int linha = 0;linha < matrizTotal.length;linha++){
+                if(matrizTotal[linha][5].equals(procuraEditora)){
+    
+
+                    //Rotina para passar pelas categorias, e não imprimir o duplicado"
+                    for(int linhaAtualCategoria = 0;linhaAtualCategoria < matrizTotal.length; linhaAtualCategoria++){
+                        String categoriaAtual = matrizTotal[linhaAtualCategoria][6];
+                        for(int proximaCategoria = 0;proximaCategoria < linhaAtualCategoria; proximaCategoria++){
+                            if (matrizTotal[proximaCategoria][6].equals(categoriaAtual)) {
+                                nomeCategoriaDuplicado = true;
+                                break;
+                            }
+                            }
+                            //Imprimir apenas as categorias que foram pesquisadas
+                            if(!nomeCategoriaDuplicado){
+                                else if(nomeCategoriaDuplicado.equals(procuraEditora)){
+
+                                }
+                        }
+                    }   
+                    
+                }
+
+                
+            }
+        
+        
 
     }
 
@@ -500,6 +537,17 @@ public class TrabalhoPratico {
               case 3:
               System.out.println("***** LISTA DE JOGOS *****");
                 jogosDaLoja(matrizTotal);
+              break;
+
+              case 4:
+              System.out.println("***** LISTA DE EDITORAS *****");
+              System.out.print("Pesquise uma editora: ");
+              String procurarEditora = input.next();
+              nomesEditoras(matrizTotal, procurarEditora);
+              break;
+
+              default:
+              System.out.println("Opção inválida");
               break;
 
            }
