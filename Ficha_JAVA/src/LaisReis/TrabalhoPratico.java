@@ -131,7 +131,7 @@ public class TrabalhoPratico {
 
         for(int linha = 0; linha < matriz.length;linha++){
             for (int coluna = 0; coluna < matriz[0].length; coluna++){
-                System.out.print(matriz[linha][coluna] + "\t | \t") ;
+                System.out.print(matriz[linha][coluna] + "\t\t| \t") ;
             }
             System.out.println();
         }
@@ -147,21 +147,23 @@ public class TrabalhoPratico {
      */
     public static double calcularTotalVendas (String[][] matrizTotal) throws FileNotFoundException{
 
-
+        
         double soma=0;
 
+      
         for(int linha = 0; linha < matrizTotal.length;linha++){
             String[] valorJogos = matrizTotal[linha][8].split(".");
 
-            //transformar em euros e centavos para depois somar
+            //transformar em euros e centavos em double para depois somar
 
             double euros = Double.parseDouble(matrizTotal[0][8]);
             double centavos = Double.parseDouble(matrizTotal[1][8]);
 
-
             soma += euros + centavos ;
+            
         }
-
+        
+        
         System.out.print("Valor total de vendas: " + soma + "€\n\n");
         return soma;
     }
