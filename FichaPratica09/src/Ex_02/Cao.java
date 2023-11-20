@@ -19,27 +19,16 @@ public class Cao {
 
     }
 
-    /**
-     * Get
-     *
-     * @return
-     */
-    public String getNome() {
-        return nome;
-    }
 
-    public String getRaca() {
-        return raca;
-    }
+   public void setLatido(String latido){
+        this.latido=latido;
+   }
 
     public void latir(){
         System.out.println(this.latido);
     }
 
-    /**
-     * Set Latido
-     * @param latido
-     */
+
 
 
 }
