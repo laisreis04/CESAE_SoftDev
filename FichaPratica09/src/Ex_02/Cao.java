@@ -15,7 +15,7 @@ public class Cao {
     public Cao(String nome, String raca, String latido) {
         this.nome = nome;
         this.raca = raca;
-        this.latido = latido;
+        this.latido = "au au au";
 
     }
 
@@ -32,8 +32,8 @@ public class Cao {
         return raca;
     }
 
-    public String getLatido() {
-        return latido;
+    public void latir(){
+        System.out.println(this.latido);
     }
 
     /**
@@ -41,7 +41,5 @@ public class Cao {
      * @param latido
      */
 
-    public void setLatido(String latido) {
-        this.latido = latido;
-    }
+
 }

@@ -11,27 +11,23 @@ public class main {
         System.out.println("Dados cao 01");
         System.out.println("Nome. " + cao01.getNome());
         System.out.println("Raça: " +cao01.getRaca());
-        System.out.println("Latido: " +cao01.getLatido());
+//        System.out.println("Latido: " + cao01.latir() + "\n");
 
 
         System.out.println("Dados cao 02");
         System.out.println("Nome. " + cao2.getNome());
         System.out.println("Raça: " +cao2.getRaca());
-        System.out.println("Latido: " +cao2.getLatido());
+//        System.out.println("Latido: " + cao2.latir() + "\n");
 
 
 
         System.out.println("Dados cao 03");
         System.out.println("Nome. " + cao3.getNome());
         System.out.println("Raça: " +cao3.getRaca());
-        System.out.println("Latido: " +cao3.getLatido());
+//        System.out.println("Latido: " +cao3.latir() + "\n");
 
-        cao3.setLatido("Ruff");
 
-        System.out.println("Dados cao 03");
-        System.out.println("Nome. " + cao3.getNome());
-        System.out.println("Raça: " +cao3.getRaca());
-        System.out.println("Latido: " +cao3.getLatido());
+
 
 
 
