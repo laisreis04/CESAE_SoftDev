@@ -13,11 +13,29 @@ public class Produto {
         this.quantidade = 0;
     }
 
+    /**
+     * Método para comprar produtos
+     * @param acresQuantidade
+     * @return
+     */
     public int compra(int acresQuantidade){
 
-        //para atualizar a quantidade
+
+        if (this.quantidade > 0){
+
+            System.out.println("Quebra no stock");
+        }
         this.quantidade+=acresQuantidade;
+        System.out.println("Stock: " + this.quantidade);
             return this.quantidade;
+        }
+
+        public  int venda(int menosQuantidade){
+
+        this.quantidade -= menosQuantidade;
+            System.out.println("Stock: " +  this.quantidade);
+        return this.quantidade;
+
         }
 
     }
