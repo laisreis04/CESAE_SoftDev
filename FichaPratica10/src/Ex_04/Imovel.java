@@ -36,7 +36,7 @@ public class Imovel {
      * @param banheiros
      * @param tamanhoPiscina
      */
-    public void valorImovel(){
+    public void valorImovel(TipoMoradia moradia, double areaTotalMoradia, Acabamento estado, int quartos, int banheiros, double tamanhoPiscina){
 
     
 
