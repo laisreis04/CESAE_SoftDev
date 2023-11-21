@@ -12,27 +12,46 @@ public class Conta {
         this.titular = titular;
     }
 
-public double transferencia(double valor, int numContaTrans){
+    public void exibirdados(){
 
-        numContaTrans = this.numConta;
-        double saldoTotalDest = this.saldo - valor;
+        System.out.println("Número da conta: " + this.numConta);
+        System.out.println("Saldo: " + this.saldo);
+        System.out.println("Titular: " + this.titular);
 
-    System.out.println("Saldo total: " + saldoTotalDest + "\nValor transferido: " + valor);
-        return saldoTotalDest;
     }
 
-    public double aumetarSaldo (double valorMB){
 
-        double saltoTotal = this.saldo + valorMB;
+    public Conta transferencia(Conta numDestinatario, double valor){
 
-        System.out.println("Montante recebido: " + valorMB + "\nSaldo: " + saltoTotal);
+
+             numDestinatario.saldo += valor;
+             this.saldo -= valor;
+             System.out.println("Valor recebido: +"+valor + "\nSaldo atual: " + numDestinatario.saldo);
+            return this;
+}
+
+    public  void aumentarSaldo (double valorDepositar) {
+
+        //para atualizar o saldo uso a classe do saldo
+
+        this.saldo = this.saldo + valorDepositar;
+        System.out.println("Valor depositado: +" + valorDepositar + "\nSaldo total: " + this.saldo);
+    }
+
+    public double diminuirSaldo (double valorRetirar){
+
+
+        if(valorRetirar < this.saldo){
+             this.saldo -= valorRetirar;
+            System.out.println("Valor retirado: - " + valorRetirar + "\nSaldo total: " + this.saldo);
+        }else {
+            System.out.println("Tá pobre amigo, não dá para retirar...");
+        }
+
         return this.saldo;
+
     }
 
-    public double dominuirSaldo (double valorMB){
-       double saldoTotal = this.saldo - valorMB;
-        System.out.println("Levantou: " + valorMB +"\nSaldo Total: " + saldoTotal);
-        return this.saldo;
-    }
+
 
 }

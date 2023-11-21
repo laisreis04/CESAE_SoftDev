@@ -6,16 +6,26 @@ public class main11 {
 
         Conta conta1 = new Conta(456,452.80, "Pedro");
         Conta conta2 = new Conta(78, 500,"Nadia");
+        Conta conta3 = new Conta(99,1200,"João");
 
 
-        conta1.transferencia(20,78);
-
+        conta1.exibirdados();
         System.out.println();
 
-        conta1.aumetarSaldo(500);
+        conta1.aumentarSaldo(1000);
+        System.out.println();
+        System.out.println();
+        conta1.exibirdados();
+        conta1.diminuirSaldo(120);
+        System.out.println();
 
-        conta1.dominuirSaldo(50);
 
+        conta3.exibirdados();
+        conta2.exibirdados();
+        conta2.transferencia(conta3, 450);
+        System.out.println();
+        conta3.exibirdados();
+        conta2.exibirdados();
     }
 
 

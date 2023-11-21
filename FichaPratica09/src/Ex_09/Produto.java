@@ -10,7 +10,7 @@ public class Produto {
         this.nome = nome;
         this.preco = preco;
         //não aparece como parametro, pois já foi inicializada
-        this.quantidade = 0;
+
     }
 
     /**
@@ -18,23 +18,25 @@ public class Produto {
      * @param acresQuantidade
      * @return
      */
-    public int compra(int acresQuantidade){
+    public void compra(int acresQuantidade){
 
 
-        if (this.quantidade > 0){
-
-            System.out.println("Quebra no stock");
-        }
         this.quantidade+=acresQuantidade;
         System.out.println("Stock: " + this.quantidade);
-            return this.quantidade;
+
         }
 
-        public  int venda(int menosQuantidade){
+        public  void  venda(int quantidade){
 
-        this.quantidade -= menosQuantidade;
-            System.out.println("Stock: " +  this.quantidade);
-        return this.quantidade;
+        if(this.quantidade >= quantidade ){
+            this.quantidade -= quantidade;
+            System.out.println("Atualização stock: " + this.quantidade);
+        }else {
+            System.out.println("Quebra no stock");
+        }
+
+
+
 
         }
 
