@@ -10,22 +10,17 @@ public class main11 {
 
 
         conta1.exibirdados();
-        System.out.println();
-
-        conta1.aumentarSaldo(1000);
-        System.out.println();
+        conta1.aumentarSaldo(100);
         System.out.println();
         conta1.exibirdados();
-        conta1.diminuirSaldo(120);
-        System.out.println();
-
 
         conta3.exibirdados();
-        conta2.exibirdados();
-        conta2.transferencia(conta3, 450);
-        System.out.println();
+
+        conta3.transferencia(conta1,300);
         conta3.exibirdados();
-        conta2.exibirdados();
+        conta1.exibirdados();
+
+
     }
 
 

@@ -21,24 +21,28 @@ public class Conta {
     }
 
 
-    public Conta transferencia(Conta numDestinatario, double valor){
+    public void transferencia(Conta numDestinatario, double valor){
 
+            if(this.saldo >= valor){
+                System.out.println("Valor transferido" + valor);
+                this.saldo -= valor;
+                numDestinatario.saldo += valor;
 
-             numDestinatario.saldo += valor;
-             this.saldo -= valor;
-             System.out.println("Valor recebido: +"+valor + "\nSaldo atual: " + numDestinatario.saldo);
-            return this;
+            }else{
+                System.out.println("Saldo indiponível");
+            }
+
 }
 
     public  void aumentarSaldo (double valorDepositar) {
 
         //para atualizar o saldo uso a classe do saldo
 
-        this.saldo = this.saldo + valorDepositar;
-        System.out.println("Valor depositado: +" + valorDepositar + "\nSaldo total: " + this.saldo);
+        this.saldo += valorDepositar;
+        System.out.println("Valor depositado: + " + valorDepositar + "\nSaldo total: " + this.saldo);
     }
 
-    public double diminuirSaldo (double valorRetirar){
+    public void diminuirSaldo (double valorRetirar){
 
 
         if(valorRetirar < this.saldo){
@@ -48,7 +52,7 @@ public class Conta {
             System.out.println("Tá pobre amigo, não dá para retirar...");
         }
 
-        return this.saldo;
+
 
     }
 

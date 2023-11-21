@@ -10,8 +10,9 @@ public class main10 {
 
 
         funcionario1.exibirDados();
-        funcionario1.aumentarSalario(10);
+        funcionario1.aumentarSalario(35);
         System.out.println();
+        funcionario1.exibirDados();
 
 
     }

@@ -18,15 +18,13 @@ public class Funcinario {
      * @param a
      * @return
      */
-    public double aumentarSalario(double a){
+    public void aumentarSalario(double a){
 
-        double totalAumento;
-        double percentagemAumento;
 
-        percentagemAumento = this.salario * (a/100);
-        totalAumento = this.salario + percentagemAumento;
-        System.out.println("Uau você recebeu um aumento, parabéns!\nValor do aumento: " + percentagemAumento + "\nValor total: " + totalAumento);
-    return this.salario;
+
+        this.salario = this.salario * (1+(a/100));
+        System.out.println("Uau você recebeu um aumento, parabéns!\n"+ "\nValor total: " + this.salario);
+
     }
 
     /**
