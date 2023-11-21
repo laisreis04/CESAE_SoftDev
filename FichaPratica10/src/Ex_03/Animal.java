@@ -16,17 +16,25 @@ public class Animal {
         this.alimentacao = alimentacao;
     }
 
-}
+    public void exibirDados(){
+
+        System.out.println("Nome: " + nome + "\nPeso: " + pesoKg);
+    }
 
     public void animalComer(double pesoGr, String comida){
 
+        //Pergunta??? Como eu faço para imprimir apenas uma vez =
+
         for(int i = 0; i < alimentacao.length;i++){
-            if(comida.equals(alimentacao)){
-                pesoKg += pesoGr*1000;
-                System.out.println("Animal comeu!");
+            if(comida.equals(alimentacao[i])){
+                pesoKg += pesoGr/1000;
+                System.out.println("Animal comeu!" + "\nPeso atual: " + pesoKg + "Kg");
+                
             }else {
                 System.out.println("Animal recusou a comida");
+              
             }
+            
         }
 
 
