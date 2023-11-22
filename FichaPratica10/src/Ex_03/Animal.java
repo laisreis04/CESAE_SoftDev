@@ -18,25 +18,41 @@ public class Animal {
 
     public void exibirDados(){
 
-        System.out.println("Nome: " + nome + "\nPeso: " + pesoKg);
+        System.out.println("Nome: " + nome);
+        System.out.println("Peso: " + pesoKg);
+        System.out.println("País de origem: " + paisOrigem);
+        System.out.println("Dieta: ");
+
+
+            //Imprimir arrays
+        for (int i = 0; i< alimentacao.length;i++){
+            System.out.print(alimentacao[i] + " ");
+        }
     }
 
+    /**
+     * Metodo para verificar se o animel comeu  + o peso atual se for positivo
+     * @param pesoGr Peso pedido como parametro é em gramas.
+     * @param comida
+     */
     public void animalComer(double pesoGr, String comida){
 
         //Pergunta??? Como eu faço para imprimir apenas uma vez =
 
         for(int i = 0; i < alimentacao.length;i++){
+            //O problema da impressao duplicada pode ser pela ordem ?
             if(comida.equals(alimentacao[i])){
                 pesoKg += pesoGr/1000;
-                System.out.println("Animal comeu!" + "\nPeso atual: " + pesoKg + "Kg");
-                
-            }else {
-                System.out.println("Animal recusou a comida");
+
+                return;
+                // break ?
+            }
               
             }
+        System.out.println("Animal comeu!" + "\nPeso atual: " + pesoKg + "Kg");
             
         }
 
 
     }
-}
+

@@ -16,7 +16,7 @@ public class main3 {
         animal1.animalComer(50000, "pessoas");
         System.out.println();
 
-        animal1.exibirDados();
+        animal2.exibirDados();
         
 
     }

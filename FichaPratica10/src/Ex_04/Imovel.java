@@ -27,48 +27,42 @@ public class Imovel {
     }
 
 
-    /**
-     * Metodo para Calcular o valore de cada imovel
-     * @param moradia
-     * @param areaMoradia inicia com 1m quadrado
-     * @param estado
-     * @param quartos
-     * @param banheiros
-     * @param tamanhoPiscina
-     */
-    public void valorImovel(TipoMoradia moradia, double areaTotalMoradia, Acabamento estado, int quartos, int banheiros, double tamanhoPiscina){
 
-    
+    public void valorImovel(){
 
-        //Valores por Moradia, posso colocar no enum de cada um, com o respsctivo valor.
-        // Guardar o preço numa variavel
-        double precoApartamento = TipoMoradia.APARTAMENTO.calcularValorMoradia(areaTotalMoradia);
-        double precoCasa = TipoMoradia.CASA.calcularValorMoradia(areaTotalMoradia);
-        double precoMansao = TipoMoradia.MANSÃO.calcularValorMoradia(areaTotalMoradia);
+       if(tipoMoradia.equals(TipoMoradia.APARTAMENTO)){
+           //restuaro + o valor do imovel
+           // para calcular o valor do imovel = tipoMoradia.calcularValorMoradia(area)
+           // para calcular o valor do acabamento = acabamento.calcularValorAcabamento
 
-        //cada estado diferente corresponde a um valor que será retirado ou acrescentado:
+           double precoApe = acabamento.calcularValorAcabamento(tipoMoradia.calcularValorMoradia(area));
+           double utilidades = (numQuartos *= 7500) + (numBanheiros *= 10500) + (areaPiscina *= 1000);
+           System.out.println("Valor imovel: " + (precoApe + utilidades) + " Euros");
+       }
+       if (tipoMoradia.equals(TipoMoradia.CASA)){
+           double precoApe = acabamento.calcularValorAcabamento(tipoMoradia.calcularValorMoradia(area));
+           double utilidades = (numQuartos *= 7500) + (numBanheiros *= 10500) + (areaPiscina *= 1000);
+           System.out.println("Valor imovel: " + (precoApe + utilidades) + " Euros");
 
-        //Restauro
-        double preçoRestauroApe = Acabamento.RESTAURO.calcularValorAcabamento(precoApartamento);
-        double preçoRestauroCasa = Acabamento.RESTAURO.calcularValorAcabamento(precoCasa);
-        double preçoRestauroMansao = Acabamento.RESTAURO.calcularValorAcabamento(precoMansao);
+       }
+       if (tipoMoradia.equals(TipoMoradia.MANSÃO)){
+           double precoApe = acabamento.calcularValorAcabamento(tipoMoradia.calcularValorMoradia(area));
+           double utilidades = (numQuartos *= 7500) + (numBanheiros *= 10500) + (areaPiscina *= 1000);
+           System.out.println("Valor imovel: " + (precoApe + utilidades) + " Euros" );
+       }
 
-        //Usada
-        double preçoUsadaApe = Acabamento.RESTAURO.calcularValorAcabamento(precoApartamento);
-        double preçoUsadaCasa = Acabamento.RESTAURO.calcularValorAcabamento(precoCasa);
-        double preçoUsadaMansao = Acabamento.RESTAURO.calcularValorAcabamento(precoMansao);
+    }
 
-        //Nova com acabamento
-        double preçoNovaAcabApe = Acabamento.RESTAURO.calcularValorAcabamento(precoApartamento);
-        double preçoNovaAcabCasa = Acabamento.RESTAURO.calcularValorAcabamento(precoCasa);
-        double preçoNovaAcabMansao = Acabamento.RESTAURO.calcularValorAcabamento(precoMansao);
+    public void exibirdados(){
 
-        quartos += 7500;
-        banheiros += 10500;
-        tamanhoPiscina += 1000;
 
-        System.out.println("valor do imovel: " + areaTotalMoradia + estado + quartos + banheiros + tamanhoPiscina);
-        
+        System.out.println("Cidade: " + cidade);
+        System.out.println("Tipo do imóvel: " + tipoMoradia);
+        System.out.println("Morada: " + rua);
+        System.out.println("******* DETALHES ********");
+        System.out.println("Números de quartos: " + numQuartos);
+        System.out.println("Números de banheiros: " + numBanheiros);
+        System.out.println("Piscina: " + areaPiscina);
 
     }
 
