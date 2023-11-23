@@ -3,7 +3,7 @@ package Ex_02;
 public class Pessoa {
 
     private String nome;
-    int idade;
+    private int idade;
     private String telefone;
     private String email;
 
@@ -26,6 +26,13 @@ public class Pessoa {
 
     public static int getIdade() {
         return idade;
+    }
+
+    public void exibir_Dados(){
+
+        System.out.println("Nome: " + nome + "| Idade: " + idade + "| Contato: " + telefone + "|" + "| Email: " + email);
+
+
     }
 
 

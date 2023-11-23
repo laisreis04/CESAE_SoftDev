@@ -22,11 +22,18 @@ public class Sorteio {
             System.out.println("Parabéns! Adiconado com sucesso");
         }
         if(Pessoa.getIdade() < 18){
-
-
-
+            this.participantes.add(novaPessoa);
+            System.out.println("Atenção! É menor de idade");
         }
 
+
+
+        public void imprimirListaParticipantes(){
+
+            for(Pessoa pessoaAtual: this.participantes){
+                pessoaAtual.exibir_Dados();
+            }
+        }
         
         
         
