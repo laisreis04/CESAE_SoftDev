@@ -24,13 +24,13 @@ public class Pessoa {
 
 
 
-    public static int getIdade() {
+    public int getIdade() {
         return idade;
     }
 
     public void exibir_Dados(){
 
-        System.out.println("Nome: " + nome + "| Idade: " + idade + "| Contato: " + telefone + "|" + "| Email: " + email);
+        System.out.println("Nome: " + nome + "| Idade: " + idade + "| Contato: " + telefone  + "| Email: " + email);
 
 
     }
@@ -46,6 +46,8 @@ public class Pessoa {
     public String getEmail() {
         return email;
     }
+
+
 
     
     
