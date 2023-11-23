@@ -16,6 +16,14 @@ public class Peixe {
         this.peixesPescados = peixesPescados;
     }
 
+    public double getPeso() {
+        return peso;
+    }
+
+    public double getPrecoKg() {
+        return precoKg;
+    }
+
     ArrayList<Peixe> peixesPescados;
 
     public void addPeixe(Peixe novoPeixe){

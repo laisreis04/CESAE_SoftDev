@@ -26,7 +26,7 @@ public class Sorteio {
 
             System.out.println(novaPessoa.getNome() + " Parabéns! Adicionado com sucesso");
         }else  {
-            
+
             System.out.println(novaPessoa.getNome() + " Atenção! É menor de idade");
         }
     }
