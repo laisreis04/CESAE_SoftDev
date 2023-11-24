@@ -8,6 +8,8 @@ public class Barco_De_Pesca {
     private String cor;
     private String anoFabrico;
 
+    private Marca marcaBarco;
+
     private  int populacao;
 
     private double capacidadeCargaKg;
@@ -15,12 +17,15 @@ public class Barco_De_Pesca {
     private ArrayList<Peixe> peixes;
     private ArrayList<Marisco> marisco;
 
-    public Barco_De_Pesca(String nome, String cor, String anoFabrico, int populacao, double capacidadeCargaKg) {
+
+
+    public Barco_De_Pesca(String nome, String cor, String anoFabrico, int populacao, double capacidadeCargaKg, Marca marcaBarco) {
         this.nome = nome;
         this.cor = cor;
         this.anoFabrico = anoFabrico;
         this.populacao = populacao;
         this.capacidadeCargaKg = capacidadeCargaKg;
+        this.marcaBarco = marcaBarco;
         this.peixes = new ArrayList<>();
         this.marisco = new ArrayList<>();
     }
@@ -31,25 +36,48 @@ public class Barco_De_Pesca {
 
     }
 
-    public void addPescarPeixe(Peixe adiconarPeixe){
+
+    /**
+     * Método para somar a carga total no barco
+     * @return a carga atualizada do barco
+     */
+    public double getCargaAtual(){
+
+        double cargaAtual = 0;
+
+        for(Peixe peixeAtual: this.peixes){
+            cargaAtual +=peixeAtual.getPeso();
+
+        }
+        for ( Marisco mariscoAtual: this.marisco){
+            cargaAtual += mariscoAtual.getPeso();
+
+        }
+        return cargaAtual;
+    }
+
+    public void pescarPeixe(Peixe novoPeixe){
 
 
-        if(capacidadeCargaKg > adiconarPeixe.getPeso()){
-            capacidadeCargaKg -= adiconarPeixe.getPeso();
-            System.out.println("Uhuul mais um");
-            this.peixes.add(adiconarPeixe);
+        if(capacidadeCargaKg < novoPeixe.getPeso() + this.getCargaAtual()){
+
+
         }else {
-            System.out.println("Excedeu o peso!!!");
+            System.out.println("Adiconou Peixe");
+            this.peixes.add(novoPeixe);
         }
 
 
     }
 
-    public void addPescarMarisco (Marisco adicionarMarisco){
-        if(capacidadeCargaKg < adicionarMarisco.getPeso()){
-            this.marisco.add(adicionarMarisco);
+    public void pescarMarisco (Marisco adicionarMarisco){
+
+
+        if(capacidadeCargaKg < adicionarMarisco.getPeso() + this.getCargaAtual()){
+
         }else {
-            System.out.println("Excedeu o peso do barco!");
+            System.out.println("Adicionou Marisco");
+            this.marisco.add(adicionarMarisco);
         }
 
     }
@@ -67,12 +95,32 @@ public class Barco_De_Pesca {
 
     }
 
-    public void totalPescado(Barco_De_Pesca ){
+    public double calcular_PrecoTotal(){
 
-        //peixe
+        double precoTotal = 0;
 
-        double valorTotal = this.peixes.;
-        System.out.println("Valor total = " + valorTotal);
+        for(Peixe peixeAtaul : this.peixes){
+            double precoPeixeAtual = peixeAtaul.getPeso()*peixeAtaul.getPrecoKg();
+            precoTotal += precoPeixeAtual;
+
+        }
+        for(Marisco mariscoAtaul : this.marisco){
+            double precoMariscoAtual = mariscoAtaul.getPeso()*mariscoAtaul.getPrecoKg();
+            precoTotal += precoMariscoAtual;
+
+        }
+        return precoTotal;
+
     }
+
+    public double salarioTripulaao(){
+        double salario = this.calcular_PrecoTotal();
+
+        salario *=0.6;
+
+        return salario/this.populacao;
+
+    }
+
 
 }

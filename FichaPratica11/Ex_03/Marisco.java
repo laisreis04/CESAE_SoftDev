@@ -9,14 +9,16 @@ public class Marisco {
 
     private double precoKg;
 
-    ArrayList<Marisco> mariscosPescados;
+   private ArrayList<Marisco> mariscosPescados;
+
+    private double somarPeso_Marisco = 0;
 
 
     public Marisco(String especie, double peso, double precoKg) {
         this.especie = especie;
         this.peso = peso;
         this.precoKg = precoKg;
-        this.mariscosPescados = mariscosPescados;
+        this.mariscosPescados = new ArrayList<>();
     }
 
     //LIsta GETTER
@@ -27,4 +29,16 @@ public class Marisco {
     public double getPrecoKg() {
         return precoKg;
     }
+
+    public double getSomarPeso_Marisco() {
+        return somarPeso_Marisco;
+    }
+
+    public void addMarisco(Marisco novoMarisco){
+
+        this.mariscosPescados.add(novoMarisco);
+    }
+
+
+
 }
