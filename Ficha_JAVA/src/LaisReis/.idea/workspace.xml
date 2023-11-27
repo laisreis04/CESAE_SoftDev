@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="290addc9-4ed0-47d6-9cb7-31228f53a29d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/AirPlaneStore/Armas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/AirPlaneStore/AviaoCombate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/AirPlaneStore/Catalogo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/AirPlaneStore/Categoria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/AirPlaneStore/Instalacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/LojaCarros/Caminhao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/LojaCarros/Carro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/LojaCarros/Mota (1).txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/LojaCarros/Moto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/LojaCarros/TipoCombustivel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/LojaCarros/Veiculo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/LojaCarros/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../FichaPratica09/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../FichaPratica09/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../FichaPratica10/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../FichaPratica10/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../FichaPratica12/src/AirPlaneStore/Aviao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/AirPlaneStore/Aviao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../FichaPratica12/src/AirPlaneStore/JatoPrivado.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../FichaPratica12/src/AirPlaneStore/JatoPrivado.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2Yl5DB46HWTbcqF9cCFFyiPIGJt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/laisr/OneDrive/Formações/IEFP/Software Dev/Algoritimia/CESAE_SoftDev/Ficha_JAVA/src/LaisReis"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="290addc9-4ed0-47d6-9cb7-31228f53a29d" name="Changes" comment="" />
+      <created>1701087204232</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701087204232</updated>
+    </task>
+    <servers />
+  </component>
+</project>
