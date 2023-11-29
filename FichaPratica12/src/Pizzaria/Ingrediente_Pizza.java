@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class Ingrediente_Pizza {
 
-    private ArrayList<Ingrediente> ingredientes;
+    private Ingrediente ingredientes;
 
     private double quantidade;
 
     public Ingrediente_Pizza(Ingrediente ingrediente, double quantidade) {
-        this.ingredientes = new ArrayList<>();
+        this.ingredientes = ingrediente;
         this.quantidade = quantidade;
     }
 
-    public ArrayList<Ingrediente> getIngredientes() {
+    public Ingrediente getIngredientes() {
         return ingredientes;
     }
 
@@ -23,5 +23,25 @@ public class Ingrediente_Pizza {
 
     public void setQuantidade(double quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public void exbibirDetalhes_Ingredientes_pizza(){
+
+        ingredientes.exibirDetalhes_Ingredientes();
+        System.out.println(": " + quantidade + " ");
+
+        switch (this.ingredientes.getUnidadeMedida()){
+
+            case GRAMAS:
+                System.out.println("g.");
+            break;
+            case LITROS:
+                System.out.println("L.");
+                break;
+            case UNIDADES:
+                System.out.println("uni.");
+                break;
+
+        }
     }
 }

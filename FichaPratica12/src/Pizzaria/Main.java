@@ -20,12 +20,22 @@ public class Main {
         Ingrediente cogumelos = new Ingrediente("I8347", "Cogumelos frescos", Unidade_Medida.UNIDADES,0.5);
         Ingrediente pimento = new Ingrediente("I8475","Pimentos diversos", Unidade_Medida.GRAMAS, 3);
         Ingrediente alho = new Ingrediente("I6454", "Alho", Unidade_Medida.UNIDADES, 12);
+        Ingrediente base1 = new Ingrediente("I90989", "Massa fina", Unidade_Medida.GRAMAS, 20);
+        Ingrediente base2 = new Ingrediente("I9384", "Massa Alta", Unidade_Medida.GRAMAS,30);
+        Ingrediente base3 = new Ingrediente("I9485", "Massa sem glúten", Unidade_Medida.GRAMAS,35);
 
 
-        Pizza pizza = new Pizza("4589","Vegan Calabresa", "19.99",19.99, Tamanho.GRANDE);
+        Pizza pizza = new Pizza("4589","Vegan Calabresa", "É vegan porra",19.99, Tamanho.GRANDE);
 
 
+        pizza.addIngredientes(new Ingrediente_Pizza(queijoFatias,10));
+        pizza.addIngredientes(new Ingrediente_Pizza(molhoTomate, 0.2));
+        pizza.addIngredientes(new Ingrediente_Pizza(peperoni,10));
+        pizza.addIngredientes(new Ingrediente_Pizza(alho,2));
 
+        System.out.println();
+
+        pizza.exibirDetalhes_Pizza();
 
 
     }

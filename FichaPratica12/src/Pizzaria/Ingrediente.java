@@ -1,5 +1,6 @@
 package Pizzaria;
 
+import Pizzaria.Enum.BasePizza;
 import Pizzaria.Enum.Unidade_Medida;
 
 public class Ingrediente {
@@ -27,11 +28,17 @@ public class Ingrediente {
         return kcal;
     }
 
+    public Unidade_Medida getUnidadeMedida() {
+        return unidadeMedida;
+    }
 
     public void exibirDetalhes_Ingredientes(){
 
-        System.out.println("[ " + codigo + "| " + nome + "| " + kcal + "| ]");
+        System.out.print("[ " + codigo + "| " + nome + "| " + unidadeMedida + "| "+ kcal + "| ]");
 
 
     }
+
+
+
 }

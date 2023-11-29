@@ -1,5 +1,6 @@
 package Pizzaria;
 
+import Pizzaria.Enum.BasePizza;
 import Pizzaria.Enum.Tamanho;
 
 import java.util.ArrayList;
@@ -24,18 +25,87 @@ public class Pizza {
         this.composicao = new ArrayList<>();
     }
 
-    public void addIngredientes(Ingrediente_Pizza novoIngrediente){
 
-        if(composicao.size() < 5){
-            composicao.add(novoIngrediente);
+    /**
+     * Método para verificar se a pizza tem ou não base
+     * @return
+     */
+    public boolean temBase(){
+        //Contador de bases
+        int contadorbases = 0;
+
+        //para ler all the array
+        for (Ingrediente_Pizza ingredientePizzaAtual : composicao){
+
+            //condição para verificar se nos Ingredientes_Pizza algum é instacia da Base
+            if (ingredientePizzaAtual.getIngredientes() instanceof Base){
+
+                //Contar a base e colocar uma condição
+                contadorbases++;
+                if(contadorbases < 1){
+                    return true;
+                }
+
+            }
         }
-
+        return false;
     }
 
-    public void editarQuantidade(Ingrediente_Pizza novoIngrediente, double quantidade){
-        for ( Ingrediente_Pizza ingredienteAtual: composicao){
-            if (ingredienteAtual.getIngredientes().equals(Ingrediente)){
+    /**
+     * Método para contar o número de Toppings
+     * @return número de toppings
+     */
+    public int contarTopping (){
 
+        //Iniciar contador
+        int contadorTopping = 0;
+
+        for(Ingrediente_Pizza ingredientePizzaAtual : composicao){
+            if(ingredientePizzaAtual.getIngredientes() instanceof Topping){
+            contadorTopping++;
+            }
+        }
+    return contadorTopping;
+    }
+
+    /**
+     *
+     * Método para adicionar ingredientes
+     * @param novoIngrediente
+     */
+    public void addIngredientes(Ingrediente_Pizza novoIngrediente){
+
+        //Contador Topping
+        int contadorToppings = 0;
+
+
+        if(novoIngrediente.getIngredientes() instanceof Topping && temBase()){
+                if(composicao.size() < 5 && contarTopping()<=4){
+                        composicao.add(novoIngrediente);
+                    }
+                }
+        }
+
+//        public void definirTipoPizza (Ingrediente_Pizza tipoPizza){
+//
+//        for (Ingrediente_Pizza ingredientePizzaatual :composicao){
+//
+//            if()
+//        }
+//
+//        }
+
+    /**
+     * Metodo para mudar a quantidade de um ingrediente_Pizza
+     * @param ingrediente
+     * @param novaQuantidade
+     */
+    public void editarQuantidade(Ingrediente ingrediente, double novaQuantidade){
+
+        for ( Ingrediente_Pizza ingredienteAtual: composicao){
+
+            if (ingredienteAtual.getIngredientes()==ingrediente){
+            ingredienteAtual.setQuantidade(novaQuantidade);
             }
         }
     }
@@ -43,7 +113,7 @@ public class Pizza {
     public void removeIngrediente(String codigoIngrediente){
 
         for(Ingrediente_Pizza ingredienteAtual : composicao){
-            if(ingredienteAtual.getIngredientes().equals(codigoIngrediente)){
+            if(ingredienteAtual.getIngredientes().getCodigo().equals(codigoIngrediente)){
                 composicao.remove(ingredienteAtual);
                 System.out.println("Ingrediente Removido!");
             }
@@ -52,15 +122,18 @@ public class Pizza {
     }
 
     public void exibirDetalhes_Pizza(){
+        int contador = 1;
 
         System.out.println("********* PIZZARIA VEGANS *********");
         System.out.println("Código: " + codigoPizza);
         System.out.println("Descrição: " + descricao);
         System.out.println("Preço: " + preco);
         System.out.println("Tamanho: " + tamanho);
-        for (Ingrediente ingredienteAtual : composicao){
-
+        for (Ingrediente_Pizza ingredientePizzaAtual : composicao){
+            System.out.print("Ingrediente " + contador++ + ":");
+            ingredientePizzaAtual.exbibirDetalhes_Ingredientes_pizza();
         }
+        System.out.println();
     }
 
 
@@ -71,15 +144,34 @@ public class Pizza {
 
 
     }
-    public void kcal_Pizza (){
+    public double kcal_Pizza (){
 
-        double totalKcal = 0;
-        for ( Ingrediente kcalAtual : composicao){
+        double kCalTotal = 0;
 
-            totalKcal += kcalAtual.getKcal();
+       for (Ingrediente_Pizza ingredientePizzaAtual : composicao){
+
+           double quantidade_ingrediente = ingredientePizzaAtual.getQuantidade();
+           double kcalPorquantidadeIngrediente = ingredientePizzaAtual.getIngredientes().getKcal();
+
+           double kcalIngredienteAtual = quantidade_ingrediente * kcalPorquantidadeIngrediente;
+           kCalTotal += kcalIngredienteAtual;
+       }
+        return kCalTotal;
+    }
+
+    /**
+     * Método para usar apenas GRAMAS como unidade de medida para as bases
+     * @param tipoBase
+     */
+    public void soGramas_BasePizza(BasePizza tipoBase) {
+
+        if (tipoBase.equals(composicao)){
+            System.out.println("g.");
         }
-
     }
 
 
-}
+
+
+
+    }
