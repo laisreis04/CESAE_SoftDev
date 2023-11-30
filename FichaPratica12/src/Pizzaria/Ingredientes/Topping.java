@@ -1,9 +1,7 @@
-package Pizzaria;
+package Pizzaria.Ingredientes;
 
 import Pizzaria.Enum.OrigemIngrediente;
 import Pizzaria.Enum.Unidade_Medida;
-
-import java.util.ArrayList;
 
 public class Topping extends Ingrediente{
 

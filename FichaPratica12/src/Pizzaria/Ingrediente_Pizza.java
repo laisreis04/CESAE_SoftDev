@@ -1,6 +1,6 @@
 package Pizzaria;
 
-import java.util.ArrayList;
+import Pizzaria.Ingredientes.Ingrediente;
 
 public class Ingrediente_Pizza {
 

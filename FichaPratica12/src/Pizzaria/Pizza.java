@@ -2,6 +2,9 @@ package Pizzaria;
 
 import Pizzaria.Enum.BasePizza;
 import Pizzaria.Enum.Tamanho;
+import Pizzaria.Ingredientes.Base;
+import Pizzaria.Ingredientes.Ingrediente;
+import Pizzaria.Ingredientes.Topping;
 
 import java.util.ArrayList;
 
@@ -159,16 +162,6 @@ public class Pizza {
         return kCalTotal;
     }
 
-    /**
-     * Método para usar apenas GRAMAS como unidade de medida para as bases
-     * @param tipoBase
-     */
-    public void soGramas_BasePizza(BasePizza tipoBase) {
-
-        if (tipoBase.equals(composicao)){
-            System.out.println("g.");
-        }
-    }
 
 
 
