@@ -162,16 +162,6 @@ public class Pizza {
         return kCalTotal;
     }
 
-    /**
-     * Método para usar apenas GRAMAS como unidade de medida para as bases
-     * @param tipoBase
-     */
-    public void soGramas_BasePizza(BasePizza tipoBase) {
-
-        if (tipoBase.equals(composicao)){
-            System.out.println("g.");
-        }
-    }
 
 
 

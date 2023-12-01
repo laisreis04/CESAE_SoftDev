@@ -11,6 +11,7 @@ import Pizzaria.Ingredientes.Topping;
 public class Main {
     public static void main(String[] args) {
 
+
         Ingrediente molhoTomate = new Ingrediente("I4587","Molho de tomate", Unidade_Medida.LITROS,5);
         Ingrediente molhoPesto = new Ingrediente("I1234", "Molho Pesto vegano", Unidade_Medida.GRAMAS, 1.5);
         Ingrediente molhoBranco = new Ingrediente("I4569","Molho Branco Vegano", Unidade_Medida.LITROS, 120);
@@ -30,9 +31,12 @@ public class Main {
         Ingrediente base3 = new Ingrediente("I9485", "Massa sem glúten", Unidade_Medida.GRAMAS,35);
 
 
+
         Pizza pizza = new Pizza("4589","Vegan Calabresa", "É vegan porra",19.99, Tamanho.GRANDE);
 
+
         Pizza pizza2 = new Pizza("P0001", "Chouriçada vegan", "Deliciosa e sem carne", 20.90, Tamanho.GRANDE);
+
 
 
         pizza.addIngredientes(new Ingrediente_Pizza(queijoFatias,10));
@@ -47,7 +51,7 @@ public class Main {
         System.out.println();
 
         pizza2.addIngredientes(new Ingrediente_Pizza(base1, 200));
-        pizza2.addIngredientes(new Ingrediente_Pizza(pimento,50));
+
 
 
 
