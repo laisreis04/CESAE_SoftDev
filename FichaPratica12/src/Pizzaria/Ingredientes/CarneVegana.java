@@ -1,10 +1,10 @@
-package Pizzaria;
+package Pizzaria.Ingredientes;
 
 import Pizzaria.Enum.OrigemIngrediente;
 import Pizzaria.Enum.TipoCarneVegetal;
 import Pizzaria.Enum.Unidade_Medida;
 
-public class CarneVegana extends Topping{
+public class CarneVegana extends Topping {
 
     private TipoCarneVegetal tipoCarneVegetal;
 

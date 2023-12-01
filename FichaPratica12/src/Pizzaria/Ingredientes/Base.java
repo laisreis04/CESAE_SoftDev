@@ -1,9 +1,7 @@
-package Pizzaria;
+package Pizzaria.Ingredientes;
 
 import Pizzaria.Enum.BasePizza;
 import Pizzaria.Enum.Unidade_Medida;
-
-import java.util.ArrayList;
 
 public class Base extends Ingrediente {
 
@@ -14,7 +12,7 @@ public class Base extends Ingrediente {
 
 
     public Base(String codigo, String nome, Unidade_Medida unidadeMedida, double kcal, BasePizza tipoBase, String descricao) {
-        super(codigo, nome, unidadeMedida, kcal);
+        super(codigo, nome, Unidade_Medida.GRAMAS, kcal);
         this.tipoBase = tipoBase;
         this.descricao = descricao;
 

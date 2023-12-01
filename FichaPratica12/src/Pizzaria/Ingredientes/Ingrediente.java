@@ -1,4 +1,4 @@
-package Pizzaria;
+package Pizzaria.Ingredientes;
 
 import Pizzaria.Enum.BasePizza;
 import Pizzaria.Enum.Unidade_Medida;

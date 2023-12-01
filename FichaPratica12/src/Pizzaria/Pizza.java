@@ -2,6 +2,9 @@ package Pizzaria;
 
 import Pizzaria.Enum.BasePizza;
 import Pizzaria.Enum.Tamanho;
+import Pizzaria.Ingredientes.Base;
+import Pizzaria.Ingredientes.Ingrediente;
+import Pizzaria.Ingredientes.Topping;
 
 import java.util.ArrayList;
 
@@ -80,7 +83,7 @@ public class Pizza {
 
 
         if(novoIngrediente.getIngredientes() instanceof Topping && temBase()){
-                if(composicao.size() < 5 && contarTopping()<=4){
+                if(composicao.size() <= 4 && contarTopping()<=4){
                         composicao.add(novoIngrediente);
                     }
                 }
