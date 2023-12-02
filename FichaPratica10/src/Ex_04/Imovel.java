@@ -76,24 +76,24 @@ public class Imovel {
      * @param imovelcomparado Parametro onde leva o imovel a ser comparado
      * @return <b>Retorna o imóvel mais caro<b/>
      */
-   public Imovel compararImovel(Imovel imovelcomparado){
+//   public Imovel compararImovel(Imovel imovelcomparado){
+//
+//       //como eu faço essa comparação?
+//
+//       if(imovelcomparado.valorImovel() > this.valorImovel()){
+//
+//           System.out.println("Imóvel mais caro: " + imovelcomparado);
+//       }
+//       return imovelcomparado;
+//
+//   }
 
-       //como eu faço essa comparação?
-
-       if(imovelcomparado.valorImovel() > this.valorImovel()){
-
-           System.out.println("Imóvel mais caro: " + imovelcomparado);
-       }
-       return imovelcomparado;
-
-   }
-
-   public void compararImoveis(Imovel comparado){
-if(this.valorImovel() > comparado.valorImovel()){
-    System.out.println("o mais caro: ":this.valorImovel());
-}
-
-   }
+//   public void compararImoveis(Imovel comparado){
+//if(this.valorImovel() > comparado.valorImovel()){
+//    System.out.println("o mais caro: ":this.valorImovel());
+//}
+//
+//   }
     
 
 

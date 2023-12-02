@@ -8,11 +8,11 @@ public class main4 {
 
 
 
-        apartamentoBolhao.exibirdados();
-        System.out.println("******** VALOR ********");
-        apartamentoBolhao.valorImovel();
-
-        apartamentoBolhao.compararImoveis(apartamentoGaia);
+//        apartamentoBolhao.exibirdados();
+//        System.out.println("******** VALOR ********");
+//        apartamentoBolhao.valorImovel();
+//
+//        apartamentoBolhao.compararImoveis(apartamentoGaia);
 
 
 
