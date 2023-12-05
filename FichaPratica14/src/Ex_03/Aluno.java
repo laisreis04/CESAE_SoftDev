@@ -20,7 +20,7 @@ public class Aluno extends Pessoa{
 
     @Override
     public void obetrFuncao() {
-        
+
     }
 
     @Override
