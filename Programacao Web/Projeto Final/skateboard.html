@@ -9,35 +9,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-    <title>Skateboard</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    
+    <title>Sobre</title>
 </head>
 <body>
 
-          <!-- Navbar -->
-          <div class="div_navbar">
-            <nav>
-              <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-              </div>
-              <ul>
-                <li class="li_nav"><a href="index.html">Home</a></li>
-                <li class="li_nav"><a href="Sobre.html">Sobre nós</a> </li>
-                <li class="li_nav"><a href="skateboard.html">Skateboard</a></li>
-                <li class="li_nav"><a href="contatos.html">Contatos</a> </li>
-              </ul>
-      
-          </nav>
+       <!-- Navbar -->
+    <div class="div_navbar">
+      <nav>
+        <div class="img_logo">
+          <img class="Logo" src="imagens/Logo_Preto_-_HW3.0__1_-removebg-preview.png" alt="Logo_Preto_-_HW3">
         </div>
-      
-      <!--Menu Hamburguer-->
-      
-      
-      
-        <script>
-          // Função para alternar a classe 'active' no menu ao clicar no ícone do menu de hambúrguer
-          $('.menu-toggle').click(function() {
-            $('.div_navbar ul').toggleClass('active');
-          });
-        </script>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+       
+        <ul>
+          <li class="li_nav"><a href="index.html">Home</a></li>
+          <li class="li_nav"><a href="Sobre.html">Sobre nós</a> </li>
+          <li class="li_nav"><a href="skateboard.html">Skateboard</a></li>
+          <li class="li_nav"><a href="contatos.html">Contatos</a> </li>
+        </ul>
+
+    </nav>
+  </div>
+
+<!--Menu Hamburguer-->
+ <script>
+    // Função para alternar a classe 'active' no menu ao clicar no ícone do menu de hambúrguer
+    $('.menu-toggle').click(function() {
+      $('.div_navbar ul').toggleClass('active');
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+  <!--Footer-->
+  <footer>
+    <div class="div_imagens_social">
+      <img class="img_logo_social" src="imagens/Facebook-removebg-preview (1).png" alt="logoFacebook">
+      <img  class="img_logo_social"src="imagens/Instagram-removebg-preview (1).png" alt="logoInstagram">
+      <img class="img_logo_social" src="imagens/WhatsApp-removebg-preview.png" alt="logoInstagram">
+    </div>
+  <p class="p_footer">&copy; 2023 Lais Reis. Todos os direitos reservados</p>
+ </footer>
+
+
+    
 </body>
 </html>
