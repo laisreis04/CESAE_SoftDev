@@ -10,6 +10,12 @@ body{
 
 }
 
+/*Vale para a página toda*/
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
 /*NavBar*/
 
 .Logo{
