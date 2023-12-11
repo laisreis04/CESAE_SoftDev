@@ -9,7 +9,6 @@ public class Main2 {
         Scanner input = new Scanner(System.in);
 
 
-
         System.out.println("Escolha o tipo de veiculo:");
         System.out.println("1. Carro");
         System.out.println("2. Moto");
@@ -71,7 +70,7 @@ public class Main2 {
 
         System.out.println("Consumo do veiculo (km/L): ");
         consumo = input.nextDouble();
-        
+
 
         switch (opcaoUser){
             case 1:
@@ -92,6 +91,8 @@ public class Main2 {
             default:
                 return null;
         }
+
+
 
 
     }
@@ -124,6 +125,9 @@ public class Main2 {
                     break;
 
                 case 2:
+                    System.out.print("Insira a distância: ");
+                    double distancia = input.nextDouble();
+                    System.out.println("Detalhes do consumo do" + veiculo + "é de : " + veiculo.calcularConsumo(distancia) );
                     break;
 
                 case 3:
