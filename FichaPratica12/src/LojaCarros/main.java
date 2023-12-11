@@ -15,14 +15,7 @@ public class main {
         Caminhao toyota = new Caminhao("Toyota", "Belford", 1989, 120,1500,TipoCombustivel.DIESEL,12.5,500);
 
 
-        System.out.println("Vencedor da Corrida ");
-        seat.corrida(kawazaky);
-        System.out.println();
 
-        System.out.println("Proço de uma viagem Porto - Viseu: ");
-        fiat.consumo(150);
-
-        toyota.calcularPeso(150,400);
 
     }
 }

@@ -3,6 +3,7 @@ package LojaCarros;
 public class Caminhao extends Veiculo {
 
     private double capacidadeCargaKg;
+    private String capacidadeCarga;
 
     public Caminhao(String marca, String modelo, int anoFabrico, int potencia, int cilindrada, TipoCombustivel tipoCombustivel, double litros100Km, double capacidadeCargaKg) {
         super(marca, modelo, anoFabrico, potencia, cilindrada, tipoCombustivel, litros100Km);
@@ -11,17 +12,22 @@ public class Caminhao extends Veiculo {
 
     public double calcularPeso(double distancia, double cargaKg){
 
-        if(cargaKg < capacidadeCargaKg){
-            double cargaTotal = cargaKg*1000;
-            if (cargaTotal % 1000 == 0){
-                double consumoTotal_Caminhao = consumo(distancia) * 1.1;
-                System.out.println("Valor total da viagem: " + consumoTotal_Caminhao);
-            }
+        if (cargaKg > this.capacidadeCarga) { // Muito pesado
+            System.out.println("Carga: "+cargaKg+"Kg. muito pesada. Capacidade Máxima: "+this.capacidadeCarga+"Kg.");
+            return false;
+        } else { // Tem capacidade para a viagem
+            double litrosConsumidos = calcularConsumo(distancia);
+            double litrosExtra = cargaKg / 1000;
+            litrosConsumidos += litrosExtra;
 
-        }else {
-            System.out.println("Ultrapassou a carga máxima permitida, viagem recusada");
+            double valorViagem = litrosConsumidos * TipoCombustivel.DIESEL;
+
+            System.out.println("Consumo: "+litrosConsumidos+"L");
+            System.out.println("Valor: "+valorViagem+"€");
+
+            return true;
         }
-        return cargaKg;
-    }
 
 }
+
+
