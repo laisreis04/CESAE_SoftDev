@@ -1,0 +1,47 @@
+Teste para criação de base de dados
+
+************** Universidade **************
+
+CREATE TABLE disciplina(
+    id_disciplina INT AUTO_INCREMENT,
+    descricao varchar(50) NOT null,
+	PRIMARY KEY (id_disciplina)
+);
+
+CREATE TABLE aluno_disciplina(
+	id_aluno INT NOT NULL,
+    id_disciplina INT NOT NULL,
+    PRIMARY KEY (id_aluno, id_disciplina)
+);
+
+CREATE TABLE aluno (
+
+	id_aluno INT AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    morada VARCHAR(70) NOT NULL,
+    localidade VARCHAR(25),
+    dataInscricao DATE,
+    idade INT,
+    id_curso INT,
+    PRIMARY KEY (id_aluno)
+);
+
+CREATE TABLE curso(
+
+	id_curso INT,
+    descricao VARCHAR (70) NOT NULL,
+    dataCriacao DATE,
+    PRIMARY KEY (id_curso)
+);
+
+
+**Adicionar chave estrageira
+
+ALTER TABLE aluno_disciplina 
+add FOREIGN KEY (id_aluno) REFERENCES 
+aluno (id_aluno),
+ADD FOREIGN KEY (id_disciplina) REFERENCES
+disciplina(id_disciplina)
+
+
+***************************************
