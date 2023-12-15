@@ -1,7 +1,7 @@
 :root{
   --colorRed: #8c0335;
   --colorBlack: #000000;
-  
+   
 }
 
 body{
@@ -132,6 +132,60 @@ font-size: 22px;
   
 }
 
+/*Texto Sobre Nós*/
+
+.div_missao_foto{
+display: flex;
+margin-top: 100px;
+margin-bottom: 80px;
+}
+
+
+.grid_container1{
+display: grid;
+grid-template-columns: repeat(2,1fr); /*numero de colunas*/
+gap: 10px; /*definir o espaço entre os item do grid*/
+
+}
+
+.grid_itens{
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 50px;
+}
+
+
+
+h1{
+  font-size: 52px;
+  font-family: Bangers;
+  letter-spacing: 4px; /*Acrescenta espaço entra as letras */
+  justify-content: left;
+
+}
+.p_quemSomos{
+font-family:'Hedvig Letters Sans', sans-serif;;
+font-size: 16px;
+margin-top: 20px;
+letter-spacing: 1px;
+}
+
+.img_grid_sobre{
+  width: 300px;
+
+}
+
+.img-raio{
+  width: 300px;
+}
+
+/*Animações Textos*/
+
+
+
+
 
 
 
@@ -166,6 +220,8 @@ footer{
   width: 25px;
   margin-right: 45px;
   padding-bottom: 20px;
+  align-items: center;
+ 
 }
   
 
