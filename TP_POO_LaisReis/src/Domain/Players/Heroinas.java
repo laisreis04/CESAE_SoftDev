@@ -1,7 +1,7 @@
 package Domain.Players;
 
-import Domain.Armas.ArmaPrincipal;
-import Domain.Armas.Consumiveis;
+import Domain.WitchStore.ArmaPrincipal;
+import Domain.WitchStore.Consumiveis;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package Domain.Armas;
+package Domain.WitchStore;
 
 public abstract class Consumiveis {
 

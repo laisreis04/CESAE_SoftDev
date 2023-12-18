@@ -10,7 +10,19 @@ public  abstract class ItemHeroina {
 
     private int precoItem;
 
-    private ArrayList<TipoHeroina> minhaHeroina;
+    private ArrayList<String> minhaHeroina;
+
+
+    public ItemHeroina(String nome, int ouro, int precoItem) {
+        this.nome = nome;
+        this.ouro = ouro;
+        this.precoItem = precoItem;
+        this.minhaHeroina = ArrayList<>();
+    }
+
+
+    public void addHeroinas(String heroinaAtual) {
+    }
 
 
     //Exibir detalhes
