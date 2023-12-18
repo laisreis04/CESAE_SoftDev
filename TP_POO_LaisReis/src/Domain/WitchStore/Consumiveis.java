@@ -1,7 +1,11 @@
 package Domain.WitchStore;
 
-public abstract class Consumiveis {
+public abstract class Consumiveis extends ItemHeroina{
 
-    private int moedas;
+
+    public Consumiveis(String nome,int precoItem) {
+        super(nome, precoItem);
+    }
+
 
 }

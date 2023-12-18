@@ -1,9 +1,9 @@
 package Tools;
 
-import Domain.Players.Heroinas;
 import Domain.WitchStore.ArmaPrincipal;
 import Domain.WitchStore.ConsumivelCombate;
 import Domain.WitchStore.ItemHeroina;
+import Domain.WitchStore.Pocao;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,15 +15,14 @@ public class CSVReaderWitchStore {
     private String filePath;
 
 
-
     //Construtor
-    public CSVReaderWitchStore (String filePath){
+    public CSVReaderWitchStore(String filePath) {
 
         this.filePath = filePath;
 
     }
 
-    public ArrayList<ItemHeroina> readCSVtoRepository () throws FileNotFoundException{
+    public ArrayList<ItemHeroina> readCSVtoRepository() throws FileNotFoundException {
 
         File file = new File(filePath);
 
@@ -33,7 +32,7 @@ public class CSVReaderWitchStore {
 
         ArrayList<ItemHeroina> arrayItens = new ArrayList<>();
 
-        while (sc.hasNextLine()){
+        while (sc.hasNextLine()) {
             linha = sc.nextLine();
             String[] linhaDividida = linha.split(";");
 
@@ -53,28 +52,29 @@ public class CSVReaderWitchStore {
             String[] divHeroinas = heroinaPermitida.split(",");
 
 
-
-
             int ataque = Integer.parseInt(linhaDividida[4]);
             int ataqueEspecial = Integer.parseInt(linhaDividida[5]);
             int ataqueInstanteneo = Integer.parseInt(linhaDividida[6]);
             int vida = Integer.parseInt(linhaDividida[7]);
             int forca = Integer.parseInt(linhaDividida[8]);
 
-            if(tipo.equals("ArmaPrincipal")){
-                ItemHeroina itemAtual = new ArmaPrincipal(nome, preco,  ataque, ataqueEspecial);
-                for (String heroinaAtual : divHeroinas){
+            if (tipo.equals("ArmaPrincipal")) {
+                ItemHeroina itemAtual = new ArmaPrincipal(nome, preco, ataque, ataqueEspecial);
+                for (String heroinaAtual : divHeroinas) {
                     itemAtual.addHeroinas(heroinaAtual);
-                }
-            }else if(tipo.equals("ConsumivelCombate")){
-                ItemHeroina itemAtual = new ConsumivelCombate(nome, preco,ataqueInstanteneo);
-                for (String heroinaAtual : divHeroinas){
+                }//? pq o noe está em vermelho?
+            } else if (tipo.equals("ConsumivelCombate")) {
+                ItemHeroina itemAtual = new ConsumivelCombate(nome, preco, ataqueInstanteneo);
+                for (String heroinaAtual : divHeroinas) {
                     itemAtual.addHeroinas(heroinaAtual);
                 }
             } else if (tipo.equals("Pocao")) {
-                ItemHeroina itemAtual = new ConsumivelCombate(nome, preco, vida, forca);
-                for (String heroinaAtual : divHeroinas){
+                ItemHeroina itemAtual = new Pocao(nome, preco, vida, forca);
+                for (String heroinaAtual : divHeroinas) {
                     itemAtual.addHeroinas(heroinaAtual);
+
+                }
+
 
             }
 
@@ -83,7 +83,4 @@ public class CSVReaderWitchStore {
         return arrayItens;
 
     }
-
-
-
 }

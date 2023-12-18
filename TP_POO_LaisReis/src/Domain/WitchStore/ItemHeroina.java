@@ -6,22 +6,31 @@ public  abstract class ItemHeroina {
 
     private String nome;
 
-    private int ouro;
-
     private int precoItem;
 
-    private ArrayList<String> minhaHeroina;
+    private ArrayList<String> heroinaPermitida;
 
 
-    public ItemHeroina(String nome, int ouro, int precoItem) {
+    public ItemHeroina(String nome,int precoItem) {
         this.nome = nome;
-        this.ouro = ouro;
         this.precoItem = precoItem;
-        this.minhaHeroina = ArrayList<>();
+        this.heroinaPermitida = new ArrayList<>();
     }
 
 
     public void addHeroinas(String heroinaAtual) {
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getPrecoItem() {
+        return precoItem;
+    }
+
+    public ArrayList<String> getHeroinaPertitida() {
+        return heroinaPermitida;
     }
 
 

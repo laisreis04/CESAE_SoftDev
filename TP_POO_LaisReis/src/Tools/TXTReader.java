@@ -4,17 +4,20 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class TXTReaderWitchStoreLogo {
+public class TXTReader {
 
-    public void imprimirLogoWitchStore() throws FileNotFoundException{
+    public TXTReader() {
 
-        Scanner sc = new Scanner(new File("Files/WitchStore_logo.txt"));
+    }
+
+    public static void imprimirFicheiro(String filePath) throws FileNotFoundException{
+
+        Scanner sc = new Scanner(new File(filePath));
 
         while (sc.hasNextLine()){
             System.out.println(sc.nextLine());
         }
 
     }
-
 
 }

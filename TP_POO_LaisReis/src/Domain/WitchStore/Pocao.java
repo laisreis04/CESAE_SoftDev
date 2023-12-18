@@ -4,13 +4,14 @@ import Domain.WitchStore.Consumiveis;
 
 public class Pocao extends Consumiveis {
 
-    private int maisVida;
+    private int vida;
 
-    private int maisForca;
+    private int forca;
 
-    public Pocao(int maisVida, int maisForca) {
-        this.maisVida = maisVida;
-        this.maisForca = maisForca;
+    public Pocao(String nome, int precoItem, int vida, int forca) {
+        super(nome, precoItem);
+        this.vida = vida;
+        this.forca = forca;
     }
 
     //Exibir Detalhes
