@@ -2,6 +2,8 @@ package Domain;
 
 public abstract class  Entidade {
 
+
+    //Esse é a classe para criar a personagem central
     private String nome;
 
     private int vidaMax;

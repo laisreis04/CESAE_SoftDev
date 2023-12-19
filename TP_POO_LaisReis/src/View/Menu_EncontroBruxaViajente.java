@@ -1,5 +1,6 @@
 package View;
 
+import Domain.WitchStore.Store;
 import Tools.TXTReader;
 
 import java.io.IOException;
@@ -35,6 +36,7 @@ public static void menuPrimeiroEncontro() throws IOException{
                     System.out.println("Olá guerreira! Você está preparada para a bataha?\nNão me parece muito preprada, mas eu posso ajudar, tenho isso a venda, poucas moedas em troca de uma batalha mais justa");
                     TXTReader.imprimirFicheiro("src/Files/WitchStore_logo");
                     //Fazer menu da loja - imprimir itens da loja
+
                     break;
                 case 2:
 

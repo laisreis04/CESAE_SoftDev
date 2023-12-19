@@ -14,5 +14,10 @@ public class ArmaPrincipal extends ItemHeroina {
 
     //Colocar o método de ataque (String NPC)
 
+    public void imprimirDetalhes_ArmaPrincipal(){
+
+        for(ItemHeroina itemHeroina:  )
+
+    }
 
 }

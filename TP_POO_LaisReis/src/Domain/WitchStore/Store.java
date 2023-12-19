@@ -1,11 +1,23 @@
 package Domain.WitchStore;
 
+import Repository.WitchStoreRepository;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Store {
 
     private ArrayList<ItemHeroina> itemHeroinas;
+
+
+
+    public Store(ArrayList<ItemHeroina> itemHeroinas) {
+        this.itemHeroinas = new ArrayList<>();
+    }
+
+    public ArrayList<ItemHeroina> getItemHeroinas() {
+        return itemHeroinas;
+    }
 
     public void exibirDetalhesStore() throws FileNotFoundException{
 

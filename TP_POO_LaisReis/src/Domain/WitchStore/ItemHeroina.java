@@ -17,7 +17,10 @@ public  abstract class ItemHeroina {
         this.heroinaPermitida = new ArrayList<>();
     }
 
-
+    /**
+     * Método para adicionar Heroina
+     * @param heroinaAtual - Recebe a heroina
+     */
     public void addHeroinas(String heroinaAtual) {
     }
 
