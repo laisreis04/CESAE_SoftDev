@@ -4,6 +4,12 @@ public class Jogo {
 
 
 
+
+    //Metodo para criarPersonagem
+
+
+
+
     //Escrever 3 cenários
 
 //cenário 1

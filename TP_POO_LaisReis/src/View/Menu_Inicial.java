@@ -2,7 +2,6 @@ package View;
 
 import Tools.TXTReader;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -32,15 +31,19 @@ public class Menu_Inicial {
 
             switch (opcao){
                 case 1:
-                    System.out.println("Escrever história inicio");
+                    System.out.println("Você está voltando para o século XV, prepare-se para a aventura que esta prestes a começar");
                     System.out.println();
                     //Opçao para falar com a bruxa
                     Menu_EncontroBruxaViajente.menuPrimeiroEncontro();
                     //Ir para o segundo menu
                     break;
 
+                case 2:
+                    System.out.println("Byeee");
+                    break;
+
                 default:
-                    System.out.println("Bye");
+                    System.out.println("Opção Inválida");
 
             }
 

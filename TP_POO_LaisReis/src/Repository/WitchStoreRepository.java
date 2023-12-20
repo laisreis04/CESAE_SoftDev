@@ -1,6 +1,6 @@
 package Repository;
 
-import Domain.WitchStore.ItemHeroina;
+import Domain.Itens.ItemHeroina;
 import Tools.CSVReaderWitchStore;
 
 import java.io.FileNotFoundException;
@@ -13,7 +13,8 @@ public class WitchStoreRepository {
 
 
     //Instaciar o CVSReader aqui dentro, para pode usar o ficheiro depois
-    private CSVReaderWitchStore csvReader;
+
+
     private ArrayList<ItemHeroina> itensLista;
 
 
@@ -30,4 +31,7 @@ public class WitchStoreRepository {
     public ArrayList<ItemHeroina> getItensLista() {
         return itensLista;
     }
+
+
+
 }

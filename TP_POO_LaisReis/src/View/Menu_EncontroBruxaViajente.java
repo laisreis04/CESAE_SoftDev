@@ -1,6 +1,6 @@
 package View;
 
-import Domain.WitchStore.Store;
+import Domain.Heroina.Entidade;
 import Tools.TXTReader;
 
 import java.io.IOException;
@@ -9,14 +9,13 @@ import java.util.Scanner;
 public class Menu_EncontroBruxaViajente {
 
 
-    public Menu_EncontroBruxaViajente(){
-
-}
 
 public static void menuPrimeiroEncontro() throws IOException{
 
     Scanner input = new Scanner(System.in);
     int opcao;
+
+    String nome;
 
         do{
 
@@ -24,7 +23,14 @@ public static void menuPrimeiroEncontro() throws IOException{
             //Escrever a história da witch store e como personagem foi para lá
 
             //Criar personagem - é preciso montar
-            System.out.println("História de ");
+
+            System.out.println("Precisamos da sua ajuda! Vamos tentar salvar as bruxas que foram queimadas na fogueira\n" +
+                    "Estamos no vilareijo de Humberg, e Para começar a sua jornada antes de tuso tenho de conhecer melhor.\n\n" +
+                    "Como você está se sentido hoje? Vamos escolher o melhor nivel de dificuldade?");
+
+            //Colocar aqui o menu da difuculdade
+
+            System.out.println("");
             System.out.println("1. Falar com bruxa viajante");
             System.out.println("2. Ah que medo! Sair, Sair, sair!!");
             opcao = input.nextInt();
@@ -46,5 +52,9 @@ public static void menuPrimeiroEncontro() throws IOException{
 
 
 }
+
+
+
+
 
 }
