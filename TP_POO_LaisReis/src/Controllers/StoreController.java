@@ -1,16 +1,21 @@
 package Controllers;
 
+
+import Domain.Heroina.Heroinas;
 import Domain.Itens.ItemHeroina;
+
 import Repository.WitchStoreRepository;
 import Tools.TXTReader;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class StoreController {
 
     private ArrayList<ItemHeroina> itemHeroinas;
+    private Domain.Itens.Consumiveis Consumiveis;
 
     public StoreController() throws FileNotFoundException {
         WitchStoreRepository repository = new WitchStoreRepository("src/Files/ItensHeroiRPG.csv");
@@ -53,7 +58,41 @@ public class StoreController {
             }
         }
 
+        //Colocar aqui o adicionar item?
+
     }
+
+public boolean heroinaPodeUsar(Heroinas heroina, ItemHeroina itemHeroinaCompra){
+        for(String heroinaPermitidaAtual: itemHeroinaCompra.getHeroinaPertitida()){
+            if(heroina.getClass().getSimpleName().equals(heroinaPermitidaAtual)){
+                return true;
+            }
+
+        }
+        return false;
+}
+
+
+
+public void adicionarItem(int itemComprado) throws FileNotFoundException {
+
+    Scanner input= new Scanner(System.in);
+    itemComprado = input.nextInt();
+
+
+}
+
+  public void venderItensLoja(Heroinas tipoHeroina){
+
+        int moedasIniciais = tipoHeroina.getMoedas();
+
+        //Check para verificar se pode ou não comprar o item
+      ItemHeroina itemHeroina = itemHeroinas.get(//Esse index é o da loja);
+      if(heroinaPodeUsar(tipoHeroina, ){
+
+      }
+
+  }
 
 
 }

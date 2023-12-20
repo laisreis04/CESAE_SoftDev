@@ -13,6 +13,7 @@ public class Menu_Dificuldade {
         int opcao;
 
         do{
+            System.out.println("**************** DIFICULDADE *****************");
             System.out.println("1. De boa na lagoa (Fácil)");
             System.out.println("2. Boraaaaa (Dificil)");
             System.out.println("0. Voltar");
