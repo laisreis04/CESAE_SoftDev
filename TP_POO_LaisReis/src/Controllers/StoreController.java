@@ -26,7 +26,7 @@ public class StoreController {
      * Método para Imprimir os detalhes dos itens da Loja
      * @throws FileNotFoundException
      */
-    public void exibirDetalhesStore() throws FileNotFoundException{
+    public void exibirDetalhesStore(Heroinas heroina) throws FileNotFoundException{
 
         TXTReader.imprimirFicheiro("src/Files/WitchStore_logo");
         System.out.println();
@@ -59,6 +59,15 @@ public class StoreController {
         }
 
         //Colocar aqui o adicionar item?
+        System.out.println("Qual quer comprar? ");
+int itemCompra = input.nextInt();
+
+// if pode usar
+
+        // if arma principal
+
+        // if consumivel
+        heroina.adiconar_Invetario(this.itemHeroinas.get(arrayIndexAletorio.get(itemCompra)));
 
     }
 

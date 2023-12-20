@@ -37,10 +37,9 @@ public abstract class Heroinas extends Entidade {
         return inventario;
     }
 
-public void adiconar_Invetario(){
+public void adiconar_Invetario(Consumiveis itemNovo){
 
-    //ArrayList<Consumiveis> = new
-    //this.inventario.add(e);
+    this.inventario.add(itemNovo);
     }
 
     /**
