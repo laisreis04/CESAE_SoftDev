@@ -45,3 +45,8 @@ disciplina(id_disciplina)
 
 
 ***************************************
+
+Para inserir os dados:
+INSERT INTO <aluno> (<nome>, <idade>)
+VALUES (<'Lais Reis'>, 21);
+
