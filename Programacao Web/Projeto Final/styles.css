@@ -145,6 +145,7 @@ margin-bottom: 80px;
 display: grid;
 grid-template-columns: repeat(2,1fr); /*numero de colunas*/
 gap: 10px; /*definir o espaço entre os item do grid*/
+margin-bottom: 120px;
 
 }
 
@@ -170,6 +171,7 @@ font-family:'Hedvig Letters Sans', sans-serif;;
 font-size: 16px;
 margin-top: 20px;
 letter-spacing: 1px;
+
 }
 
 .img_grid_sobre{
@@ -216,9 +218,10 @@ footer{
 
 .img_logo_social{
   
- margin-top: 15px;
   width: 25px;
   margin-right: 45px;
+  padding: 0px;
+
   /* padding-bottom: 20px; */ /*arrumar isso aqui ...Margens*/
   align-items: center;
  
