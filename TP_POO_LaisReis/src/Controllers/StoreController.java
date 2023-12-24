@@ -2,6 +2,7 @@ package Controllers;
 
 
 import Domain.Heroina.Heroinas;
+import Domain.Itens.Consumiveis;
 import Domain.Itens.ItemHeroina;
 
 import Repository.WitchStoreRepository;
@@ -26,7 +27,7 @@ public class StoreController {
      * Método para Imprimir os detalhes dos itens da Loja
      * @throws FileNotFoundException
      */
-    public void exibirDetalhesStore(Heroinas heroina) throws FileNotFoundException{
+    public void exibirDetalhesStore(Heroinas heroinaJogando) throws FileNotFoundException{
 
         TXTReader.imprimirFicheiro("src/Files/WitchStore_logo");
         System.out.println();
@@ -58,16 +59,38 @@ public class StoreController {
             }
         }
 
-        //Colocar aqui o adicionar item?
-        System.out.println("Qual quer comprar? ");
-int itemCompra = input.nextInt();
 
-// if pode usar
+        //Verificações para saber se aqueloa Heroína pode ou não comprar aquele item, e depois guardar ele no invetário dela.
+        Scanner input= new Scanner(System.in);
+
+        //Colocar aqui o adicionar item?
+        System.out.println("Toda luta é necessário uma ajuda, o que você vai querer comprar? ");
+        int itemCompra = input.nextInt();
+
+        //Verificar se o input está dentro do itens apresentados (se inseriu um numero que corresponde ao que foram apresentados)
+
+        if(itemCompra >=1 && itemCompra <= arrayIndexAletorio.size()){
+            //Colocar o menos -1 pq todos os array começam com 0 e a minha lista começa no 1.
+            int contadorItemescolhido = arrayIndexAletorio.get(itemCompra - 1 );
+            if(contadorItemescolhido < itemHeroinas.size()){
+                //Armazenar numa variavel, para depois fazer as comprações (if's)
+                ItemHeroina item_Escolhido_USer = itemHeroinas.get(contadorItemescolhido);
+
+                // if pode usar
+                if (heroinaPodeUsar(heroinaJogando,item_Escolhido_USer));
+                heroinaJogando.adiconar_Invetario((Consumiveis) item_Escolhido_USer);
+                System.out.println("Item Adicionado com sucesso!");
+            }
+        }
+
+
+
+
 
         // if arma principal
 
         // if consumivel
-        heroina.adiconar_Invetario(this.itemHeroinas.get(arrayIndexAletorio.get(itemCompra)));
+//        heroina.adiconar_Invetario(this.itemHeroinas.get(arrayIndexAletorio.get(itemCompra)));
 
     }
 
@@ -83,25 +106,25 @@ public boolean heroinaPodeUsar(Heroinas heroina, ItemHeroina itemHeroinaCompra){
 
 
 
-public void adicionarItem(int itemComprado) throws FileNotFoundException {
+//public void adicionarItem(int itemComprado) throws FileNotFoundException {
+//
+//    Scanner input= new Scanner(System.in);
+//    itemComprado = input.nextInt();
+//
+//
+//}
 
-    Scanner input= new Scanner(System.in);
-    itemComprado = input.nextInt();
-
-
-}
-
-  public void venderItensLoja(Heroinas tipoHeroina){
-
-        int moedasIniciais = tipoHeroina.getMoedas();
-
-        //Check para verificar se pode ou não comprar o item
-      ItemHeroina itemHeroina = itemHeroinas.get(//Esse index é o da loja);
-      if(heroinaPodeUsar(tipoHeroina, ){
-
-      }
-
-  }
+//  public void venderItensLoja(Heroinas tipoHeroina){
+//
+//        int moedasIniciais = tipoHeroina.getMoedas();
+//
+//        //Check para verificar se pode ou não comprar o item
+//      ItemHeroina itemHeroina = itemHeroinas.get(//Esse index é o da loja);
+//      if(heroinaPodeUsar(tipoHeroina, ){
+//
+//      }
+//
+//  }
 
 
 }
