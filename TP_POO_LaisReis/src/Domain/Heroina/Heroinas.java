@@ -43,7 +43,9 @@ public abstract class Heroinas extends Entidade {
         return moedas;
     }
 
-
+    public void setArmas(ArmaPrincipal armas) {
+        this.armas = armas;
+    }
 
     public void adiconar_Invetario(Consumiveis itemNovo){
 

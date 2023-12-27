@@ -2,6 +2,7 @@ package Controllers;
 
 
 import Domain.Heroina.Heroinas;
+import Domain.Itens.ArmaPrincipal;
 import Domain.Itens.Consumiveis;
 import Domain.Itens.ItemHeroina;
 
@@ -81,19 +82,24 @@ public class StoreController {
 
 
                 // if pode usar e comprar
-                if (heroinaPodeUsar(heroinaJogando,item_Escolhido_USer));
-                int precoItem = itemHeroinas.getFirst().getPrecoItem();
-                int moedasIniciais = difuculdadeEscolhida.parametros_Dificuldade();
-                if(moedasIniciais >= precoItem){
-                    heroinaJogando.adiconar_Invetario((Consumiveis) item_Escolhido_USer);
-                    System.out.println("Item Adicionado com sucesso!");
-                    moedasIniciais -= precoItem;
-                }
+                if (heroinaPodeUsar(heroinaJogando,item_Escolhido_USer)){
+                    int precoItem = itemHeroinas.getFirst().getPrecoItem();
+                    int moedasIniciais = difuculdadeEscolhida.parametros_Dificuldade();
+                    if(moedasIniciais >= precoItem){
+                        heroinaJogando.adiconar_Invetario((Consumiveis) item_Escolhido_USer);
+                        System.out.println("Item Adicionado com sucesso!");
+                        moedasIniciais -= precoItem;
+                    }
+                    ArmaPrincipal armaEscolhida_User = (ArmaPrincipal) itemHeroinas.get(contadorItemescolhido);
+                    if(substituir_Armaprincipal(armaEscolhida_User,heroinaJogando)){
+                        heroinaJogando.setArmas(armaEscolhida_User);
+                        System.out.println("Arma Selecionada com Sucesso");
+                        moedasIniciais -= precoItem;
+                    }
 
+                }
             }
        }
-
-
     }
 
     /**
@@ -111,6 +117,28 @@ public class StoreController {
         }
         return false;
 }
+
+
+    /**
+     * Método para subustirui a arma principal por outra
+     * @param novaArma
+     * @param heroinaJogando
+     * @return
+     */
+    public boolean substituir_Armaprincipal(ArmaPrincipal novaArma, Heroinas heroinaJogando){
+        // Verificar se a arma pode ou não ser selecionada (na lista de heroinas permitidas)
+        if(novaArma instanceof ArmaPrincipal){
+            ArmaPrincipal armaEscolhida = heroinaJogando.getArmas();
+
+            //Verificar se a arma é diferente e não é nula
+            if (novaArma != null && !novaArma.equals(armaEscolhida)) {
+            return true;
+            }
+        }
+
+
+        return false;
+    }
 
 
 

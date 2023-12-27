@@ -1,6 +1,7 @@
 import Controllers.StoreController;
 import Domain.Heroina.Cavaleira;
 import Domain.Heroina.Heroinas;
+import Domain.Itens.ArmaPrincipal;
 import Domain.Store;
 
 import java.io.FileNotFoundException;
@@ -20,6 +21,10 @@ public class MainTeste_ImprimirItensLojas {
 
 
 //        System.out.println(heroina.getClass().getSimpleName());
+
+
+        ArmaPrincipal a1 = new ArmaPrincipal("shakira", 45,85,100);
+        a1.imprimirDetalhes_ArmaPrincipal();
 
     }
 }
