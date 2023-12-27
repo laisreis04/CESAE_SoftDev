@@ -83,28 +83,26 @@ public class StoreController {
                 // if pode usar e comprar
                 if (heroinaPodeUsar(heroinaJogando,item_Escolhido_USer));
                 int precoItem = itemHeroinas.getFirst().getPrecoItem();
-                int moedasIniciais = difuculdadeEscolhida.setDificuldade();
-                if(heroinaJogando.getMoedas()>= precoItem && heroinaJogando.getMoedas()>= moedasIniciais){
+                int moedasIniciais = difuculdadeEscolhida.parametros_Dificuldade();
+                if(moedasIniciais >= precoItem){
                     heroinaJogando.adiconar_Invetario((Consumiveis) item_Escolhido_USer);
                     System.out.println("Item Adicionado com sucesso!");
                     moedasIniciais -= precoItem;
                 }
-                if()
+
             }
-        }
+       }
 
-
-
-
-
-        // if arma principal
-
-        // if consumivel
-//        heroina.adiconar_Invetario(this.itemHeroinas.get(arrayIndexAletorio.get(itemCompra)));
 
     }
 
-public boolean heroinaPodeUsar(Heroinas heroina, ItemHeroina itemHeroinaCompra){
+    /**
+     * Método para condicionar os tipos de itens que cada herína pode usar
+     * @param heroina
+     * @param itemHeroinaCompra
+     * @return
+     */
+    public boolean heroinaPodeUsar(Heroinas heroina, ItemHeroina itemHeroinaCompra){
         for(String heroinaPermitidaAtual: itemHeroinaCompra.getHeroinaPertitida()){
             if(heroina.getClass().getSimpleName().equals(heroinaPermitidaAtual)){
                 return true;
@@ -134,7 +132,5 @@ public boolean heroinaPodeUsar(Heroinas heroina, ItemHeroina itemHeroinaCompra){
 //
 //      }
 //
-//  }
+ }
 
-
-}

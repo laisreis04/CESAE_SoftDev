@@ -4,6 +4,7 @@ import Domain.Heroina.Entidade;
 import Domain.Heroina.Heroinas;
 import Domain.Itens.ItemHeroina;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -21,7 +22,7 @@ public class DifficultyController {
         this.heroinaEscolhida = heroinaEscolhida;
     }
 
-    public int setDificuldade()throws IOException{
+    public int parametros_Dificuldade()throws FileNotFoundException {
 
         System.out.println("1. Fácil, hoje eu tô de boas \n" +
                 "(Pontos Iniciais: 300)");
