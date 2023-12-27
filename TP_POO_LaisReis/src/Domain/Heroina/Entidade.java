@@ -59,7 +59,13 @@ public abstract class  Entidade {
         return nome;
     }
 
-    //Vida máx = vida Atual();
+    public int setVidaAtual(int vidaAtual) {
+        this.vidaAtual = vidaAtual;
+        return vidaAtual;
+    }
 
-
+    public int setForca(int forca) {
+        this.forca = forca;
+        return forca;
+    }
 }

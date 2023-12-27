@@ -2,7 +2,6 @@ package Domain.Heroina;
 
 import Domain.Itens.ArmaPrincipal;
 import Domain.Itens.Consumiveis;
-import Domain.Itens.ItemHeroina;
 
 import java.util.ArrayList;
 
@@ -37,7 +36,16 @@ public abstract class Heroinas extends Entidade {
         return inventario;
     }
 
-public void adiconar_Invetario(Consumiveis itemNovo){
+
+    //SETTERS
+    public int setMoedas(int moedas) {
+        this.moedas = moedas;
+        return moedas;
+    }
+
+
+
+    public void adiconar_Invetario(Consumiveis itemNovo){
 
     this.inventario.add(itemNovo);
     }

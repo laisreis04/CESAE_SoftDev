@@ -9,6 +9,7 @@ import Repository.WitchStoreRepository;
 import Tools.TXTReader;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -16,7 +17,9 @@ import java.util.Scanner;
 public class StoreController {
 
     private ArrayList<ItemHeroina> itemHeroinas;
-    private Domain.Itens.Consumiveis Consumiveis;
+    private Consumiveis Consumiveis;
+
+    private DifficultyController difuculdadeEscolhida;
 
     public StoreController() throws FileNotFoundException {
         WitchStoreRepository repository = new WitchStoreRepository("src/Files/ItensHeroiRPG.csv");
@@ -27,7 +30,7 @@ public class StoreController {
      * Método para Imprimir os detalhes dos itens da Loja
      * @throws FileNotFoundException
      */
-    public void exibirDetalhesStore(Heroinas heroinaJogando) throws FileNotFoundException{
+    public void exibirDetalhesStore(Heroinas heroinaJogando) throws IOException {
 
         TXTReader.imprimirFicheiro("src/Files/WitchStore_logo");
         System.out.println();
@@ -76,10 +79,17 @@ public class StoreController {
                 //Armazenar numa variavel, para depois fazer as comprações (if's)
                 ItemHeroina item_Escolhido_USer = itemHeroinas.get(contadorItemescolhido);
 
-                // if pode usar
+
+                // if pode usar e comprar
                 if (heroinaPodeUsar(heroinaJogando,item_Escolhido_USer));
-                heroinaJogando.adiconar_Invetario((Consumiveis) item_Escolhido_USer);
-                System.out.println("Item Adicionado com sucesso!");
+                int precoItem = itemHeroinas.getFirst().getPrecoItem();
+                int moedasIniciais = difuculdadeEscolhida.setDificuldade();
+                if(heroinaJogando.getMoedas()>= precoItem && heroinaJogando.getMoedas()>= moedasIniciais){
+                    heroinaJogando.adiconar_Invetario((Consumiveis) item_Escolhido_USer);
+                    System.out.println("Item Adicionado com sucesso!");
+                    moedasIniciais -= precoItem;
+                }
+                if()
             }
         }
 

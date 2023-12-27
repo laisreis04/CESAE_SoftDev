@@ -2,16 +2,19 @@ tipo;nome;preco;heroinaPermitida;ataque;ataqueEspecial;ataqueInstantaneo;vida;fo
 ConsumivelCombate;Varinha Magica;40;[Feiticeira];0;0;120;0;0
 ArmaPrincipal;Espada Mullan;60;[Cavaleira,Feiticeira, Arqueira];60;120;0;0;0
 ArmaPrincipal;Flechas de Fogo;50;[Cavaleira,Arqueira];50;100;0;0;0
-Pocao;Good Night my Lord;30;[Cavaleira,Feiticeira, Arqueira];0;0;0;20;30
+Pocao;Good Night my Lord;30;[Cavaleira,Feiticeira, Arqueira];0;0;0;50;30
 ArmaPrincipal;Vassoura Dyson;40;[Cavaleira,Arqueira];50;100;0;0;0
 ArmaPrincipal;Escudo Malefica;50;[Cavaleira,Arqueira];60;120;0;0;0
-Pocao;Maca do Amor;40;[Cavaleira,Feiticeira, Arqueira];0;0;0;12;24
-ConsumivelCombate;Dust Bieber;30;[Cavaleira,Feiticeira, Arqueira];0;0;100;0;0
+Pocao;Maca do Amor;40;[Cavaleira,Feiticeira,Arqueira];0;0;0;50;30
+ConsumivelCombate;Dust Bieber;30;[Cavaleira,Feiticeira,Arqueira];0;0;100;0;0
 ArmaPrincipal;Pirogotica Skirt;50;[Cavaleira,Arqueira];70;140;0;0;0
-ConsumivelCombate;Vougue Madonna;30;[Cavaleira,Feiticeira, Arqueira];0;0;100;0;0
-ConsumivelCombate;Okruuu CardB Spell;30;[Feiticeira];0;0;120;0;0
+ConsumivelCombate;Vogue Madonna;30;[Cavaleira,Feiticeira, Arqueira];0;0;100;0;0
+ConsumivelCombate;Okruuu CardB Spell;30;[Feiticeira];0;0;200;0;0
 ConsumivelCombate;Bible Kkardashian Spell;30;[Feiticeira];0;0;140;0;0
 ArmaPrincipal;Britney Umbrella;50;[Cavaleira,Arqueira];70;140;0;0;0
-Pocao;OMG by Paris;40;[Cavaleira,Feiticeira, Arqueira];0;0;0;40;50
-Pocao;VitD Life elixir;50;[Cavaleira,Feiticeira, Arqueira];0;0;0;50;60
-Pocao;SPA;30;[Cavaleira,Feiticeira, Arqueira];0;0;0;20;40
+Pocao;OMG by Paris;40;[Cavaleira,Feiticeira,Arqueira];0;0;0;40;50
+Pocao;VitD Life elixir;50;[Cavaleira,Feiticeira,Arqueira];0;0;0;50;60
+Pocao;SPA;30;[Cavaleira,Feiticeira, Arqueira];0;0;0;40;40
+ArmaPrincipal;Cristal Heel Bela Adormecida;50;[Cavaleira,Feiticeira, Arqueira];60;120;0;0;0
+;;;;;;;;
+;;;;;;;;
