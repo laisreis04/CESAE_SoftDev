@@ -26,7 +26,8 @@ public class ArmaPrincipal extends ItemHeroina {
 
     public void imprimirDetalhes_ArmaPrincipal(){
 
-        System.out.println("Sua arma Principal é : " + getNome() );
+        System.out.println("Sua arma Principal é : " + super.getNome() );
+        System.out.println("Preço Item: " + super.getPrecoItem());
     }
 
 

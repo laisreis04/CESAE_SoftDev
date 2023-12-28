@@ -58,7 +58,13 @@ public abstract class Heroinas extends Entidade {
      */
     public abstract void ataqueNPC(NPC inimigo);
 
+
     // usarPocao - imprimir os detalhes da pocao e perguntar qualquer usar + incrmentar vida e força
+
+    /**
+     * Método obrigatório para todas as heroinas para usar poção e restuarar a vida e força
+     */
+    public abstract void usarPocao();
 
     // metodo atacar
 
