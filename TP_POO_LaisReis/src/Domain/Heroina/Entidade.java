@@ -68,4 +68,12 @@ public abstract class  Entidade {
         this.forca = forca;
         return forca;
     }
+
+    public void setVidaMax(int vidaMax) {
+        this.vidaMax = vidaMax;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }

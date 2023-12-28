@@ -20,7 +20,7 @@ public class StoreController {
     private ArrayList<ItemHeroina> itemHeroinas;
     private Consumiveis Consumiveis;
 
-    private DifficultyController difuculdadeEscolhida;
+    private LifeController difuculdadeEscolhida;
 
     public StoreController() throws FileNotFoundException {
         WitchStoreRepository repository = new WitchStoreRepository("src/Files/ItensHeroiRPG.csv");
@@ -86,7 +86,7 @@ public class StoreController {
                     int precoItem = itemHeroinas.getFirst().getPrecoItem();
                     int moedasIniciais = difuculdadeEscolhida.parametros_Dificuldade();
                     if(moedasIniciais >= precoItem){
-                        heroinaJogando.adiconar_Invetario((Consumiveis) item_Escolhido_USer);
+                        heroinaJogando.adicionar_Invetario((Consumiveis) item_Escolhido_USer);
                         System.out.println("Item Adicionado com sucesso!");
                         moedasIniciais -= precoItem;
                     }

@@ -3,13 +3,13 @@ package Controllers;
 import Domain.Heroina.Entidade;
 import Domain.Heroina.Heroinas;
 import Domain.Itens.ItemHeroina;
+import Repository.WitchStoreRepository;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class DifficultyController {
+public class LifeController {
 
 
     private ArrayList<ItemHeroina> itensLoja;
@@ -18,8 +18,10 @@ public class DifficultyController {
 
     private Entidade entidadeEscolhida;
 
-    public DifficultyController(Heroinas heroinaEscolhida) {
-        this.heroinaEscolhida = heroinaEscolhida;
+    public LifeController() throws FileNotFoundException{
+
+        WitchStoreRepository repository = new WitchStoreRepository("src/Files/ItensHeroiRPG.csv");
+        this.itensLoja = repository.getItensLista();
     }
 
     public int parametros_Dificuldade()throws FileNotFoundException {
@@ -43,22 +45,27 @@ public class DifficultyController {
 
         if(dificuldade == 1){
            int pontosIniciais = 300;
+           entidadeEscolhida.setVidaMax(300);
             int setForca_Facil = entidadeEscolhida.setForca(pontosIniciais - forca);
             int setMoeda_Facil = heroinaEscolhida.setMoedas(20);
             int setVida_Facil = entidadeEscolhida.setVidaAtual(pontosIniciais - setForca_Facil);
 
         } else if (dificuldade == 2) {
             int pontosIniciais = 220;
+            entidadeEscolhida.setVidaMax(220);
             int setForca = entidadeEscolhida.setForca(pontosIniciais - forca);
             int setMoeda = heroinaEscolhida.setMoedas(15);
             int setVida = entidadeEscolhida.setVidaAtual(pontosIniciais - setForca);
 
         }else {
+
             System.out.println("Opção invalida");
         }
 
         return dificuldade;
     }
+
+
 
 
 

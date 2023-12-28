@@ -1,8 +1,8 @@
 package Domain.Heroina;
 
-import Controllers.DifficultyController;
 import Domain.Itens.ArmaPrincipal;
 import Domain.Itens.Consumiveis;
+import Domain.Itens.Pocao;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -49,7 +49,7 @@ public abstract class Heroinas extends Entidade {
         this.armas = armas;
     }
 
-    public void adiconar_Invetario(Consumiveis itemNovo){
+    public void adicionar_Invetario(Consumiveis itemNovo){
 
     this.inventario.add(itemNovo);
     }
@@ -66,7 +66,7 @@ public abstract class Heroinas extends Entidade {
     /**
      * Método obrigatório para todas as heroinas para usar poção e restuarar a vida e força
      */
-    public void usarPocao(){
+    public void usarPocao(Heroinas heroinaEscolhida){
 
         System.out.println("Gata bora recueperar?\n" +
                 "Aqui esta a lista de poções: ");
@@ -84,9 +84,18 @@ public abstract class Heroinas extends Entidade {
 
         int opcao = input.nextInt();
         if(opcao >= 1 && opcao <= inventario.size()){
-            Consumiveis pocaoEscolhida = inventario.get(opcao - 1);
-            DifficultyController dc = new DifficultyController();
-            Entidade heroinaAtual = setVidaAtual(Consumiveis(pocaoEscolhida));
+           Consumiveis pocaoEscolhida = inventario.get(opcao - 1);
+            if(moedas >= pocaoEscolhida.getPrecoItem()){
+                Pocao usarPocao = (Pocao) pocaoEscolhida;
+                int vidaCurada;
+                vidaCurada = heroinaEscolhida.getVidaAtual() + usarPocao.getVida();
+                //Verificar se a vida não ultrapassa a vida máxima
+                if(heroinaEscolhida.getVidaMax() <= vidaCurada){
+                    usarPocao.setVida(vidaCurada);
+                }
+
+
+            }
 
         }
 

@@ -14,6 +14,18 @@ public class Pocao extends Consumiveis {
         this.forca = forca;
     }
 
+    public int getVida() {
+        return vida;
+    }
+
+    public int getForca() {
+        return forca;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
     //Exibir Detalhes
 
 }
