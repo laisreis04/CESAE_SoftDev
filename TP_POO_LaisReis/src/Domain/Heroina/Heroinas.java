@@ -1,9 +1,11 @@
 package Domain.Heroina;
 
+import Controllers.DifficultyController;
 import Domain.Itens.ArmaPrincipal;
 import Domain.Itens.Consumiveis;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public abstract class Heroinas extends Entidade {
 
@@ -64,7 +66,31 @@ public abstract class Heroinas extends Entidade {
     /**
      * Método obrigatório para todas as heroinas para usar poção e restuarar a vida e força
      */
-    public abstract void usarPocao();
+    public void usarPocao(){
+
+        System.out.println("Gata bora recueperar?\n" +
+                "Aqui esta a lista de poções: ");
+
+        //Ciclo para mostar as poções no invetário e o seu preço:
+        int contador = 1;
+        for(Consumiveis pocaoAtual : inventario){
+            System.out.println(contador + "-" + pocaoAtual.getNome() + "\t|Preço: " + pocaoAtual.getPrecoItem());
+            contador++;
+        }
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Quer usar alguma?\n" +
+                "É só digitar o numero da poção");
+
+        int opcao = input.nextInt();
+        if(opcao >= 1 && opcao <= inventario.size()){
+            Consumiveis pocaoEscolhida = inventario.get(opcao - 1);
+            DifficultyController dc = new DifficultyController();
+            Entidade heroinaAtual = setVidaAtual(Consumiveis(pocaoEscolhida));
+
+        }
+
+    }
 
     // metodo atacar
 

@@ -36,8 +36,8 @@ public class DifficultyController {
 
         dificuldade = input.nextInt();
         System.out.println("Nem tudo são flores, temos que distribuir a sua força.\n" +
-                "mas como tudo nessa vida nada é gratuito, a cada 1 nivel de força serão retirados 5 pontos. \n" +
-                "Pense bem e distribua da melhor força");
+                "mas como tudo nessa vida nada é gratuito , fica a tabela de pontos:\n" +
+                        "Força  \t Pontos\n01 \t 05\n");
 
         forca  = input.nextInt();
 
