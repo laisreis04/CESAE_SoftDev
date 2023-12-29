@@ -14,13 +14,18 @@ public abstract class Heroinas extends Entidade {
     protected ArmaPrincipal armas;
     protected ArrayList<Consumiveis> inventario;
 
-    public Heroinas(String nome, int vidaMax, int vidaAtual, int forca, int nivel, int moedas, ArmaPrincipal armas) {
+    public Heroinas(String nome, int vidaMax, int vidaAtual, int forca, int nivel, int moedas) {
         super(nome, vidaMax, vidaAtual, forca);
         this.nivel = nivel;
         this.moedas = moedas;
         this.armas = armas;
         this.inventario = new ArrayList<>();
     }
+
+    public Heroinas() {
+
+    }
+
 
     public int getNivel() {
         return nivel;

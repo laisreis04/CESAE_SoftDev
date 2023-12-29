@@ -47,8 +47,9 @@ public class CSVReaderWitchStore {
             String heroinaPermitida = linhaDividida[3];
 
             //Retirar os [ do array
-            heroinaPermitida.replace("[", " ");
-            heroinaPermitida.replace("]", " ");
+            heroinaPermitida = heroinaPermitida.replace("[", " ");
+            heroinaPermitida = heroinaPermitida.replace("]", " ");
+
 
             String[] divHeroinas = heroinaPermitida.split(",");
 

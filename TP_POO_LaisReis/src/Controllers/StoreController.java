@@ -1,7 +1,10 @@
 package Controllers;
 
 
+import Domain.Heroina.Cavaleira;
+import Domain.Heroina.Entidade;
 import Domain.Heroina.Heroinas;
+import Domain.Heroina.NPC;
 import Domain.Itens.ArmaPrincipal;
 import Domain.Itens.Consumiveis;
 import Domain.Itens.ItemHeroina;
@@ -20,7 +23,17 @@ public class StoreController {
     private ArrayList<ItemHeroina> itemHeroinas;
     private Consumiveis Consumiveis;
 
-    private LifeController difuculdadeEscolhida;
+    private Points_DistributionController difuculdadeEscolhida;
+
+    private Heroinas heroinaJogando;
+
+    Points_DistributionController criacao = new Points_DistributionController();
+
+    public StoreController(Domain.Itens.Consumiveis consumiveis, Points_DistributionController difuculdadeEscolhida, Heroinas heroinaJogando) throws FileNotFoundException {
+        Consumiveis = consumiveis;
+        this.difuculdadeEscolhida = criacao;
+        this.heroinaJogando = criacao.heroinaEscolhida;
+    }
 
     public StoreController() throws FileNotFoundException {
         WitchStoreRepository repository = new WitchStoreRepository("src/Files/ItensHeroiRPG.csv");
@@ -31,7 +44,7 @@ public class StoreController {
      * Método para Imprimir os detalhes dos itens da Loja
      * @throws FileNotFoundException
      */
-    public void exibirDetalhesStore(Heroinas heroinaJogando) throws IOException {
+    public void exibirDetalhesStore() throws IOException {
 
         TXTReader.imprimirFicheiro("src/Files/WitchStore_logo");
         System.out.println();
@@ -82,7 +95,7 @@ public class StoreController {
 
 
                 // if pode usar e comprar
-                if (heroinaPodeUsar(heroinaJogando,item_Escolhido_USer)){
+                if (heroinaJogando.equals(heroinaPodeUsar(heroinaJogando,item_Escolhido_USer))){
                     int precoItem = itemHeroinas.getFirst().getPrecoItem();
                     int moedasIniciais = difuculdadeEscolhida.parametros_Dificuldade();
                     if(moedasIniciais >= precoItem){
@@ -109,8 +122,10 @@ public class StoreController {
      * @return
      */
     public boolean heroinaPodeUsar(Heroinas heroina, ItemHeroina itemHeroinaCompra){
+        String classeHeroina = heroina.getClass().getSimpleName();
+
         for(String heroinaPermitidaAtual: itemHeroinaCompra.getHeroinaPertitida()){
-            if(heroina.getClass().getSimpleName().equals(heroinaPermitidaAtual)){
+            if(classeHeroina.equals(heroinaPermitidaAtual)){
                 return true;
             }
 
@@ -140,25 +155,5 @@ public class StoreController {
         return false;
     }
 
-
-
-//public void adicionarItem(int itemComprado) throws FileNotFoundException {
-//
-//    Scanner input= new Scanner(System.in);
-//    itemComprado = input.nextInt();
-//
-//
-//}
-
-//  public void venderItensLoja(Heroinas tipoHeroina){
-//
-//        int moedasIniciais = tipoHeroina.getMoedas();
-//
-//        //Check para verificar se pode ou não comprar o item
-//      ItemHeroina itemHeroina = itemHeroinas.get(//Esse index é o da loja);
-//      if(heroinaPodeUsar(tipoHeroina, ){
-//
-//      }
-//
  }
 
