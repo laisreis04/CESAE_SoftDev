@@ -78,9 +78,10 @@ public class StoreController {
 
 
         //Verificações para saber se aqueloa Heroína pode ou não comprar aquele item, e depois guardar ele no invetário dela.
+
+
         Scanner input= new Scanner(System.in);
 
-        //Colocar aqui o adicionar item?
         System.out.println("Toda luta é necessário uma ajuda, o que você vai querer comprar? ");
         int itemCompra = input.nextInt();
 
@@ -95,19 +96,24 @@ public class StoreController {
 
 
                 // if pode usar e comprar
-                if (heroinaJogando.equals(heroinaPodeUsar(heroinaJogando,item_Escolhido_USer))){
+                if (heroinaPodeUsar(heroinaJogando,item_Escolhido_USer)){
                     int precoItem = itemHeroinas.getFirst().getPrecoItem();
-                    int moedasIniciais = difuculdadeEscolhida.parametros_Dificuldade();
+                    int moedasIniciais = difuculdadeEscolhida.getMoeda();
                     if(moedasIniciais >= precoItem){
                         heroinaJogando.adicionar_Invetario((Consumiveis) item_Escolhido_USer);
                         System.out.println("Item Adicionado com sucesso!");
                         moedasIniciais -= precoItem;
+                        heroinaJogando.setMoedas(moedasIniciais);
                     }
                     ArmaPrincipal armaEscolhida_User = (ArmaPrincipal) itemHeroinas.get(contadorItemescolhido);
                     if(substituir_Armaprincipal(armaEscolhida_User,heroinaJogando)){
-                        heroinaJogando.setArmas(armaEscolhida_User);
-                        System.out.println("Arma Selecionada com Sucesso");
-                        moedasIniciais -= precoItem;
+                        if(moedasIniciais >= precoItem){
+                            heroinaJogando.setArmas(armaEscolhida_User);
+                            System.out.println("Arma Selecionada com Sucesso");
+                            moedasIniciais -= precoItem;
+                            heroinaJogando.setMoedas(moedasIniciais);
+                        }
+
                     }
 
                 }
