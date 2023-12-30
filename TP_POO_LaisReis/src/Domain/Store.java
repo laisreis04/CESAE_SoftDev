@@ -1,14 +1,10 @@
 package Domain;
 
-import Controllers.Points_DistributionController;
-import Controllers.StoreController;
 import Domain.Itens.ItemHeroina;
 import Repository.WitchStoreRepository;
-import Tools.TXTReader;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Store {
 

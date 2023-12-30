@@ -1,26 +1,24 @@
 package Controllers;
 
-import Domain.Heroina.Cavaleira;
 import Domain.Heroina.Entidade;
 import Domain.Heroina.Heroinas;
 import Domain.Heroina.NPC;
 import Domain.Itens.ItemHeroina;
 import Repository.WitchStoreRepository;
-import View.Menu_EncontroBruxaViajente;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Points_DistributionController {
+public class GameController {
 
 
     private ArrayList<ItemHeroina> itensLoja;
 
 
 
-    public Points_DistributionController() throws FileNotFoundException{
+    public GameController() throws FileNotFoundException{
 
         WitchStoreRepository repository = new WitchStoreRepository("src/Files/ItensHeroiRPG.csv");
         this.itensLoja = repository.getItensLista();

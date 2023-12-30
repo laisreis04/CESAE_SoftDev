@@ -1,6 +1,6 @@
 package View;
 
-import Controllers.Points_DistributionController;
+import Controllers.GameController;
 import Controllers.StoreController;
 import Domain.Heroina.*;
 import Tools.TXTReader;
@@ -14,13 +14,15 @@ public class Menu_EncontroBruxaViajente {
 
 public static void menuPrimeiroEncontro() throws IOException {
 
-    Points_DistributionController criacao = new Points_DistributionController();
+    GameController criacao = new GameController();
 
     Heroinas cavaleira = new Cavaleira();
     Heroinas feiticeira = new Feiticeira();
     Heroinas arqueira = new Arqueira();
 
-    StoreController store = new StoreController();
+    StoreController store = new StoreController(cavaleira);
+    StoreController store1 = new StoreController(feiticeira);
+    StoreController store2 = new StoreController(arqueira);
 
     Scanner input = new Scanner(System.in);
     int opcao;
@@ -58,6 +60,8 @@ public static void menuPrimeiroEncontro() throws IOException {
             System.out.println("Olá guerreira! Você está preparada para a bataha?\nNão me parece muito preprada, mas eu posso ajudar, tenho isso a venda, poucas moedas em troca de uma batalha mais justa");
             TXTReader.imprimirFicheiro("src/Files/WitchStore_logo");
             store.exibirDetalhesStore();
+            store1.exibirDetalhesStore();
+            store2.exibirDetalhesStore();
             //Fazer menu da loja - imprimir itens da loja
 
             break;

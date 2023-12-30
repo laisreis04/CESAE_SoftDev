@@ -1,10 +1,7 @@
 package Controllers;
 
 
-import Domain.Heroina.Cavaleira;
-import Domain.Heroina.Entidade;
 import Domain.Heroina.Heroinas;
-import Domain.Heroina.NPC;
 import Domain.Itens.ArmaPrincipal;
 import Domain.Itens.Consumiveis;
 import Domain.Itens.ItemHeroina;
@@ -23,19 +20,19 @@ public class StoreController {
     private ArrayList<ItemHeroina> itemHeroinas;
     private Consumiveis Consumiveis;
 
-    private Points_DistributionController difuculdadeEscolhida;
+    private GameController difuculdadeEscolhida;
 
     private Heroinas heroinaJogando;
 
-    Points_DistributionController criacao = new Points_DistributionController();
+    GameController criacao = new GameController();
 
-    public StoreController(Domain.Itens.Consumiveis consumiveis, Points_DistributionController difuculdadeEscolhida, Heroinas heroinaJogando) throws FileNotFoundException {
+    public StoreController(Domain.Itens.Consumiveis consumiveis, GameController difuculdadeEscolhida, Heroinas heroinaJogando) throws FileNotFoundException {
         Consumiveis = consumiveis;
         this.difuculdadeEscolhida = criacao;
         this.heroinaJogando = criacao.heroinaEscolhida;
     }
 
-    public StoreController() throws FileNotFoundException {
+    public StoreController(Heroinas heroinaJogando) throws FileNotFoundException {
         WitchStoreRepository repository = new WitchStoreRepository("src/Files/ItensHeroiRPG.csv");
         this.itemHeroinas = repository.getItensLista();
     }
@@ -85,41 +82,62 @@ public class StoreController {
         System.out.println("Toda luta é necessário uma ajuda, o que você vai querer comprar? ");
         int itemCompra = input.nextInt();
 
+//        if (itemCompra == contador){
+//            int moedasIniciais = difuculdadeEscolhida.getMoeda();
+//            int valorItem = itemHeroinas.getFirst().getPrecoItem();
+//            if(moedasIniciais >= valorItem){
+//
+//                if(heroinaPodeUsar(heroinaJogando, itemHeroinas.getFirst())
+//            }
+//        }
+
         //Verificar se o input está dentro do itens apresentados (se inseriu um numero que corresponde ao que foram apresentados)
 
         if(itemCompra >=1 && itemCompra <= arrayIndexAletorio.size()){
             //Colocar o menos -1 pq todos os array começam com 0 e a minha lista começa no 1.
-            int contadorItemescolhido = arrayIndexAletorio.get(itemCompra - 1 );
-            if(contadorItemescolhido < itemHeroinas.size()){
+            itemCompra = arrayIndexAletorio.get(itemCompra - 1 );
+            if(itemCompra < itemHeroinas.size()){
                 //Armazenar numa variavel, para depois fazer as comprações (if's)
-                ItemHeroina item_Escolhido_USer = itemHeroinas.get(contadorItemescolhido);
+                ItemHeroina item_Escolhido_USer = itemHeroinas.get(itemCompra);//estava o contador aqui
 
 
-                // if pode usar e comprar
-                if (heroinaPodeUsar(heroinaJogando,item_Escolhido_USer)){
-                    int precoItem = itemHeroinas.getFirst().getPrecoItem();
-                    int moedasIniciais = difuculdadeEscolhida.getMoeda();
-                    if(moedasIniciais >= precoItem){
-                        heroinaJogando.adicionar_Invetario((Consumiveis) item_Escolhido_USer);
-                        System.out.println("Item Adicionado com sucesso!");
-                        moedasIniciais -= precoItem;
-                        heroinaJogando.setMoedas(moedasIniciais);
-                    }
-                    ArmaPrincipal armaEscolhida_User = (ArmaPrincipal) itemHeroinas.get(contadorItemescolhido);
-                    if(substituir_Armaprincipal(armaEscolhida_User,heroinaJogando)){
+                while(itemCompra == itemCompra){
+                    // if pode usar e comprar
+                    if (heroinaPodeUsar(heroinaJogando, item_Escolhido_USer)){
+                        int precoItem = itemHeroinas.getFirst().getPrecoItem();
+                        int moedasIniciais = difuculdadeEscolhida.getMoeda();
                         if(moedasIniciais >= precoItem){
-                            heroinaJogando.setArmas(armaEscolhida_User);
-                            System.out.println("Arma Selecionada com Sucesso");
+                            heroinaJogando.adicionar_Invetario((Consumiveis) item_Escolhido_USer);
+                            System.out.println("Item Adicionado com sucesso!");
                             moedasIniciais -= precoItem;
                             heroinaJogando.setMoedas(moedasIniciais);
+                        }else {
+                            System.out.println("Diñero insuficiente");
+
+                        }
+                        ArmaPrincipal armaEscolhida_User = (ArmaPrincipal) itemHeroinas.get(itemCompra);//contador
+                        if(substituir_Armaprincipal(armaEscolhida_User,heroinaJogando)){
+                            if(moedasIniciais >= precoItem){
+                                heroinaJogando.setArmas(armaEscolhida_User);
+                                System.out.println("Arma Selecionada com Sucesso");
+                                moedasIniciais -= precoItem;
+                                heroinaJogando.setMoedas(moedasIniciais);
+                            }
+
                         }
 
                     }
 
                 }
+
             }
-       }
+        }
     }
+
+
+
+
+
 
     /**
      * Método para condicionar os tipos de itens que cada herína pode usar
@@ -128,14 +146,17 @@ public class StoreController {
      * @return
      */
     public boolean heroinaPodeUsar(Heroinas heroina, ItemHeroina itemHeroinaCompra){
-        String classeHeroina = heroina.getClass().getSimpleName();
+        if (heroina != null) {
+            String classeHeroina = heroina.getClass().getSimpleName();
 
-        for(String heroinaPermitidaAtual: itemHeroinaCompra.getHeroinaPertitida()){
-            if(classeHeroina.equals(heroinaPermitidaAtual)){
-                return true;
+            for(String heroinaPermitidaAtual: itemHeroinaCompra.getHeroinaPertitida()){
+                if(classeHeroina.equals(heroinaPermitidaAtual)){
+                    return true;
+                }
+
             }
-
         }
+
         return false;
 }
 

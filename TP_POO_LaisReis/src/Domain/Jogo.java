@@ -1,10 +1,9 @@
 package Domain;
 
-import Controllers.Points_DistributionController;
+import Controllers.GameController;
 import Domain.Heroina.*;
 import View.Menu_EncontroBruxaViajente;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -64,7 +63,7 @@ public class Jogo {
             //Dificuldade
             System.out.println("****************************************");  //40*
             System.out.println("Qual o nível de dificuldade?\n");
-            Points_DistributionController dificuldade = new Points_DistributionController();
+            GameController dificuldade = new GameController();
             dificuldade.parametros_Dificuldade();
 
 

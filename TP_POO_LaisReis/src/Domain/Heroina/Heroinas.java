@@ -18,7 +18,7 @@ public abstract class Heroinas extends Entidade {
         super(nome, vidaMax, vidaAtual, forca);
         this.nivel = nivel;
         this.moedas = moedas;
-        this.armas = armas;
+        this.armas = null;
         this.inventario = new ArrayList<>();
     }
 
