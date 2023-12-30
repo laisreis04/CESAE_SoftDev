@@ -101,8 +101,9 @@ public class StoreController {
                 ItemHeroina item_Escolhido_USer = itemHeroinas.get(itemCompra);//estava o contador aqui
 
 
-                while(itemCompra == itemCompra){
+
                     // if pode usar e comprar
+                if (itemCompra == contador){
                     if (heroinaPodeUsar(heroinaJogando, item_Escolhido_USer)){
                         int precoItem = itemHeroinas.getFirst().getPrecoItem();
                         int moedasIniciais = difuculdadeEscolhida.getMoeda();
@@ -130,9 +131,13 @@ public class StoreController {
 
                 }
 
+
+                }
+
             }
+
         }
-    }
+
 
 
 

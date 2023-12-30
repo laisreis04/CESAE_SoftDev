@@ -108,4 +108,6 @@ public abstract class Heroinas extends Entidade {
 
     // metodo atacar
 
+
+
 }

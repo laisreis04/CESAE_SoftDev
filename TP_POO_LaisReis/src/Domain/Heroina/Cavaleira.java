@@ -17,6 +17,8 @@ public class Cavaleira extends Heroinas {
     @Override
     public void ataqueNPC(NPC inimigo) {
 
+        if(inimigo)
+
     }
 
 
