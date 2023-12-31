@@ -1,6 +1,7 @@
 package Controllers;
 
 
+import Domain.Heroina.Entidade;
 import Domain.Heroina.Heroinas;
 import Domain.Itens.ArmaPrincipal;
 import Domain.Itens.Consumiveis;
@@ -8,6 +9,7 @@ import Domain.Itens.ItemHeroina;
 
 import Repository.WitchStoreRepository;
 import Tools.TXTReader;
+import View.Menu_Comeco_Missao;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -32,7 +34,7 @@ public class StoreController {
         this.heroinaJogando = criacao.heroinaEscolhida;
     }
 
-    public StoreController(Heroinas heroinaJogando) throws FileNotFoundException {
+    public StoreController(Entidade heroinaJogando) throws FileNotFoundException {
         WitchStoreRepository repository = new WitchStoreRepository("src/Files/ItensHeroiRPG.csv");
         this.itemHeroinas = repository.getItensLista();
     }
@@ -82,14 +84,7 @@ public class StoreController {
         System.out.println("Toda luta é necessário uma ajuda, o que você vai querer comprar? ");
         int itemCompra = input.nextInt();
 
-//        if (itemCompra == contador){
-//            int moedasIniciais = difuculdadeEscolhida.getMoeda();
-//            int valorItem = itemHeroinas.getFirst().getPrecoItem();
-//            if(moedasIniciais >= valorItem){
-//
-//                if(heroinaPodeUsar(heroinaJogando, itemHeroinas.getFirst())
-//            }
-//        }
+
 
         //Verificar se o input está dentro do itens apresentados (se inseriu um numero que corresponde ao que foram apresentados)
 
@@ -104,11 +99,11 @@ public class StoreController {
 
                     // if pode usar e comprar
                 if (itemCompra == contador){
-                    if (heroinaPodeUsar(heroinaJogando, item_Escolhido_USer)){
+
                         int precoItem = itemHeroinas.getFirst().getPrecoItem();
                         int moedasIniciais = difuculdadeEscolhida.getMoeda();
                         if(moedasIniciais >= precoItem){
-                            heroinaJogando.adicionar_Invetario((Consumiveis) item_Escolhido_USer);
+                            heroinaJogando.getInventario().add((Consumiveis) item_Escolhido_USer);
                             System.out.println("Item Adicionado com sucesso!");
                             moedasIniciais -= precoItem;
                             heroinaJogando.setMoedas(moedasIniciais);
@@ -123,6 +118,7 @@ public class StoreController {
                                 System.out.println("Arma Selecionada com Sucesso");
                                 moedasIniciais -= precoItem;
                                 heroinaJogando.setMoedas(moedasIniciais);
+
                             }
 
                         }
@@ -133,10 +129,12 @@ public class StoreController {
 
 
                 }
+        Menu_Comeco_Missao menuMissao = new Menu_Comeco_Missao();
+        menuMissao.primeiraMissao();
 
             }
 
-        }
+
 
 
 
