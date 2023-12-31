@@ -1,12 +1,13 @@
 package View;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu_Comeco_Missao {
 
 
-    public void primeiraMissao()throws FileNotFoundException{
+    public void primeiraMissao() throws IOException {
 
         Scanner input = new Scanner(System.in);
 
@@ -30,6 +31,13 @@ public class Menu_Comeco_Missao {
         switch (opcao){
 
             case 1:
+                break;
+            case 2:
+                Sala_B salaB = new Sala_B();
+                salaB.salaB();
+                break;
+            default:
+                System.out.println("Opção Inválida");
 
         }
 

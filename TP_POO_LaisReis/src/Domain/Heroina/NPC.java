@@ -9,6 +9,9 @@ public class NPC extends Entidade{
         this.moedas = moedas;
     }
 
+
+
+
     // método ataque
 
 }

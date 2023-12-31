@@ -16,6 +16,9 @@ public class Arqueira extends Heroinas{
     @Override
     public void ataqueNPC(NPC inimigo) {
 
+
+
+
     }
 
 

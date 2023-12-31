@@ -102,6 +102,7 @@ public class StoreController {
 
                         int precoItem = itemHeroinas.getFirst().getPrecoItem();
                         int moedasIniciais = difuculdadeEscolhida.getMoeda();
+                        heroinaJogando.setMoedas(moedasIniciais);
                         if(moedasIniciais >= precoItem){
                             heroinaJogando.getInventario().add((Consumiveis) item_Escolhido_USer);
                             System.out.println("Item Adicionado com sucesso!");
