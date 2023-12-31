@@ -59,7 +59,7 @@ public class Sala_B {
             }
         };
 
-        System.out.println("Força: " + heroina.setForca(heroina.getForca()-80) + "\nVida: " + heroina.setVidaAtual(heroina.getVidaAtual()-80));
+        System.out.println("Força: " + heroina.setForca(heroina.getForca()- 80) + "\nVida: " + heroina.setVidaAtual(heroina.getVidaAtual()- 80));
 
 
 

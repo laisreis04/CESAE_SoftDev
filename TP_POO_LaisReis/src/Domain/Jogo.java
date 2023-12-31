@@ -73,22 +73,22 @@ public class Jogo {
                 case 1:
                     System.out.println("**** CAVALEIRA SELECIONADA ****");
                     System.out.println();
-                    Entidade tipoHeroina = new Cavaleira(nome, dificuldade.getVidaMax(), dificuldade.getVidaAtual(), dificuldade.getForca(), 1, dificuldade.getMoeda());
-                    setHeroinaEscolhida((Heroinas) tipoHeroina);
+                    Heroinas tipoHeroina = new Cavaleira(nome, dificuldade.getVidaMax(), dificuldade.getVidaAtual(), dificuldade.getForca(), 1, dificuldade.getMoeda());
+                    setHeroinaEscolhida(tipoHeroina);
                     Menu_EncontroBruxaViajente.menuPrimeiroEncontro();
                     break;
                 case 2:
                     System.out.println("**** FEITICEIRA SELECIONADA ****");
                     System.out.println();
-                    Entidade tipoHeroina1 = new Feiticeira(nome, dificuldade.getVidaMax(), dificuldade.getVidaAtual(), dificuldade.getForca(), 1, dificuldade.getMoeda());
-                    setHeroinaEscolhida((Heroinas) tipoHeroina1);
+                    Heroinas tipoHeroina1 = new Feiticeira(nome, dificuldade.getVidaMax(), dificuldade.getVidaAtual(), dificuldade.getForca(), 1, dificuldade.getMoeda());
+                    setHeroinaEscolhida(tipoHeroina1);
                     Menu_EncontroBruxaViajente.menuPrimeiroEncontro();
                     break;
                 case 3:
                     System.out.println("**** ARQEIRA SELECIONADA ****");
                     System.out.println();
-                    Entidade tipoHeroina3 = new Arqueira(nome, dificuldade.getVidaMax(), dificuldade.getVidaAtual(), dificuldade.getForca(), 1, dificuldade.getMoeda());
-                    setHeroinaEscolhida((Heroinas) tipoHeroina3);
+                    Heroinas tipoHeroina3 = new Arqueira(nome, dificuldade.getVidaMax(), dificuldade.getVidaAtual(), dificuldade.getForca(), 1, dificuldade.getMoeda());
+                    setHeroinaEscolhida(tipoHeroina3);
                     Menu_EncontroBruxaViajente.menuPrimeiroEncontro();
                     break;
 
