@@ -25,6 +25,7 @@ public  abstract class ItemHeroina {
      */
     public void addHeroinas(String heroinaNova) {
         this.heroinaPermitida.add(heroinaNova);
+
     }
 
     public String getNome() {
@@ -45,6 +46,7 @@ public  abstract class ItemHeroina {
         System.out.print("Nome: " + this.nome + " \n" );
         System.out.print("Preço: " + precoItem + " \n\t");
         System.out.print("Heroínas  Permitidas: "+this.heroinaPermitida + "\n");
+
 
     }
 

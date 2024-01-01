@@ -15,7 +15,7 @@ public class Menu_Inicial {
 
 
 
-        TXTReader.imprimirFicheiro("src/Files/Game_logo");
+
 
         Jogo jogar = new Jogo();
         jogar.criarPersonagem();

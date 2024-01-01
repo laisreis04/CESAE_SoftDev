@@ -1,6 +1,9 @@
 package View;
 
+import Domain.Heroina.Heroinas;
+import Domain.Heroina.NPC;
 import Domain.Jogo;
+import Tools.TXTReader;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -13,7 +16,11 @@ public class Sala_B1_Final {
 
         int opcao;
 
-        System.out.println("Oh no! O cavaleiro era um templário, e ele te enganou! Você perdeu todos os seu pontos!\n");
+        TXTReader.imprimirFicheiro("src/Files/GameOver");
+
+
+        System.out.println();
+        System.out.println("Infelizmente nem todas as heroinas por ai tem uma segunda chance...\n");
         System.out.println("Quer jogar novamente?");
         System.out.println("1. SIM - Com a mesma personagem");
         System.out.println("2. SIM -Uma nova jogadora");
@@ -23,7 +30,13 @@ public class Sala_B1_Final {
         switch (opcao){
 
             case 1:
-                Menu_EncontroBruxaViajente.menuPrimeiroEncontro();
+                Heroinas heroinaEscolhida = new Heroinas() {
+                    @Override
+                    public void ataqueNPC(NPC inimigo) {
+
+                    }
+                };
+                Menu_EncontroBruxaViajente.menuPrimeiroEncontro(heroinaEscolhida);
                 break;
             case 2:
                 Jogo escolhaPersonagem = new Jogo();

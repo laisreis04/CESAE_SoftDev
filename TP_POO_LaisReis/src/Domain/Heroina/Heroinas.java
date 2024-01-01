@@ -4,6 +4,9 @@ import Domain.Itens.ArmaPrincipal;
 import Domain.Itens.Consumiveis;
 import Domain.Itens.Pocao;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -54,9 +57,13 @@ public abstract class Heroinas extends Entidade {
         this.armas = armas;
     }
 
-    public void adicionar_Invetario(Consumiveis itemNovo){
+    public void adicionar_Invetario(Consumiveis itemNovo) throws IOException {
 
-    this.inventario.add(itemNovo);
+    File ficheiro = new File("src/Files/ItensComprados");
+        FileWriter fw = new FileWriter(ficheiro);
+        fw.append("Item inserido: " + itemNovo);
+        fw.close();
+
     }
 
     /**

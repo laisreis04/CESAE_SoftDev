@@ -1,11 +1,25 @@
 package View;
 
+import Domain.Heroina.Heroinas;
+import Domain.Heroina.NPC;
+import Domain.Itens.ItemHeroina;
+import Domain.Itens.Pocao;
+import Tools.TXTReader;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu_Comeco_Missao {
 
+private ArrayList<ItemHeroina> lista;
+
+    public Menu_Comeco_Missao() {
+
+        this.lista = lista;
+    }
 
     public void primeiraMissao() throws IOException {
 
@@ -13,29 +27,39 @@ public class Menu_Comeco_Missao {
 
         int opcao;
 
+
+        System.out.println("* ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ►** ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ►** ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ►*\n");
         System.out.println("Você pode escolher entra dois caminhos:\n");
-        System.out.println("1. Encontro com os Juízes:\n" +
-                "\n" +
-                "Neste caminho, nossa heroína enfrenta os Juízes, figuras poderosas e implacáveis. " +
-                "Ela usará suas habilidades e astúcia para desafiar a autoridade opressora e libertar as bruxas aprisionadas. Cada desafio vencido fortalecerá sua determinação, " +
-                "mas também aumentará a intensidade da perseguição contra ela.");
-        System.out.println("2. Encontro amoroso com o Cavaleiro:\n" +
-                "\n" +
-                "Nesta opção, nossa heroína se envolve romanticamente com um Cavaleiro, uma aliança perigosa e proibida. " +
-                "O romance traz prazer, mas também implica riscos. A jornada amorosa afetará a missão principal, adicionando uma camada de complexidade emocional. " +
-                "No entanto, cada passo desse relacionamento desviará a atenção da missão, diminuindo a eficácia da luta contra os opressores.");
+        System.out.println("1. CAMINHO DO LAGO VERDE:\n");
+        System.out.println("2. TRILHA VILA CHÃ:\n");
+        System.out.println("3. VER VIDA E FORÇA");
 
         opcao = input.nextInt();
-
+        Sala_B salaB = new Sala_B();
 
         switch (opcao){
 
             case 1:
+
                 break;
             case 2:
-                Sala_B salaB = new Sala_B();
+
                 salaB.salaB();
                 break;
+            case 3:
+                System.out.println("Escolher caminho:\n");
+                System.out.println("1. CAMINHO DO LAGO VERDE:\n");
+                System.out.println("2. TRILHA VILA CHÃ:\n");
+                opcao = input.nextInt();
+                if(opcao == 1){
+                    //salaA
+
+                } else {
+                salaB.salaB();
+            }
+
+                break;
+
             default:
                 System.out.println("Opção Inválida");
 
