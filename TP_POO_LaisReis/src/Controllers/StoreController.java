@@ -97,30 +97,28 @@ public class StoreController {
 
 
 
-                    // if pode usar e comprar
+                // if pode usar e comprar
                 if (itemCompra == contador){
 
-                        int precoItem = itemHeroinas.getFirst().getPrecoItem();
-                        int moedasIniciais = difuculdadeEscolhida.getMoeda();
+                    int precoItem = itemHeroinas.getFirst().getPrecoItem();
+                    int moedasIniciais = difuculdadeEscolhida.getMoeda();
+                    heroinaJogando.setMoedas(moedasIniciais);
+                    if(moedasIniciais >= precoItem){
+                        heroinaJogando.adicionar_Invetario((Consumiveis) item_Escolhido_USer);
+                        System.out.println("Item Adicionado com sucesso!");
+                        moedasIniciais -= precoItem;
                         heroinaJogando.setMoedas(moedasIniciais);
+                    }else {
+                        System.out.println("Diñero insuficiente");
+
+                    }
+                    ArmaPrincipal armaEscolhida_User = (ArmaPrincipal) itemHeroinas.get(itemCompra);//contador
+                    if(substituir_Armaprincipal(armaEscolhida_User,heroinaJogando)){
                         if(moedasIniciais >= precoItem){
-                            heroinaJogando.getInventario().add((Consumiveis) item_Escolhido_USer);
-                            System.out.println("Item Adicionado com sucesso!");
+                            heroinaJogando.setArmas(armaEscolhida_User);
+                            System.out.println("Arma Selecionada com Sucesso");
                             moedasIniciais -= precoItem;
                             heroinaJogando.setMoedas(moedasIniciais);
-                        }else {
-                            System.out.println("Diñero insuficiente");
-
-                        }
-                        ArmaPrincipal armaEscolhida_User = (ArmaPrincipal) itemHeroinas.get(itemCompra);//contador
-                        if(substituir_Armaprincipal(armaEscolhida_User,heroinaJogando)){
-                            if(moedasIniciais >= precoItem){
-                                heroinaJogando.setArmas(armaEscolhida_User);
-                                System.out.println("Arma Selecionada com Sucesso");
-                                moedasIniciais -= precoItem;
-                                heroinaJogando.setMoedas(moedasIniciais);
-
-                            }
 
                         }
 
@@ -128,12 +126,14 @@ public class StoreController {
 
                 }
 
+            }
 
-                }
+
+        }
         Menu_Comeco_Missao menuMissao = new Menu_Comeco_Missao();
         menuMissao.primeiraMissao();
 
-            }
+    }
 
 
 
