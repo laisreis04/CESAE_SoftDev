@@ -8,23 +8,19 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class MainTeste_ImprimirItensLojas {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 
 
 
 
-//        Heroinas heroina = new Cavaleira("Lais",100,100,20,5,2,null);
-//
-//        StoreController lojinha = new StoreController();
+        Heroinas heroina = new Cavaleira("Lais",100,100,20,5,2);
+
+        StoreController lojinha = new StoreController(heroina);
+
+        lojinha.exibirDetalhesStore();
 
 
 
-
-//        System.out.println(heroina.getClass().getSimpleName());
-
-
-        ArmaPrincipal a1 = new ArmaPrincipal("shakira", 45,85,100);
-        a1.imprimirDetalhes_ArmaPrincipal();
 
     }
 }

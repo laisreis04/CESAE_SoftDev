@@ -15,8 +15,6 @@ public class Menu_EncontroBruxaViajente {
 
 public static void menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOException, InterruptedException {
 
-    GameController criacao = new GameController();
-
 
     Entidade jogadora = new Entidade() {
         @Override
@@ -51,7 +49,6 @@ public static void menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOExce
             System.out.println();
             System.out.println("Olá guerreira! Você está preparada para a batalha?\nNão me parece muito preprada, mas eu posso ajudar, tenho isso a \n" +
                     "venda, poucas moedas em troca de uma batalha mais justa");
-            TXTReader.imprimirFicheiro("src/Files/WitchStore_logo");
             store.exibirDetalhesStore();
             //Fazer menu da loja - imprimir itens da loja
 

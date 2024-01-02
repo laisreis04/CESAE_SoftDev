@@ -1,11 +1,5 @@
 package Domain.Itens;
 
-import Domain.Itens.Consumiveis;
-import Repository.WitchStoreRepository;
-
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-
 public class Pocao extends Consumiveis {
 
     private int vida;
@@ -13,12 +7,16 @@ public class Pocao extends Consumiveis {
     private int forca;
 
 
-
     public Pocao(String nome, int precoItem, int vida, int forca) {
         super(nome, precoItem);
         this.vida = vida;
         this.forca = forca;
     }
+
+    public Pocao(int vida, int forca) {
+        super(String.valueOf(vida), forca);
+    }
+
 
     public int getVida() {
         return vida;
@@ -32,12 +30,15 @@ public class Pocao extends Consumiveis {
         this.vida = vida;
     }
 
-    public void exibir_Detalhes_pocao(){
-
-
-            System.out.println("Vida= " + vida);
-        System.out.println("Força = " + forca);
-
+    public void setForca(int forca) {
+        this.forca = forca;
     }
 
+public void exibirVida_Forca(){
+
+    System.out.println("Sua vida: " + this.vida);
+    System.out.println("Sua Força: " + forca);
+
 }
+
+    }

@@ -20,13 +20,7 @@ public class CavaleiroController {
         //Há 50% de chance de dar bom
         int ramdonNum = random.nextInt(1, 50);
 
-        Heroinas heroinaJogando = new Heroinas() {
-            @Override
-            public String ataqueNPC(NPC inimigo) {
 
-                return String.valueOf(inimigo);
-            }
-        };
 
         System.out.println("..... (¯`v´¯)♥\n" +
                 ".......•.¸.•´\n" +

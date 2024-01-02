@@ -6,18 +6,26 @@ import java.util.ArrayList;
 
 public  abstract class ItemHeroina {
 
-    private String nome;
+    String nome;
 
-    private int precoItem;
+    int precoItem;
+
+    private int forca;
+
+    private int vida;
+    private int ataque;
+
 
     private ArrayList<String> heroinaPermitida;
 
 
-    public ItemHeroina(String nome,int precoItem) {
+    public ItemHeroina(String nome, int precoItem) {
         this.nome = nome;
         this.precoItem = precoItem;
         this.heroinaPermitida = new ArrayList<>();
     }
+
+
 
     /**
      * Método para adicionar Heroina
@@ -26,6 +34,14 @@ public  abstract class ItemHeroina {
     public void addHeroinas(String heroinaNova) {
         this.heroinaPermitida.add(heroinaNova);
 
+    }
+
+    public int getForca() {
+        return forca;
+    }
+
+    public int getVida() {
+        return vida;
     }
 
     public String getNome() {
@@ -49,6 +65,8 @@ public  abstract class ItemHeroina {
 
 
     }
+
+
 
 
 }

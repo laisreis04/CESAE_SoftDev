@@ -21,14 +21,14 @@ public static void ataqueAoCavaleiroMentiroso() throws IOException, InterruptedE
             "Ambas as opções refletem diferentes desdobramentos da história, trazendo à tona as consequências das escolhas e emoções intensas \n" +
             "vividas pelos personagens.\"");
 
+
+    NPC inimigo = new NPC("Cavaleiro Mentiroso", 150, 50, 120, 80);
     Heroinas ataque = new Heroinas() {
         @Override
-        public String ataqueNPC(NPC inimigo) {
+        public void ataqueNPC(NPC inimigo) throws IOException, InterruptedException {
 
-            return String.valueOf(inimigo);
         }
     };
-    NPC inimigo = new NPC("Cavaleiro Mentiroso", 150, 50, 120, 80);
     ataque.ataqueNPC(inimigo);
 
     System.out.println("Você ganhou essa batalha! Parabéns");

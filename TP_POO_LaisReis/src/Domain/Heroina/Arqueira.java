@@ -1,6 +1,9 @@
 package Domain.Heroina;
 
-import java.io.FileNotFoundException;
+import Tools.TXTReader;
+import View.Sala_FInal;
+
+import java.io.IOException;
 
 public class Arqueira extends Heroinas{
 
@@ -14,23 +17,39 @@ public class Arqueira extends Heroinas{
     }
 
     @Override
-    public String ataqueNPC(NPC inimigo) throws FileNotFoundException {
+    public void ataqueNPC(NPC inimigo) throws IOException, InterruptedException {
 
-        // Heroina ataca primeiro
-        int danoHeroina = getForca() + getArmas().getAtaque();
 
-        // dano no inimigo
-        int danoInimigo = inimigo.atacar(danoHeroina);
+        String ganhador = null;
+        int ataqueEspecial;
 
-        // // 10% a mais de dano do inimigo (100 + 10)
-        int danoArqueira = (int) (inimigo.getForca() * 1.1);
+        while (this.getVidaAtual() != 0 || inimigo.getVidaAtual() != 0){
+            if(this.getVidaAtual() >= inimigo.getVidaAtual()){
+                System.out.println("Bom ataque!");
+                inimigo.setVidaAtual(inimigo.getVidaAtual() - this.getForca());
+            }
+            if (this.getVidaAtual() <= inimigo.getVidaAtual()){
+                System.out.println("Oh NO! Sua falta de ataenção causou mais 10% de força no  contra ataque do " + inimigo.getNome() + "!");
+                this.setVidaAtual(this.getVidaAtual() - inimigo.getForca());
+            }
+            if ( inimigo.getVidaAtual() == 0){
+                ganhador = this.getNome();
+                System.out.println("Você ganhou a batalha ");
+                this.setMoedas(this.getMoedas() +inimigo.getMoedas());
+                System.out.println("E ainda ficou com as moedas dele ( " + inimigo.getMoedas() + " )");
+                System.out.println("Total: " + (this.getMoedas() + inimigo.getMoedas()));
+                Sala_FInal.salaFinal();
 
-        //Dano a heroina e inimigo
-        setVidaAtual(getVidaAtual() - danoArqueira);
-        //inimigo
-        inimigo.setVidaAtual(inimigo.getVidaAtual() - danoInimigo);
+            }
+            if (this.getVidaAtual() == 0){
+                System.out.println("Na vida não ganhamos todas as batalhas...");
+                ganhador = inimigo.getNome();
+                TXTReader.imprimirFicheiro("src/Files/GameOver");
+                Sala_FInal.salaFinal();
+            }
 
-        return String.valueOf(danoHeroina);
+        }
+
     }
 
 

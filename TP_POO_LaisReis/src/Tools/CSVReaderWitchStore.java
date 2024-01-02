@@ -62,23 +62,22 @@ public class CSVReaderWitchStore {
 
             ItemHeroina itemAtual=null;
 
-            if (tipo.equals("ArmaPrincipal")) {
+            if (tipo.equals("armaPrincipal")) {
                 itemAtual = new ArmaPrincipal(nome, preco, ataque, ataqueEspecial);
                 for (String heroinaAtual : divHeroinas) {
                     itemAtual.addHeroinas(heroinaAtual);
                 }//? pq o noe está em vermelho?
-            } else if (tipo.equals("ConsumivelCombate")) {
+            } else if (tipo.equals("consumivelCombate")) {
                 itemAtual = new ConsumivelCombate(nome, preco, ataqueInstanteneo);
                 for (String heroinaAtual : divHeroinas) {
                     itemAtual.addHeroinas(heroinaAtual);
                 }
-            } else if (tipo.equals("Pocao")) {
-                itemAtual = new Pocao(nome, preco, vida, forca);
+            } else if (tipo.equals("pocao")) {
+                itemAtual = new Pocao(nome,preco, vida, forca);
                 for (String heroinaAtual : divHeroinas) {
                     itemAtual.addHeroinas(heroinaAtual);
 
                 }
-
 
             }
             arrayItens.add(itemAtual);

@@ -49,7 +49,7 @@ private ArrayList<ItemHeroina> lista;
                 break;
 
             case 3:
-                GameController.exibir_Vida_Forca();
+
                 System.out.println("Escolher caminho:\n");
                 System.out.println("1. CAMINHO DO LAGO VERDE:\n");
                 System.out.println("2. TRILHA VILA CHÃ:\n");

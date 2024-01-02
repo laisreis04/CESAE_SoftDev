@@ -1,12 +1,14 @@
 package View;
 
-import Domain.Heroina.Heroinas;
-import Domain.Heroina.NPC;
+import Domain.Heroina.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Sala_A {
+
+    public Sala_A() {
+    }
 
     public static void menuSala_A() throws IOException, InterruptedException {
 
@@ -22,19 +24,37 @@ public class Sala_A {
                 "de uma fonte desconhecida. A heroína, com sua agilidade e coragem, rapidamente se prepara para enfrentar essa nova ameaça.");
 
 
-        Heroinas heroinaAtacando = new Heroinas() {
-            @Override
-            public String ataqueNPC(NPC inimigo) throws FileNotFoundException {
-                return String.valueOf(inimigo);
-            }
-        };
 
+
+
+        Heroinas heroinaJogando = null;
 
         //método de ataque ao inimigo - Segue ataques diferente das diferentes classe, quando a heroina foi instaciada.
-        NPC inimigoJuizes = new NPC("Juizes", 150,150,80,100);
-        heroinaAtacando.ataqueNPC(inimigoJuizes);
+        NPC inimigoJuizes = new NPC("Juizes", 80,80,40,100);
 
-        Sala_FInal.salaFinal();
+        System.out.println();
+        System.out.println("A " + heroinaJogando.getNome() + "é atacada");
+
+        System.out.println("Começar a batalha?\n1. Sim\n2.Não");
+        Scanner input = new Scanner(System.in);
+        int opcao = input.nextInt();
+
+        if(opcao == 1){
+            if(heroinaJogando.getNome().equals("Sabrina")){
+                Heroinas feiticeira = new Feiticeira();
+                feiticeira.ataqueNPC(inimigoJuizes);
+            } else if (heroinaJogando.getNome().equals("JoanaDark")) {
+                Heroinas cavaleira = new Cavaleira();
+                cavaleira.ataqueNPC(inimigoJuizes);
+            } else if (heroinaJogando.getNome().equals("Xena")) {
+
+            }
+
+
+        }else {
+            Sala_FInal.salaFinal();
+        }
+
 
 
 

@@ -30,13 +30,12 @@ public class Sala_B1_Final {
         switch (opcao){
 
             case 1:
-                Heroinas heroinaEscolhida = new Heroinas() {
-                    @Override
-                    public String ataqueNPC(NPC inimigo) {
+               Heroinas heroinaEscolhida = new Heroinas() {
+                   @Override
+                   public void ataqueNPC(NPC inimigo) throws IOException, InterruptedException {
 
-                        return String.valueOf(inimigo);
-                    }
-                };
+                   }
+               };
                 Menu_EncontroBruxaViajente.menuPrimeiroEncontro(heroinaEscolhida);
                 break;
             case 2:

@@ -40,4 +40,7 @@ public class ArmaPrincipal extends ItemHeroina {
     public int getAtaqueEspecial() {
         return ataqueEspecial;
     }
+
+
 }
+

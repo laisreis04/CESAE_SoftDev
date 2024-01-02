@@ -21,19 +21,8 @@ public class StoreController {
 
     private ArrayList<ItemHeroina> itemHeroinas;
 
-
     private Heroinas heroinaJogando;
 
-
-    GameController criacao = new GameController();
-
-    public StoreController() throws FileNotFoundException {
-    }
-
-    public StoreController(Consumiveis consumiveis) throws FileNotFoundException {
-
-        this.heroinaJogando = criacao.heroinaEscolhida;
-    }
 
     public StoreController(Entidade heroinaJogando) throws FileNotFoundException {
         WitchStoreRepository repository = new WitchStoreRepository("src/Files/ItensHeroiRPG.csv");
@@ -42,6 +31,7 @@ public class StoreController {
 
     /**
      * Método para Imprimir os detalhes dos itens da Loja
+     *
      * @throws FileNotFoundException
      */
     public void exibirDetalhesStore() throws IOException, InterruptedException {
@@ -56,96 +46,87 @@ public class StoreController {
         //Para criar os números aleatórios para cada array
         Random random = new Random();
 
+        int contador = 1;
 
-        while (arrayIndexAletorio.size() < 10){
-            int indexAleatorio = random.nextInt(0, this.itemHeroinas.size());
 
-            if(!arrayIndexAletorio.contains(indexAleatorio)){
+        while (arrayIndexAletorio.size() < 10) {
+            int indexAleatorio = random.nextInt(this.itemHeroinas.size());
+            if (!arrayIndexAletorio.contains(indexAleatorio)) {
                 arrayIndexAletorio.add(indexAleatorio);
             }
+            //Para impirmir o Item que estar "guardado" no index aleatorio
+
         }
-        //Para impirmir o Item que estar "guardado" no index aleatorio
-        int contador = 1;
-        for (int index: arrayIndexAletorio){
-            if(index < itemHeroinas.size()){
-                ItemHeroina itemAtual = itemHeroinas.get(index);
-                System.out.println("************* ITEM " + contador + " *************");
-                itemAtual.exibirDetalhes();
-                System.out.println("****************************************\n");
-                contador++;
-            }
-        }
+        ItemHeroina itemAtual = itemHeroinas.get(contador);
+        if (itemAtual != null) {
+            System.out.println("************* ITEM " + contador + " *************");
+            itemAtual.exibirDetalhes();
+            System.out.println("****************************************\n");
+            contador++;
+
+            //Verificações para saber se aqueloa Heroína pode ou não comprar aquele item, e depois guardar ele no invetário dela.
 
 
-        //Verificações para saber se aqueloa Heroína pode ou não comprar aquele item, e depois guardar ele no invetário dela.
+            Scanner input = new Scanner(System.in);
+
+            System.out.println("Toda luta é necessário uma ajuda, o que você vai querer comprar? ");
+            int itemCompra = input.nextInt();
+            System.out.println("Nossa developer, tentou, tentou, tentou, mas no final não conseguiu mostrar a lojinha da bruxa.");
+            System.out.println("Mas a sua viagem não para aqui, carrega o numero 1 para continuar.");
 
 
-        Scanner input= new Scanner(System.in);
+            //Verificar se o input está dentro do itens apresentados (se inseriu um numero que corresponde ao que foram apresentados)
 
-        System.out.println("Toda luta é necessário uma ajuda, o que você vai querer comprar? ");
-        int itemCompra = input.nextInt();
-
-
-
-        //Verificar se o input está dentro do itens apresentados (se inseriu um numero que corresponde ao que foram apresentados)
-
-        if(itemCompra >=1 && itemCompra <= arrayIndexAletorio.size()){
-            //Colocar o menos -1 pq todos os array começam com 0 e a minha lista começa no 1.
-            itemCompra = arrayIndexAletorio.get(itemCompra - 1 );
-            if(itemCompra < itemHeroinas.size()){
-                //Armazenar numa variavel, para depois fazer as comprações (if's)
-                ItemHeroina item_Escolhido_USer = itemHeroinas.get(itemCompra);//estava o contador aqui
+            if (itemCompra >= 1 && itemCompra <= arrayIndexAletorio.size()) {
+                //Colocar o menos -1 pq todos os array começam com 0 e a minha lista começa no 1.
+                itemCompra = arrayIndexAletorio.get(itemCompra - 1);
+                if (itemCompra < itemHeroinas.size()) {
+                    //Armazenar numa variavel, para depois fazer as comprações (if's)
+                    ItemHeroina item_Escolhido_USer = itemHeroinas.get(itemCompra);//estava o contador aqui
 
 
+                    // if pode usar e comprar
+                    if (itemCompra == contador) {
 
-                // if pode usar e comprar
-                if (itemCompra == contador){
-
-                    int precoItem = itemHeroinas.getFirst().getPrecoItem();
-                    int moedasIniciais = heroinaJogando.getMoedas();
+                        int precoItem = itemHeroinas.getFirst().getPrecoItem();
+                        int moedasIniciais = heroinaJogando.getMoedas();
 
 
-                    if(moedasIniciais >= precoItem){
-                       heroinaJogando.adicionar_Invetario((Consumiveis) item_Escolhido_USer);
-                        System.out.println("Item Adicionado com sucesso!");
-                        int moedaDepoisCOmpra = moedasIniciais - precoItem;
-                        heroinaJogando.setMoedas(moedaDepoisCOmpra);
-                        if(item_Escolhido_USer instanceof ArmaPrincipal){
-                                substituir_Armaprincipal((ArmaPrincipal) item_Escolhido_USer,heroinaJogando);
-                            int moedaDepois = moedasIniciais - precoItem;
-                            heroinaJogando.setMoedas(moedaDepois);
+                        if (moedasIniciais >= precoItem) {
+                            heroinaJogando.adicionar_Invetario((Consumiveis) item_Escolhido_USer);
+                            System.out.println("Item Adicionado com sucesso!");
+                            int moedaDepoisCOmpra = moedasIniciais - precoItem;
+                            heroinaJogando.setMoedas(moedaDepoisCOmpra);
+                            if (item_Escolhido_USer instanceof ArmaPrincipal) {
+                                substituir_Armaprincipal((ArmaPrincipal) item_Escolhido_USer, heroinaJogando);
+                                int moedaDepois = moedasIniciais - precoItem;
+                                heroinaJogando.setMoedas(moedaDepois);
+                            }
+                        } else {
+                            System.out.println("Diñero insuficiente");
+
                         }
-                    }else {
-                        System.out.println("Diñero insuficiente");
+
 
                     }
 
-
                 }
 
-            }
 
+            }
+            Menu_Comeco_Missao menuMissao = new Menu_Comeco_Missao();
+            menuMissao.primeiraMissao();
 
         }
-        Menu_Comeco_Missao menuMissao = new Menu_Comeco_Missao();
-        menuMissao.primeiraMissao();
-
     }
 
 
-
-
-
-
-
-
-
-    /**
-     * Método para condicionar os tipos de itens que cada herína pode usar
-     * @param heroina
-     * @param itemHeroinaCompra
-     * @return
-     */
+        /**
+         * Método para condicionar os tipos de itens que cada herína pode usar
+         * @param heroina
+         * @param itemHeroinaCompra
+         * @return
+         */
     public boolean heroinaPodeUsar(Heroinas heroina, ItemHeroina itemHeroinaCompra){
         if (heroina != null) {
             String classeHeroina = heroina.getClass().getSimpleName();
@@ -162,26 +143,22 @@ public class StoreController {
 }
 
 
-    /**
-     * Método para subustirui a arma principal por outra
-     * @param novaArma
-     * @param heroinaJogando
-     * @return
-     */
-    public boolean substituir_Armaprincipal(ArmaPrincipal novaArma, Heroinas heroinaJogando){
-        // Verificar se a arma pode ou não ser selecionada (na lista de heroinas permitidas)
-        if(novaArma instanceof ArmaPrincipal){
-            ArmaPrincipal armaEscolhida = heroinaJogando.getArmas();
+        /**
+         * Método para subustirui a arma principal por outra
+         * @param novaArma
+         * @param heroinaJogando
+         * @return
+         */
+        public boolean substituir_Armaprincipal (ArmaPrincipal novaArma, Heroinas heroinaJogando){
+            // Verificar se a arma pode ou não ser selecionada (na lista de heroinas permitidas)
+            if (novaArma != null) {
 
-            //Verificar se a arma é diferente e não é nula
-            if (novaArma != null && !novaArma.equals(armaEscolhida)) {
-            return true;
+                return true;
             }
+
+            return false;
         }
 
-
-        return false;
     }
 
- }
 

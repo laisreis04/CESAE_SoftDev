@@ -2,14 +2,9 @@ package Domain.Heroina;
 
 import Domain.Itens.ArmaPrincipal;
 import Domain.Itens.Consumiveis;
-import Domain.Itens.Pocao;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public abstract class Heroinas extends Entidade {
 
@@ -60,10 +55,7 @@ public abstract class Heroinas extends Entidade {
 
     public void adicionar_Invetario(Consumiveis itemNovo) throws IOException {
 
-    File ficheiro = new File("src/Files/ItensComprados");
-        FileWriter fw = new FileWriter(ficheiro);
-        fw.append("Item inserido: " + itemNovo);
-        fw.close();
+        this.inventario.add(itemNovo);
 
     }
 
@@ -71,52 +63,8 @@ public abstract class Heroinas extends Entidade {
      * Método para atacar um NPC
      *
      * @param inimigo
-     * @return
      */
-    public abstract String ataqueNPC(NPC inimigo) throws FileNotFoundException;
-
-
-    // usarPocao - imprimir os detalhes da pocao e perguntar qualquer usar + incrmentar vida e força
-
-    /**
-     * Método obrigatório para todas as heroinas para usar poção e restuarar a vida e força
-     */
-    public void usarPocao(Heroinas heroinaEscolhida){
-
-        System.out.println("Gata bora recueperar?\n" +
-                "Aqui esta a lista de poções: ");
-
-        //Ciclo para mostar as poções no invetário e o seu preço:
-        int contador = 1;
-        for(Consumiveis pocaoAtual : inventario){
-            System.out.println(contador + "-" + pocaoAtual.getNome() + "\t|Preço: " + pocaoAtual.getPrecoItem());
-            contador++;
-        }
-
-        Scanner input = new Scanner(System.in);
-        System.out.println("Quer usar alguma?\n" +
-                "É só digitar o numero da poção");
-
-        int opcao = input.nextInt();
-        if(opcao >= 1 && opcao <= inventario.size()){
-           Consumiveis pocaoEscolhida = inventario.get(opcao - 1);
-            if(moedas >= pocaoEscolhida.getPrecoItem()){
-                Pocao usarPocao = (Pocao) pocaoEscolhida;
-                int vidaCurada;
-                vidaCurada = heroinaEscolhida.getVidaAtual() + usarPocao.getVida();
-                //Verificar se a vida não ultrapassa a vida máxima
-                if(heroinaEscolhida.getVidaMax() <= vidaCurada){
-                    usarPocao.setVida(vidaCurada);
-                }
-
-
-            }
-
-        }
-
-    }
-
-    // metodo atacar
+    public abstract void ataqueNPC(NPC inimigo) throws IOException, InterruptedException;
 
 
 

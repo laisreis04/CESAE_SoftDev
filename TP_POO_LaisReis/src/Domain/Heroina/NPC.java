@@ -13,7 +13,6 @@ public class NPC extends Entidade{
         return moedas;
     }
 
-    // método ataque
 
 
 
