@@ -66,7 +66,6 @@ public class StoreController {
 
             //Verificações para saber se aqueloa Heroína pode ou não comprar aquele item, e depois guardar ele no invetário dela.
 
-
             Scanner input = new Scanner(System.in);
 
             System.out.println("Toda luta é necessário uma ajuda, o que você vai querer comprar? ");
@@ -114,10 +113,10 @@ public class StoreController {
 
 
             }
-            Menu_Comeco_Missao menuMissao = new Menu_Comeco_Missao();
-            menuMissao.primeiraMissao();
 
         }
+        Menu_Comeco_Missao menuMissao = new Menu_Comeco_Missao();
+        menuMissao.primeiraMissao();
     }
 
 

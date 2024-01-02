@@ -27,29 +27,22 @@ public class Sala_A {
 
 
 
-        Heroinas heroinaJogando = null;
+        Heroinas cavaleira = new Cavaleira();
+        Heroinas feiticeira = new Feiticeira();
+        Heroinas arqueira = new Arqueira();
 
         //método de ataque ao inimigo - Segue ataques diferente das diferentes classe, quando a heroina foi instaciada.
         NPC inimigoJuizes = new NPC("Juizes", 80,80,40,100);
 
-        System.out.println();
-        System.out.println("A " + heroinaJogando.getNome() + "é atacada");
 
         System.out.println("Começar a batalha?\n1. Sim\n2.Não");
         Scanner input = new Scanner(System.in);
         int opcao = input.nextInt();
 
         if(opcao == 1){
-            if(heroinaJogando.getNome().equals("Sabrina")){
-                Heroinas feiticeira = new Feiticeira();
-                feiticeira.ataqueNPC(inimigoJuizes);
-            } else if (heroinaJogando.getNome().equals("JoanaDark")) {
-                Heroinas cavaleira = new Cavaleira();
+                feiticeira.ataqueNPC(inimigoJuizes);;
                 cavaleira.ataqueNPC(inimigoJuizes);
-            } else if (heroinaJogando.getNome().equals("Xena")) {
-
-            }
-
+                arqueira.ataqueNPC(inimigoJuizes);
 
         }else {
             Sala_FInal.salaFinal();
