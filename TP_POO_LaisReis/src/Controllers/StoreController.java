@@ -112,8 +112,8 @@ public class StoreController {
                         System.out.println("Diñero insuficiente");
 
                     }
-                    ArmaPrincipal armaEscolhida_User = (ArmaPrincipal) itemHeroinas.get(item_Escolhido_USer.getNome());//contador
-                    
+                    ArmaPrincipal armaEscolhida_User = (ArmaPrincipal) itemHeroinas.get(itemCompra);//contador
+
                     //Imprimir
                     armaEscolhida_User.imprimirDetalhes_ArmaPrincipal();
                     if(substituir_Armaprincipal(armaEscolhida_User,heroinaJogando)){
