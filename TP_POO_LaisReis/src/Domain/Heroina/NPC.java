@@ -9,9 +9,17 @@ public class NPC extends Entidade{
         this.moedas = moedas;
     }
 
-
-
+    public int getMoedas() {
+        return moedas;
+    }
 
     // método ataque
+
+    public int atacar(int golpeRecebido){
+
+        int danoTotal = 0;
+        danoTotal -= golpeRecebido;
+        return danoTotal;
+    }
 
 }

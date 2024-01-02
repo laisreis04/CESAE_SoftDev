@@ -49,8 +49,9 @@ public class GameController {
 
     Heroinas heroinaEscolhida = new Heroinas() {
         @Override
-        public void ataqueNPC(NPC inimigo) {
+        public int ataqueNPC(NPC inimigo) {
 
+            return 0;
         }
     };
 

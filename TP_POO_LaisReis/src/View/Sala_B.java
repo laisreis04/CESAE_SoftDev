@@ -11,10 +11,12 @@ import java.io.IOException;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 
+import static java.lang.Thread.sleep;
+
 public class Sala_B {
 
 
-public void salaB() throws IOException {
+public static void salaB() throws IOException, InterruptedException {
 
         Entidade heroina = new Entidade() {
             @Override
@@ -24,12 +26,12 @@ public void salaB() throws IOException {
 
             @Override
             public int getVidaAtual() {
-                return super.getVidaAtual() - 50;
+                return super.getVidaAtual();
             }
 
             @Override
             public int getForca() {
-                return super.getForca() - 80;
+                return super.getForca();
             }
 
             @Override
@@ -77,6 +79,31 @@ public void salaB() throws IOException {
         System.out.println("* ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ►** ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ►** ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ►*");
         System.out.println("\nForça: " + heroina.setForca(heroina.getForca()) + "\nVida: " + heroina.setVidaAtual(heroina.getVidaAtual()));
         System.out.println("* ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ►** ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ►** ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ►*");
+
+    System.out.println("Prepare-se agora quem toma as decisões é o Cavaleiro");
+
+
+        sleep(1000);
+    System.out.println("1...");
+    sleep(1000);
+    System.out.println("2...");
+    sleep(1000);
+    System.out.println("3...");
+    sleep(1000);
+    System.out.println("4...");
+    sleep(1000);
+    System.out.println("5...");
+    sleep(1000);
+    System.out.println("6...");
+    sleep(1000);
+    System.out.println("7...");
+    sleep(1000);
+    System.out.println("8...");
+    sleep(1000);
+    System.out.println("9...");
+    sleep(1000);
+    System.out.println("10...");
+
 
         CavaleiroController cavaleiroNamoro = new CavaleiroController();
         cavaleiroNamoro.decisao_Cavaleiro();

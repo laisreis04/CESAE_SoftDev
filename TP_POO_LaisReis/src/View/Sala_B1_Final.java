@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Sala_B1_Final {
 
-    public void menu_B1_Final() throws IOException {
+    public void menu_B1_Final() throws IOException, InterruptedException {
 
         Scanner input = new Scanner(System.in);
 
@@ -32,8 +32,9 @@ public class Sala_B1_Final {
             case 1:
                 Heroinas heroinaEscolhida = new Heroinas() {
                     @Override
-                    public void ataqueNPC(NPC inimigo) {
+                    public int ataqueNPC(NPC inimigo) {
 
+                        return 0;
                     }
                 };
                 Menu_EncontroBruxaViajente.menuPrimeiroEncontro(heroinaEscolhida);

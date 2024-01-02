@@ -21,7 +21,7 @@ private ArrayList<ItemHeroina> lista;
         this.lista = lista;
     }
 
-    public void primeiraMissao() throws IOException {
+    public void primeiraMissao() throws IOException, InterruptedException {
 
         Scanner input = new Scanner(System.in);
 
@@ -35,17 +35,18 @@ private ArrayList<ItemHeroina> lista;
         System.out.println("3. VER VIDA E FORÇA");
 
         opcao = input.nextInt();
-        Sala_B salaB = new Sala_B();
+
 
         switch (opcao){
 
             case 1:
-
+                Sala_B2.ataqueAoCavaleiroMentiroso();
                 break;
+
             case 2:
-
-                salaB.salaB();
+                Sala_B.salaB();
                 break;
+
             case 3:
                 System.out.println("Escolher caminho:\n");
                 System.out.println("1. CAMINHO DO LAGO VERDE:\n");
@@ -55,7 +56,7 @@ private ArrayList<ItemHeroina> lista;
                     //salaA
 
                 } else {
-                salaB.salaB();
+                Sala_B.salaB();
             }
 
                 break;

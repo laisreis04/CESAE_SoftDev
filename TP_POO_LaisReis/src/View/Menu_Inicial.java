@@ -11,7 +11,7 @@ public class Menu_Inicial {
     public Menu_Inicial(){
 
     }
-    public static void MenuInicial() throws IOException {
+    public static void MenuInicial() throws IOException, InterruptedException {
 
 
 

@@ -37,7 +37,7 @@ public class Jogo {
      * Método para criar Personagem (Força/Vida) e selecionar o toipo de Heroina (Cavaleira, arqiera ou feiticeira)
      * @throws IOException
      */
-    public void criarPersonagem() throws IOException {
+    public void criarPersonagem() throws IOException, InterruptedException {
 
         Scanner input = new Scanner(System.in);
 

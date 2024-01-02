@@ -13,7 +13,7 @@ public class Menu_EncontroBruxaViajente {
 
 
 
-public static void menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOException {
+public static void menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOException, InterruptedException {
 
     GameController criacao = new GameController();
 

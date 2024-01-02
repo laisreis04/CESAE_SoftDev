@@ -5,6 +5,7 @@ import Domain.Itens.Consumiveis;
 import Domain.Itens.Pocao;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -68,9 +69,11 @@ public abstract class Heroinas extends Entidade {
 
     /**
      * Método para atacar um NPC
+     *
      * @param inimigo
+     * @return
      */
-    public abstract void ataqueNPC(NPC inimigo);
+    public abstract int ataqueNPC(NPC inimigo) throws FileNotFoundException;
 
 
     // usarPocao - imprimir os detalhes da pocao e perguntar qualquer usar + incrmentar vida e força

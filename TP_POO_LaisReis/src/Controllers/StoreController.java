@@ -43,7 +43,7 @@ public class StoreController {
      * Método para Imprimir os detalhes dos itens da Loja
      * @throws FileNotFoundException
      */
-    public void exibirDetalhesStore() throws IOException {
+    public void exibirDetalhesStore() throws IOException, InterruptedException {
 
         TXTReader.imprimirFicheiro("src/Files/WitchStore_logo");
         System.out.println();

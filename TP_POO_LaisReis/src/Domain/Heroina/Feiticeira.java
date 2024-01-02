@@ -1,8 +1,8 @@
 package Domain.Heroina;
 
-import Domain.Itens.ArmaPrincipal;
+import java.io.FileNotFoundException;
 
-public class Feiticeira extends Heroinas{
+public class Feiticeira extends Heroinas {
 
     public Feiticeira(String nome, int vidaMax, int vidaAtual, int forca, int nivel, int moedas) {
         super(nome, vidaMax, vidaAtual, forca, nivel, moedas);
@@ -16,9 +16,38 @@ public class Feiticeira extends Heroinas{
     }
 
     @Override
-    public void ataqueNPC(NPC inimigo) {
+    public int ataqueNPC(NPC inimigo) throws FileNotFoundException {
+
+        int ganhador = 0;
+
+        while (getVidaAtual() == 0 || inimigo.getVidaAtual() == 0) {
+            //Heroina ataca primero
+            int danoHeroina = getForca() + getArmas().getAtaque();
+
+            //Dano no inimigo
+            int danoInimigo = inimigo.atacar(danoHeroina);
+
+            //danos nas personagens
+            inimigo.setVidaAtual(inimigo.getVidaAtual() - danoInimigo);
+            //heroina
+            int heroinaVidaTotal = setVidaAtual(getVidaAtual() - danoHeroina);
+
+            if(heroinaVidaTotal > 0){
+                int moedasHeroina = setMoedas(getMoedas() + inimigo.getMoedas());
+                return  ganhador = heroinaVidaTotal;
+            }else {
+                return ganhador = inimigo.getVidaAtual();
+
+            }
+
+        }
+        return ganhador;
+        }
+
 
     }
 
 
-}
+
+
+

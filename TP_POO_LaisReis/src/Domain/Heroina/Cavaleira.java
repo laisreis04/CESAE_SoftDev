@@ -1,7 +1,5 @@
 package Domain.Heroina;
 
-import Domain.Itens.ArmaPrincipal;
-
 public class Cavaleira extends Heroinas {
 
     public Cavaleira(String nome, int vidaMax, int vidaAtual, int forca, int nivel, int moedas) {
@@ -19,16 +17,33 @@ public class Cavaleira extends Heroinas {
 
     }
 
+
+
     @Override
-    public void ataqueNPC(NPC inimigo) {
+    public int ataqueNPC(NPC inimigo) {
 
-        Cavaleira cavaleiraLutando = new Cavaleira();
+        // Inimigo ataca primeiro
+        int danoInimigo = (int) (inimigo.getForca() * 0.8); // Apenas 80% da força inicial do inimigo
 
-        if(cavaleiraLutando.getForca() > inimigo.getForca()){
-            cavaleiraLutando.setForca(cavaleiraLutando.getForca() - (int) (inimigo.getForca() * 0.8));
-        } else if (cavaleiraLutando.getForca() <= inimigo.getForca()) {
-            inimigo.setForca(inimigo.getForca() - 50);
+        // Calcula dano no cavaleiro
+        int danoHeroina = inimigo.atacar(danoInimigo); // Reduz a vida do cavaleiro
+
+        // dano nas personagens
+        //Inimigo:
+        int inimigoTotal = inimigo.setVidaAtual(inimigo.getVidaAtual() - danoInimigo);
+
+        //Heroina:
+        int heroinaVidaTotal = setVidaAtual(getVidaAtual() - danoHeroina);
+        setForca(getForca() - danoInimigo);
+
+
+        if(heroinaVidaTotal > inimigoTotal){
+            return heroinaVidaTotal;
+
         }
+
+
+        return danoInimigo;
 
     }
 

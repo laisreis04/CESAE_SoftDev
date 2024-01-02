@@ -13,14 +13,13 @@ public class ArmaPrincipal extends ItemHeroina {
 
 
 
+
     public ArmaPrincipal(String nome, int precoItem, int ataque, int ataqueEspecial) throws FileNotFoundException {
         super(nome, precoItem);
         this.ataque = ataque;
         this.ataqueEspecial = ataqueEspecial;
 
     }
-
-    //Colocar o método de ataque (String NPC)
 
 
 
@@ -31,5 +30,14 @@ public class ArmaPrincipal extends ItemHeroina {
     }
 
 
+    public int getAtaque() throws FileNotFoundException {
 
+
+        return ataque;
+
+    }
+
+    public int getAtaqueEspecial() {
+        return ataqueEspecial;
+    }
 }
