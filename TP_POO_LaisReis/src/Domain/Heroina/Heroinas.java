@@ -73,7 +73,7 @@ public abstract class Heroinas extends Entidade {
      * @param inimigo
      * @return
      */
-    public abstract int ataqueNPC(NPC inimigo) throws FileNotFoundException;
+    public abstract String ataqueNPC(NPC inimigo) throws FileNotFoundException;
 
 
     // usarPocao - imprimir os detalhes da pocao e perguntar qualquer usar + incrmentar vida e força

@@ -20,17 +20,18 @@ import java.util.Scanner;
 public class StoreController {
 
     private ArrayList<ItemHeroina> itemHeroinas;
-    private Consumiveis Consumiveis;
 
-    private GameController difuculdadeEscolhida;
 
     private Heroinas heroinaJogando;
 
+
     GameController criacao = new GameController();
 
-    public StoreController(Domain.Itens.Consumiveis consumiveis, GameController difuculdadeEscolhida, Heroinas heroinaJogando) throws FileNotFoundException {
-        Consumiveis = consumiveis;
-        this.difuculdadeEscolhida = criacao;
+    public StoreController() throws FileNotFoundException {
+    }
+
+    public StoreController(Consumiveis consumiveis) throws FileNotFoundException {
+
         this.heroinaJogando = criacao.heroinaEscolhida;
     }
 
@@ -101,31 +102,24 @@ public class StoreController {
                 if (itemCompra == contador){
 
                     int precoItem = itemHeroinas.getFirst().getPrecoItem();
-                    int moedasIniciais = difuculdadeEscolhida.getMoeda();
-                    heroinaJogando.setMoedas(moedasIniciais);
+                    int moedasIniciais = heroinaJogando.getMoedas();
+
+
                     if(moedasIniciais >= precoItem){
-                        heroinaJogando.adicionar_Invetario((Consumiveis) item_Escolhido_USer);
+                       heroinaJogando.adicionar_Invetario((Consumiveis) item_Escolhido_USer);
                         System.out.println("Item Adicionado com sucesso!");
-                        moedasIniciais -= precoItem;
-                        heroinaJogando.setMoedas(moedasIniciais);
+                        int moedaDepoisCOmpra = moedasIniciais - precoItem;
+                        heroinaJogando.setMoedas(moedaDepoisCOmpra);
+                        if(item_Escolhido_USer instanceof ArmaPrincipal){
+                                substituir_Armaprincipal((ArmaPrincipal) item_Escolhido_USer,heroinaJogando);
+                            int moedaDepois = moedasIniciais - precoItem;
+                            heroinaJogando.setMoedas(moedaDepois);
+                        }
                     }else {
                         System.out.println("Diñero insuficiente");
 
                     }
-                    ArmaPrincipal armaEscolhida_User = (ArmaPrincipal) itemHeroinas.get(itemCompra);//contador
 
-                    //Imprimir
-                    armaEscolhida_User.imprimirDetalhes_ArmaPrincipal();
-                    if(substituir_Armaprincipal(armaEscolhida_User,heroinaJogando)){
-                        if(moedasIniciais >= precoItem){
-                            heroinaJogando.setArmas(armaEscolhida_User);
-                            System.out.println("Arma Selecionada com Sucesso");
-                            moedasIniciais -= precoItem;
-                            heroinaJogando.setMoedas(moedasIniciais);
-
-                        }
-
-                    }
 
                 }
 

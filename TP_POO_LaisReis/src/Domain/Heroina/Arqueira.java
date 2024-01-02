@@ -14,7 +14,7 @@ public class Arqueira extends Heroinas{
     }
 
     @Override
-    public int ataqueNPC(NPC inimigo) throws FileNotFoundException {
+    public String ataqueNPC(NPC inimigo) throws FileNotFoundException {
 
         // Heroina ataca primeiro
         int danoHeroina = getForca() + getArmas().getAtaque();
@@ -30,7 +30,7 @@ public class Arqueira extends Heroinas{
         //inimigo
         inimigo.setVidaAtual(inimigo.getVidaAtual() - danoInimigo);
 
-        return danoHeroina;
+        return String.valueOf(danoHeroina);
     }
 
 

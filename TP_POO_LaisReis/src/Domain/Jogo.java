@@ -59,64 +59,61 @@ public class Jogo {
                 "Prepare-se para a aventura e a luta pela justiça, pois o destino de Salem está em suas mãos!\n");
 
         String nome;
-        System.out.println("╔═.✵.══════════╗\n");
-        System.out.println();
-        System.out.println("Vamos montar a sua Guerreira");
-
-
-        //Nome
-        System.out.println("Qual vai ser o nome dela? ");
-        nome = input.next();
-        setNomeHeroina(nome);
-        System.out.println();
 
 
 
-            System.out.println("╚══════════.✵.═╝");  //40*
-            System.out.println("Que tipo de heroina quer ser?");
-            System.out.println();
-
-            System.out.println("1. Cavaleira");
-            System.out.println("2. Feiticeira");
-            System.out.println("3. Arqueira");
-            opcao = input.nextInt();
-            System.out.println();
-
-            //Dificuldade
-            System.out.println("****************************************");  //40*
-            System.out.println("Qual o nível de dificuldade?\n");
-            GameController dificuldade = new GameController();
-            dificuldade.parametros_Dificuldade();
 
 
-            switch (opcao) {
+            do{
 
-                case 1:
-                    System.out.println("**** CAVALEIRA SELECIONADA ****");
-                    System.out.println();
-                    setNomeHeroina(nome);
-                    Heroinas tipoHeroina = new Cavaleira(nome, dificuldade.getVidaMax(), dificuldade.getVidaAtual(), dificuldade.getForca(), 1, dificuldade.getMoeda());
-                    Menu_EncontroBruxaViajente.menuPrimeiroEncontro(setHeroinaEscolhida(tipoHeroina));
-                    break;
-                case 2:
-                    System.out.println("**** FEITICEIRA SELECIONADA ****");
-                    System.out.println();
-                    setNomeHeroina(nome);
-                    Heroinas tipoHeroina1 = new Feiticeira(nome, dificuldade.getVidaMax(), dificuldade.getVidaAtual(), dificuldade.getForca(), 1, dificuldade.getMoeda());
-                    Menu_EncontroBruxaViajente.menuPrimeiroEncontro(setHeroinaEscolhida(tipoHeroina1));
-                    break;
-                case 3:
-                    System.out.println("**** ARQUEIRA SELECIONADA ****");
-                    System.out.println();
-                    setNomeHeroina(nome);
-                    Heroinas tipoHeroina3 = new Arqueira(nome, dificuldade.getVidaMax(), dificuldade.getVidaAtual(), dificuldade.getForca(), 1, dificuldade.getMoeda());
-                    Menu_EncontroBruxaViajente.menuPrimeiroEncontro(setHeroinaEscolhida(tipoHeroina3));
-                    break;
+                System.out.println("╔═.✵.══════════════════════════════════╗\n");
+                System.out.println("Que tipo de heroina quer ser?");
+                System.out.println();
 
-                default:
-                    System.out.println("Opção inválida");
+                System.out.println("1. Cavaleira");
+                System.out.println("2. Feiticeira");
+                System.out.println("3. Arqueira");
+                System.out.println("0. Sair");
+                opcao = input.nextInt();
+                System.out.println();
+                System.out.println("╚════════════════════════════════.✵.═╝");  //40*
 
-            }
+                //Dificuldade
+                System.out.println("╔═.✵.══════════════════════════════════╗\n");
+                System.out.println("Qual o nível de dificuldade?\n");
+                GameController dificuldade = new GameController();
+                dificuldade.parametros_Dificuldade();
+                System.out.println("╚════════════════════════════════.✵.═╝");  //40*
+
+
+                switch (opcao) {
+
+                    case 1:
+                        System.out.println("**** CAVALEIRA SELECIONADA ****");
+                        System.out.println();
+                        Heroinas tipoHeroina = new Cavaleira("Xena", dificuldade.getVidaMax(), dificuldade.getVidaAtual(), dificuldade.getForca(), 1, dificuldade.getMoeda());
+                        Menu_EncontroBruxaViajente.menuPrimeiroEncontro(setHeroinaEscolhida(tipoHeroina));
+                        break;
+                    case 2:
+                        System.out.println("**** FEITICEIRA SELECIONADA ****");
+                        System.out.println();
+                        Heroinas tipoHeroina1 = new Feiticeira("Sabrina", dificuldade.getVidaMax(), dificuldade.getVidaAtual(), dificuldade.getForca(), 1, dificuldade.getMoeda());
+                        Menu_EncontroBruxaViajente.menuPrimeiroEncontro(setHeroinaEscolhida(tipoHeroina1));
+                        break;
+                    case 3:
+                        System.out.println("**** ARQUEIRA SELECIONADA ****");
+                        System.out.println();
+                        Heroinas tipoHeroina3 = new Arqueira("nome", dificuldade.getVidaMax(), dificuldade.getVidaAtual(), dificuldade.getForca(), 1, dificuldade.getMoeda());
+                        Menu_EncontroBruxaViajente.menuPrimeiroEncontro(setHeroinaEscolhida(tipoHeroina3));
+                        break;
+
+                    default:
+                        System.out.println("Opção inválida");
+
+                }
+
+            }while (opcao != 0);
+
 
 
 

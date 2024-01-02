@@ -20,7 +20,7 @@ public class Cavaleira extends Heroinas {
 
 
     @Override
-    public int ataqueNPC(NPC inimigo) {
+    public String ataqueNPC(NPC inimigo) {
 
         // Inimigo ataca primeiro
         int danoInimigo = (int) (inimigo.getForca() * 0.8); // Apenas 80% da força inicial do inimigo
@@ -38,12 +38,12 @@ public class Cavaleira extends Heroinas {
 
 
         if(heroinaVidaTotal > inimigoTotal){
-            return heroinaVidaTotal;
+            return String.valueOf(heroinaVidaTotal);
 
         }
 
 
-        return danoInimigo;
+        return String.valueOf(danoInimigo);
 
     }
 

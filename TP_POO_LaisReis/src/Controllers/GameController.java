@@ -18,6 +18,9 @@ public class GameController {
 
 
 
+
+
+
     public GameController() throws FileNotFoundException{
 
         WitchStoreRepository repository = new WitchStoreRepository("src/Files/ItensHeroiRPG.csv");
@@ -25,7 +28,7 @@ public class GameController {
 
     }
 
-    Entidade entidadeEscolhida = new Entidade() {
+    static Entidade heroina = new Entidade() {
         @Override
         public int getVidaMax() {
             return super.getVidaMax();
@@ -49,9 +52,9 @@ public class GameController {
 
     Heroinas heroinaEscolhida = new Heroinas() {
         @Override
-        public int ataqueNPC(NPC inimigo) {
+        public String ataqueNPC(NPC inimigo) {
 
-            return 0;
+            return String.valueOf(inimigo);
         }
     };
 
@@ -89,23 +92,25 @@ public class GameController {
 
 
         //Set de vida Máxima
-        entidadeEscolhida.setVidaMax(pontosIniciais);
+        heroina.setVidaMax(pontosIniciais);
 
 
         if(dificuldade == 1){
-            int forca_Facil = entidadeEscolhida.setForca(forca);
+            int vidaMax = heroina.setVidaMax(300);
+            int forca_Facil = heroina.setForca(forca);
             System.out.println("Sua força total é: " + forca_Facil + "pw");
-            int moedas_Facil = heroinaEscolhida.setMoedas(80);
+            int moedas_Facil =heroinaEscolhida.setMoedas(80);
             System.out.println("Total de moedas: " + moedas_Facil + "diñero");
-            int vida_Facil = entidadeEscolhida.setVidaAtual(pontosIniciais - forca_Facil);
+            int vida_Facil = heroina.setVidaAtual(vidaMax - forca);
             System.out.println("Total de Vida: " + vida_Facil + "pts");
 
         } else if (dificuldade == 2) {
-            int forca_Dificil = entidadeEscolhida.setForca(forca);
+            int vidaMax = heroina.setVidaMax(220);
+            int forca_Dificil = heroina.setForca(forca);
             System.out.println("Sua força total é: " + forca_Dificil + "pw");
             int moedas_dificil = heroinaEscolhida.setMoedas(40);
             System.out.println("Total de moedas: " + moedas_dificil + "diñero");
-            int vida_Dificil = entidadeEscolhida.setVidaAtual(pontosIniciais - forca_Dificil);
+            int vida_Dificil = heroina.setVidaAtual(vidaMax - forca);
             System.out.println("Total de Vida: " + vida_Dificil + "pts");
 
         }else {
@@ -117,23 +122,28 @@ public class GameController {
     }
 
 
-        public int getVidaMax(){
-        return entidadeEscolhida.getVidaMax();
+        public static int getVidaMax(){
+        return heroina.getVidaMax();
         }
 
-        public int getForca(){
-        return entidadeEscolhida.getForca();
+        public static int getForca(){
+        return heroina.getForca();
         }
 
         public int getMoeda(){
         return heroinaEscolhida.getMoedas();
         }
 
-        public int getVidaAtual(){
+        public static int getVidaAtual(){
         return  getVidaMax();
         }
 
 
+public static void exibir_Vida_Forca(){
 
+    System.out.println("Sua vida: " + getVidaAtual());
+    System.out.println("Sua força: " + getForca());
+
+}
 
 }

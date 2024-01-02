@@ -1,8 +1,14 @@
 package View;
 
+import Domain.Heroina.Heroinas;
+import Domain.Heroina.NPC;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class Sala_A {
 
-    public void menuSala_A(){
+    public static void menuSala_A() throws IOException, InterruptedException {
 
 
         System.out.println("A heroína, seguindo o caminho em direção ao Lago Verde, adentra uma paisagem serena e exuberante, \n" +
@@ -14,6 +20,23 @@ public class Sala_A {
                 "\n" +
                 "De repente, um estrondo ecoa através da clareira enquanto a terra treme. Um ataque surpresa se desencadeia, vindo \n" +
                 "de uma fonte desconhecida. A heroína, com sua agilidade e coragem, rapidamente se prepara para enfrentar essa nova ameaça.");
+
+
+        Heroinas heroinaAtacando = new Heroinas() {
+            @Override
+            public String ataqueNPC(NPC inimigo) throws FileNotFoundException {
+                return String.valueOf(inimigo);
+            }
+        };
+
+
+        //método de ataque ao inimigo - Segue ataques diferente das diferentes classe, quando a heroina foi instaciada.
+        NPC inimigoJuizes = new NPC("Juizes", 150,150,80,100);
+        heroinaAtacando.ataqueNPC(inimigoJuizes);
+
+        Sala_FInal.salaFinal();
+
+
 
 
 

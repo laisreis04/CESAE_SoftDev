@@ -32,9 +32,9 @@ public class Sala_B1_Final {
             case 1:
                 Heroinas heroinaEscolhida = new Heroinas() {
                     @Override
-                    public int ataqueNPC(NPC inimigo) {
+                    public String ataqueNPC(NPC inimigo) {
 
-                        return 0;
+                        return String.valueOf(inimigo);
                     }
                 };
                 Menu_EncontroBruxaViajente.menuPrimeiroEncontro(heroinaEscolhida);

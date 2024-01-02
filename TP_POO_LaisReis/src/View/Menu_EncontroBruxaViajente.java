@@ -35,7 +35,6 @@ public static void menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOExce
 
 
 
-
     //Colocar aqui o menu da dificuldade
 
 

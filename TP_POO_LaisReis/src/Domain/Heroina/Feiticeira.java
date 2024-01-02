@@ -16,9 +16,10 @@ public class Feiticeira extends Heroinas {
     }
 
     @Override
-    public int ataqueNPC(NPC inimigo) throws FileNotFoundException {
+    public String ataqueNPC(NPC inimigo) throws FileNotFoundException {
 
         int ganhador = 0;
+
 
         while (getVidaAtual() == 0 || inimigo.getVidaAtual() == 0) {
             //Heroina ataca primero
@@ -33,15 +34,15 @@ public class Feiticeira extends Heroinas {
             int heroinaVidaTotal = setVidaAtual(getVidaAtual() - danoHeroina);
 
             if(heroinaVidaTotal > 0){
-                int moedasHeroina = setMoedas(getMoedas() + inimigo.getMoedas());
-                return  ganhador = heroinaVidaTotal;
+                setMoedas(getMoedas() + inimigo.getMoedas());
+                return String.valueOf(ganhador);
             }else {
-                return ganhador = inimigo.getVidaAtual();
+                return String.valueOf(ganhador);
 
             }
 
         }
-        return ganhador;
+        return  ganhador + getNome();
         }
 
 

@@ -15,11 +15,6 @@ public class NPC extends Entidade{
 
     // método ataque
 
-    public int atacar(int golpeRecebido){
 
-        int danoTotal = 0;
-        danoTotal -= golpeRecebido;
-        return danoTotal;
-    }
 
 }

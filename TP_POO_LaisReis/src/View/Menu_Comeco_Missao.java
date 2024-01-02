@@ -1,5 +1,6 @@
 package View;
 
+import Controllers.GameController;
 import Domain.Heroina.Heroinas;
 import Domain.Heroina.NPC;
 import Domain.Itens.ItemHeroina;
@@ -40,7 +41,7 @@ private ArrayList<ItemHeroina> lista;
         switch (opcao){
 
             case 1:
-                Sala_B2.ataqueAoCavaleiroMentiroso();
+               Sala_A.menuSala_A();
                 break;
 
             case 2:
@@ -48,13 +49,13 @@ private ArrayList<ItemHeroina> lista;
                 break;
 
             case 3:
+                GameController.exibir_Vida_Forca();
                 System.out.println("Escolher caminho:\n");
                 System.out.println("1. CAMINHO DO LAGO VERDE:\n");
                 System.out.println("2. TRILHA VILA CHÃ:\n");
                 opcao = input.nextInt();
                 if(opcao == 1){
-                    //salaA
-
+                    Sala_A.menuSala_A();
                 } else {
                 Sala_B.salaB();
             }

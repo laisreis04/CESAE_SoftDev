@@ -22,9 +22,9 @@ public class CavaleiroController {
 
         Heroinas heroinaJogando = new Heroinas() {
             @Override
-            public int ataqueNPC(NPC inimigo) {
+            public String ataqueNPC(NPC inimigo) {
 
-                return 0;
+                return String.valueOf(inimigo);
             }
         };
 
@@ -52,6 +52,8 @@ public class CavaleiroController {
                     "\n" +
                     "A cena fica permeada por um sentimento de tristeza e perda, lembrando a fragilidade das relações e o preço muitas vezes alto das discordâncias.\n");
             System.out.println();
+
+            //Sala para a escolha random - pode ganhar ou perder (Vai para o game over)
             Sala_B1_Final salaB1Final = new Sala_B1_Final();
             salaB1Final.menu_B1_Final();
 
@@ -63,6 +65,9 @@ public class CavaleiroController {
                     "A heroína, sentindo-se profundamente perturbada pela perda momentânea de controle sobre a situação, é tomada por uma ira intensa.\n" +
                     "\n");
 
+
+            //Indicar sala para o proximo cenário
+            //Sala B2 - ataque ao cavaleiro
             Sala_B2 salaB2 = new Sala_B2();
             salaB2.ataqueAoCavaleiroMentiroso();
 

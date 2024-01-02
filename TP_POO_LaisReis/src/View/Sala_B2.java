@@ -23,9 +23,9 @@ public static void ataqueAoCavaleiroMentiroso() throws IOException, InterruptedE
 
     Heroinas ataque = new Heroinas() {
         @Override
-        public int ataqueNPC(NPC inimigo) {
+        public String ataqueNPC(NPC inimigo) {
 
-            return 0;
+            return String.valueOf(inimigo);
         }
     };
     NPC inimigo = new NPC("Cavaleiro Mentiroso", 150, 50, 120, 80);
