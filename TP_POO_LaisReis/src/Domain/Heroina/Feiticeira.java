@@ -33,11 +33,11 @@ public class Feiticeira extends Heroinas {
                 this.setVidaAtual(this.getVidaAtual() - inimigo.getForca());
             }
             if(inimigo.getVidaAtual() == 0){
-                ganhador = this.getNome();
                 this.setMoedas(this.getMoedas() +inimigo.getMoedas());
                 System.out.println("Você venceu a batalha!");
                 System.out.println("E ainda ficou com as moedas dele ( " + inimigo.getMoedas() + " )");
                 System.out.println("Total: " + (this.getMoedas() + inimigo.getMoedas()));
+                ganhador = this.getNome();
                 Sala_FInal.salaFinal();
 
 

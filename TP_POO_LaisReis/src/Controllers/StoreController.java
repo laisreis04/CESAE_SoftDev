@@ -54,6 +54,7 @@ public class StoreController {
             if (!arrayIndexAletorio.contains(indexAleatorio)) {
                 arrayIndexAletorio.add(indexAleatorio);
             }
+
             //Para impirmir o Item que estar "guardado" no index aleatorio
 
         }
@@ -83,7 +84,6 @@ public class StoreController {
                     //Armazenar numa variavel, para depois fazer as comprações (if's)
                     ItemHeroina item_Escolhido_USer = itemHeroinas.get(itemCompra);//estava o contador aqui
 
-
                     // if pode usar e comprar
                     if (itemCompra == contador) {
 
@@ -92,10 +92,12 @@ public class StoreController {
 
 
                         if (moedasIniciais >= precoItem) {
+                            // TODO: validar se é consumivel
                             heroinaJogando.adicionar_Invetario((Consumiveis) item_Escolhido_USer);
                             System.out.println("Item Adicionado com sucesso!");
                             int moedaDepoisCOmpra = moedasIniciais - precoItem;
                             heroinaJogando.setMoedas(moedaDepoisCOmpra);
+
                             if (item_Escolhido_USer instanceof ArmaPrincipal) {
                                 substituir_Armaprincipal((ArmaPrincipal) item_Escolhido_USer, heroinaJogando);
                                 int moedaDepois = moedasIniciais - precoItem;

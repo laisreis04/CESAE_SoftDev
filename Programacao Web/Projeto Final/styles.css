@@ -171,6 +171,7 @@ font-family:'Hedvig Letters Sans', sans-serif;;
 font-size: 16px;
 margin-top: 20px;
 letter-spacing: 1px;
+margin-right: 18px;
 
 }
 
@@ -186,6 +187,14 @@ letter-spacing: 1px;
 /*Animações Textos*/
 
 
+/*Skateboard Page*/
+
+.video{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
 
 
 
