@@ -1,4 +1,4 @@
-package org.example;
+package Ex_01;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,8 +10,8 @@ class CalculatorTest {
     Calculator calculator;
 
     @BeforeEach
-    public void setCalculator(){
-        calculator = calculator;
+    public void setUp(){
+        calculator = new Calculator();
     }
 
     @Test
@@ -21,4 +21,10 @@ class CalculatorTest {
 
     }
 
+    @Test
+    public void subtractTest(){
+
+       assertEquals(5, calculator.subtract(10,5));
+
+    }
 }
