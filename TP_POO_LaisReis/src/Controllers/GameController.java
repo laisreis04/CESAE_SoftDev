@@ -74,10 +74,51 @@ public class GameController {
 
         System.out.println("Nem tudo são flores, temos que distribuir a sua força.\n" +
                 "Mas como nem tudo são flores, fica a tabela de pontos:\n" +
-                "1pw Força = 5 Pontos Iniciais");
+                "1pw Força = 5 Pontos Iniciais\n");
 
         System.out.print("Força: ");
         forca = input.nextInt() * 5;
+
+        System.out.println("Escolha sua heroína:");
+        System.out.println("1. Cavaleira");
+        System.out.println("2. Feiticeira");
+        System.out.println("3. Arqueira");
+
+        int opcaoHeroina = input.nextInt();
+
+//        int vidaInicial = 0;
+//        int forcaInicial = 0;
+//
+//
+//        switch (dificuldade) {
+//            case 1: // Fácil
+//                vidaInicial = 300;
+//                forcaInicial = 60;
+//
+//                return new Cavaleira("Xena", dificuldade,)
+//                break;
+//            case 2: // Difícil
+//                vidaInicial = 220;
+//                forcaInicial = 40;
+//                break;
+//            default:
+//                System.out.println("Opção de dificuldade inválida!");
+//                break;
+//        }
+//
+//        Heroinas heroinaEscolhida1 = heroinaEscolhida;
+//        public static Heroinas heroinaEscolhida(Heroinas heroinaEscolhida){
+//
+//
+//
+//        }
+
+
+
+
+
+
+
 
 
         //Set de vida Máxima
