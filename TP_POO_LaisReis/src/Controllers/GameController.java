@@ -1,9 +1,7 @@
 package Controllers;
 
 import Domain.Heroina.*;
-import Domain.Itens.ItemHeroina;
-import Repository.WitchStoreRepository;
-import View.Menu_EncontroBruxaViajente;
+
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
