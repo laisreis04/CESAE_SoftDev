@@ -76,9 +76,23 @@ public class AnimalTest {
       //Animal deixa de ter fome
       assertFalse(animal1.estaComFome());
 
-      //Animal
+      //Animal continua com fome
+        assertTrue(animal1.estaComFome());
 
-        
+        //Animal come
+        animal1.comer(Alimento.FRUTAS);
+
+        //Já comeu e não tem mais fome
+        assertFalse(animal1.estaComFome());
+
+        //retornar um alimento que ele coma
+
+        animal1.comer(Alimento.VEGETAIS);
+        assertTrue(animal1.estaComFome());
+
+
+
+
 
 
     }
