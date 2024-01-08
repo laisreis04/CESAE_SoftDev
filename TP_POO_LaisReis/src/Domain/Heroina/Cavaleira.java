@@ -22,7 +22,10 @@ public class Cavaleira extends Heroinas {
 
     }
 
-
+    @Override
+    public Heroinas criarHeroina() {
+        return new Cavaleira(this.getNome(),this.getVidaMax(),this.getVidaAtual(),this.getForca(),this.getNivel(),this.getMoedas());
+    }
 
     @Override
     public void ataqueNPC(NPC inimigo) throws IOException, InterruptedException {

@@ -21,7 +21,8 @@ public abstract class Heroinas extends Entidade {
         this.inventario = new ArrayList<>();
     }
 
-    public Heroinas() {
+    public Heroinas () {
+
 
     }
 
@@ -65,6 +66,11 @@ public abstract class Heroinas extends Entidade {
      * @param inimigo
      */
     public abstract void ataqueNPC(NPC inimigo) throws IOException, InterruptedException;
+
+
+
+
+     public abstract Heroinas criarHeroina();
 
 
 

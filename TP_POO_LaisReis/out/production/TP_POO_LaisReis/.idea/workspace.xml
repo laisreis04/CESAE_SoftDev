@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="662dfe34-64f3-4da1-9cbf-9e80ca78d1b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Ficha_JUnit/src/main/java/Ex_04/Loja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/build/classes/java/main/Ex_01/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/build/classes/java/main/Ex_01/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/build/classes/java/main/Ex_01/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/build/classes/java/main/Ex_01/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/build/classes/java/main/Ex_02/StringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/build/classes/java/main/Ex_02/StringUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/build/classes/java/test/Ex_01/CalculatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/build/classes/java/test/Ex_01/CalculatorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/build/classes/java/test/Ex_02/StringUtilsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/build/classes/java/test/Ex_02/StringUtilsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/src/main/java/Ex_03/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/src/main/java/Ex_03/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ficha_JUnit/src/test/java/Ex_03/AnimalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ficha_JUnit/src/test/java/Ex_03/AnimalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/GameController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2afXnXiW9Uqb5GAotdqp1vgGHWR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/softdev/Documents/Lais Reis/CESAE_SoftDev/TP_POO_LaisReis"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="662dfe34-64f3-4da1-9cbf-9e80ca78d1b6" name="Changes" comment="" />
+      <created>1704710774357</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704710774357</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

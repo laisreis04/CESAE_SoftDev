@@ -1,6 +1,9 @@
 package Controllers;
 
 import Domain.Heroina.*;
+import Domain.Itens.ItemHeroina;
+import Repository.WitchStoreRepository;
+import View.Menu_EncontroBruxaViajente;
 
 
 import java.io.FileNotFoundException;
@@ -45,7 +48,7 @@ public class GameController {
     };
 
 
-    public void parametros_Dificuldade() throws IOException, InterruptedException {
+    public Heroinas parametros_Dificuldade() throws IOException, InterruptedException {
 
         Scanner input = new Scanner(System.in);
 
@@ -112,11 +115,8 @@ public class GameController {
 //        }
 
 
-
-
-
-
-
+        System.out.println("Qual o seu nome ?");
+        String nome = input.next();
 
 
         //Set de vida Máxima
@@ -144,6 +144,8 @@ public class GameController {
         System.out.println("╚════════════════════════════════.✵.═╝");  //40*
 
 
+        Heroinas tipoHeroina = null;
+
         switch (opcao) {
 
             case 1:
@@ -157,7 +159,7 @@ public class GameController {
                     System.out.println("Total de moedas: " + 80 + "diñero");
                     int vida_Facil = heroina.setVidaAtual(vidaMax - forca);
                     System.out.println("Total de Vida: " + vida_Facil + "pts");
-                    Heroinas tipoHeroina = new Cavaleira("JoanaDark", vidaMax, vida_Facil, forca_Facil, 1, moeda_facil);
+                    tipoHeroina = new Cavaleira(nome, vidaMax, vidaAtual, forca_Facil, 1, moeda_facil);
                     Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina);
 
                 } else if (dificuldade == 2) {
@@ -168,7 +170,7 @@ public class GameController {
                     System.out.println("Total de moedas: " + moedas_dificil + "diñero");
                     int vida_Dificil = heroina.setVidaAtual(vidaMax - forca);
                     System.out.println("Total de Vida: " + vida_Dificil + "pts");
-                    Heroinas tipoHeroina = new Cavaleira("JoanaDark", vidaMax, vida_Dificil, forca_Dificil, 1, moedas_dificil);
+                    tipoHeroina = new Cavaleira(nome, vidaMax, vida_Dificil, forca_Dificil, 1, moedas_dificil);
                     Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina);
 
                 } else {
@@ -190,8 +192,8 @@ public class GameController {
                     System.out.println("Total de moedas: " + moedas_Facil + "diñero");
                     int vida_Facil = heroina.setVidaAtual(vidaMax - forca);
                     System.out.println("Total de Vida: " + vida_Facil + "pts");
-                    Heroinas tipoHeroina1 = new Feiticeira("Sabrina", vidaMax, vida_Facil, forca_Facil, 1, moedas_Facil);
-                    Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina1);
+                    tipoHeroina = new Feiticeira(nome, vidaMax, vida_Facil, forca_Facil, 1, moedas_Facil);
+                    Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina);
 
                 } else if (dificuldade == 2) {
                     int vidaMax = heroina.setVidaMax(220);
@@ -201,8 +203,8 @@ public class GameController {
                     System.out.println("Total de moedas: " + moedas_dificil + "diñero");
                     int vida_Dificil = heroina.setVidaAtual(vidaMax - forca);
                     System.out.println("Total de Vida: " + vida_Dificil + "pts");
-                    Heroinas tipoHeroina1 = new Feiticeira("Sabrina", vidaMax, vida_Dificil, forca_Dificil, 1, moedas_dificil);
-                    Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina1);
+                    tipoHeroina = new Feiticeira(nome, vidaMax, vida_Dificil, forca_Dificil, 1, moedas_dificil);
+                    Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina);
 
                 } else {
 
@@ -223,8 +225,8 @@ public class GameController {
                     System.out.println("Total de moedas: " + moedas_Facil + "diñero");
                     int vida_Facil = heroina.setVidaAtual(vidaMax - forca);
                     System.out.println("Total de Vida: " + vida_Facil + "pts");
-                    Heroinas tipoHeroina3 = new Arqueira("Xena", vidaMax, vida_Facil, forca_Facil, 1, moedas_Facil);
-                    Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina3);
+                    tipoHeroina = new Arqueira(nome, vidaMax, vida_Facil, forca_Facil, 1, moedas_Facil);
+                    Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina);
 
                 } else if (dificuldade == 2) {
                     int vidaMax = heroina.setVidaMax(220);
@@ -234,8 +236,8 @@ public class GameController {
                     System.out.println("Total de moedas: " + moedas_dificil + "diñero");
                     int vida_Dificil = heroina.setVidaAtual(vidaMax - forca);
                     System.out.println("Total de Vida: " + vida_Dificil + "pts");
-                    Heroinas tipoHeroina3 = new Arqueira("Xena", vidaMax, vida_Dificil, forca_Dificil, 1, moedas_dificil);
-                    Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina3);
+                    tipoHeroina = new Arqueira(nome, vidaMax, vida_Dificil, forca_Dificil, 1, moedas_dificil);
+                    Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina);
 
                 } else {
 
@@ -249,6 +251,7 @@ public class GameController {
 
         }
 
+        return tipoHeroina;
     }
 }
 
