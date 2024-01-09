@@ -30,21 +30,6 @@ public class Carro {
     }
 
 
-    public int getAno() {
-        return ano;
-    }
-
-    public int getPotencia() {
-        return potencia;
-    }
-
-    public int getCilindrada() {
-        return cilindrada;
-    }
-
-    public double getLitrosKm() {
-        return litrosKm;
-    }
 
     public TipoCombustivel getTipoCombustivel() {
         return tipoCombustivel;
@@ -85,6 +70,22 @@ public class Carro {
         }
         return null;
 
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public int getPotencia() {
+        return potencia;
+    }
+
+    public int getCilindrada() {
+        return cilindrada;
+    }
+
+    public double getLitrosKm() {
+        return litrosKm;
     }
 
     public double consumo(double kmPercorridos){

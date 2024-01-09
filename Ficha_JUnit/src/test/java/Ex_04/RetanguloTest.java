@@ -12,7 +12,7 @@ class RetanguloTest {
 
     @BeforeEach
     void setUp() {
-        figura1 = new Retangulo(20,35);
+        figura1 = new Retangulo( 20,35);
         figura2 = new Retangulo(10.5,12.3);
     }
 
@@ -21,6 +21,8 @@ class RetanguloTest {
 
         assertEquals(700, figura1.calcularArea());
         assertEquals(129.15,figura2.calcularArea());
+
+        assertEquals(-700,figura1.calcularArea());
 
     }
 
