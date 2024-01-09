@@ -85,28 +85,28 @@ public class StoreController {
                     ItemHeroina item_Escolhido_USer = itemHeroinas.get(itemCompra);//estava o contador aqui
 
                     // if pode usar e comprar
-                    if (itemCompra == contador) {
-
-                        int precoItem = itemHeroinas.getFirst().getPrecoItem();
-                        int moedasIniciais = heroinaJogando.getMoedas();
-
-
-                        if (moedasIniciais >= precoItem) {
-                            // TODO: validar se é consumivel
-                            heroinaJogando.adicionar_Invetario((Consumiveis) item_Escolhido_USer);
-                            System.out.println("Item Adicionado com sucesso!");
-                            int moedaDepoisCOmpra = moedasIniciais - precoItem;
-                            heroinaJogando.setMoedas(moedaDepoisCOmpra);
-
-                            if (item_Escolhido_USer instanceof ArmaPrincipal) {
-                                substituir_Armaprincipal((ArmaPrincipal) item_Escolhido_USer, heroinaJogando);
-                                int moedaDepois = moedasIniciais - precoItem;
-                                heroinaJogando.setMoedas(moedaDepois);
-                            }
-                        } else {
-                            System.out.println("Diñero insuficiente");
-
-                        }
+//                    if (itemCompra == contador) {
+//
+//                        int precoItem = itemHeroinas.getFirst().getPrecoItem();
+//                        int moedasIniciais = heroinaJogando.getMoedas();
+//
+//
+//                        if (moedasIniciais >= precoItem) {
+//                            // TODO: validar se é consumivel
+//                            heroinaJogando.adicionar_Invetario((Consumiveis) item_Escolhido_USer);
+//                            System.out.println("Item Adicionado com sucesso!");
+//                            int moedaDepoisCOmpra = moedasIniciais - precoItem;
+//                            heroinaJogando.setMoedas(moedaDepoisCOmpra);
+//
+//                            if (item_Escolhido_USer instanceof ArmaPrincipal) {
+//                                substituir_Armaprincipal((ArmaPrincipal) item_Escolhido_USer, heroinaJogando);
+//                                int moedaDepois = moedasIniciais - precoItem;
+//                                heroinaJogando.setMoedas(moedaDepois);
+//                            }
+//                        } else {
+//                            System.out.println("Diñero insuficiente");
+//
+//                        }
 
 
                     }
@@ -115,11 +115,12 @@ public class StoreController {
 
 
             }
-
-        }
         Menu_Comeco_Missao menuMissao = new Menu_Comeco_Missao();
         menuMissao.primeiraMissao();
-    }
+
+        }
+
+
 
 
         /**

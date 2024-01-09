@@ -5,9 +5,17 @@ import Domain.Heroina.NPC;
 
 import java.io.IOException;
 
+
+
 public class Sala_B2 {
 
-public static void ataqueAoCavaleiroMentiroso() throws IOException, InterruptedException{
+    private Heroinas heroinaEscolhida;
+
+    public Sala_B2() {
+        this.heroinaEscolhida = heroinaEscolhida;
+    }
+
+    public void ataqueAoCavaleiroMentiroso() throws IOException, InterruptedException{
 
 
     System.out.println("* ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ►** ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ►** ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ► ◄ ◊ ►*\n");
@@ -23,13 +31,8 @@ public static void ataqueAoCavaleiroMentiroso() throws IOException, InterruptedE
 
 
     NPC inimigo = new NPC("Cavaleiro Mentiroso", 150, 50, 120, 80);
-    Heroinas ataque = new Heroinas() {
-        @Override
-        public void ataqueNPC(NPC inimigo) throws IOException, InterruptedException {
 
-        }
-    };
-    ataque.ataqueNPC(inimigo);
+      heroinaEscolhida.ataqueNPC(inimigo);
 
     System.out.println("Você ganhou essa batalha! Parabéns");
 

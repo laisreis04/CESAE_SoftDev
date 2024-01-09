@@ -22,29 +22,21 @@ public class Sala_B1_Final {
         System.out.println();
         System.out.println("Infelizmente nem todas as heroinas por ai tem uma segunda chance...\n");
         System.out.println("Quer jogar novamente?");
-        System.out.println("1. SIM - Com a mesma personagem");
-        System.out.println("2. SIM -Uma nova jogadora");
+
+        System.out.println("1. SIM ");
         System.out.println("3. NÃO - Sair");
         opcao = input.nextInt();
 
         switch (opcao){
 
             case 1:
-               Heroinas heroinaEscolhida = new Heroinas() {
-                   @Override
-                   public void ataqueNPC(NPC inimigo) throws IOException, InterruptedException {
-
-                   }
-               };
-                Menu_EncontroBruxaViajente.menuPrimeiroEncontro(heroinaEscolhida);
-                break;
-            case 2:
                 Jogo escolhaPersonagem = new Jogo();
                 escolhaPersonagem.criarPersonagem();
                 break;
-            case 3:
+            case 2:
                 Menu_Inicial.MenuInicial();
                 break;
+
             default:
                 System.out.println("Opção Inválida");
 

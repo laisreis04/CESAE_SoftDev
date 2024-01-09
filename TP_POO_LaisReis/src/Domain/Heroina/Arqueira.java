@@ -52,5 +52,10 @@ public class Arqueira extends Heroinas{
 
     }
 
+    @Override
+    public Heroinas criarHeroina() {
+        return new Arqueira(this.getNome(),this.getVidaMax(),this.getVidaAtual(), this.getForca(),1,this.getMoedas());
+    }
+
 
 }

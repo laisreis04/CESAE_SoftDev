@@ -51,6 +51,11 @@ public class Feiticeira extends Heroinas {
         }
 
     }
+
+    @Override
+    public Heroinas criarHeroina() {
+        return new Feiticeira(this.getNome(),this.getVidaMax(),this.getVidaAtual(), this.getForca(),1,this.getMoedas());
+    }
 }
 
 
