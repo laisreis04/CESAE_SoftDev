@@ -14,45 +14,41 @@ import java.util.Scanner;
 public class GameController {
 
 
-    private ArrayList<ItemHeroina> itensLoja;
-    private int vidaAtual;
-
-
-    public GameController() throws FileNotFoundException {
-
-        WitchStoreRepository repository = new WitchStoreRepository("src/Files/ItensHeroiRPG.csv");
-        this.itensLoja = repository.getItensLista();
-
-    }
-
-    Entidade heroina = new Entidade() {
-        @Override
-        public int getVidaMax() {
-            return super.getVidaMax();
-        }
-
-        @Override
-        public int getVidaAtual() {
-            return super.getVidaAtual();
-        }
-
-        @Override
-        public int getForca() {
-            return super.getForca();
-        }
-
-        @Override
-        public String getNome() {
-            return super.getNome();
-        }
-    };
-
-
+    /**
+     * Método para criar uma personagem. Vida, força, nome.
+     * @return Heroina
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public Heroinas parametros_Dificuldade() throws IOException, InterruptedException {
 
         Scanner input = new Scanner(System.in);
 
         int dificuldade, forca;
+
+        System.out.println("Vamos começar o nosos jogo, qual o seu nome ?");
+        String nome = input.next();
+
+
+        int opcao;
+
+
+        System.out.println("╔═.✵.══════════════════════════════════╗\n");
+        System.out.println("Que tipo de heroina quer ser?");
+        System.out.println();
+
+        System.out.println("1. Cavaleira");
+        System.out.println("2. Feiticeira");
+        System.out.println("3. Arqueira");
+        System.out.println("0. Sair");
+        opcao = input.nextInt();
+        System.out.println();
+        System.out.println("╚════════════════════════════════.✵.═╝");  //40*
+
+        //Dificuldade
+        System.out.println("╔═.✵.══════════════════════════════════╗\n");
+        System.out.println("Qual o nível de dificuldade?\n");
+        System.out.println("╚════════════════════════════════.✵.═╝");  //40*
 
         System.out.println("1. Fácil, hoje eu tô de boas \n" +
                 "(Pontos Iniciais: 300)\n\n");
@@ -80,71 +76,9 @@ public class GameController {
         System.out.print("Força: ");
         forca = input.nextInt() * 5;
 
-        System.out.println("Escolha sua heroína:");
-        System.out.println("1. Cavaleira");
-        System.out.println("2. Feiticeira");
-        System.out.println("3. Arqueira");
-
-        int opcaoHeroina = input.nextInt();
-
-//        int vidaInicial = 0;
-//        int forcaInicial = 0;
-//
-//
-//        switch (dificuldade) {
-//            case 1: // Fácil
-//                vidaInicial = 300;
-//                forcaInicial = 60;
-//
-//                return new Cavaleira("Xena", dificuldade,)
-//                break;
-//            case 2: // Difícil
-//                vidaInicial = 220;
-//                forcaInicial = 40;
-//                break;
-//            default:
-//                System.out.println("Opção de dificuldade inválida!");
-//                break;
-//        }
-//
-//        Heroinas heroinaEscolhida1 = heroinaEscolhida;
-//        public static Heroinas heroinaEscolhida(Heroinas heroinaEscolhida){
-//
-//
-//
-//        }
-
-
-        System.out.println("Qual o seu nome ?");
-        String nome = input.next();
-
-
         //Set de vida Máxima
-        heroina.setVidaMax(pontosIniciais);
-
-
-        int opcao;
-
-
-        System.out.println("╔═.✵.══════════════════════════════════╗\n");
-        System.out.println("Que tipo de heroina quer ser?");
-        System.out.println();
-
-        System.out.println("1. Cavaleira");
-        System.out.println("2. Feiticeira");
-        System.out.println("3. Arqueira");
-        System.out.println("0. Sair");
-        opcao = input.nextInt();
-        System.out.println();
-        System.out.println("╚════════════════════════════════.✵.═╝");  //40*
-
-        //Dificuldade
-        System.out.println("╔═.✵.══════════════════════════════════╗\n");
-        System.out.println("Qual o nível de dificuldade?\n");
-        System.out.println("╚════════════════════════════════.✵.═╝");  //40*
-
-
         Heroinas tipoHeroina = null;
+
 
         switch (opcao) {
 
@@ -152,23 +86,23 @@ public class GameController {
                 System.out.println("**** CAVALEIRA SELECIONADA ****");
                 System.out.println();
                 if (dificuldade == 1) {
-                    int vidaMax = heroina.setVidaMax(300);
-                    int forca_Facil = heroina.setForca(forca);
+                    int vidaMax = tipoHeroina.setVidaMax(300);
+                    int forca_Facil = tipoHeroina.setForca(forca);
                     System.out.println("Sua força total é: " + forca_Facil + "pw");
                     int moeda_facil = 80;
                     System.out.println("Total de moedas: " + 80 + "diñero");
-                    int vida_Facil = heroina.setVidaAtual(vidaMax - forca);
+                    int vida_Facil = tipoHeroina.setVidaAtual(vidaMax - forca);
                     System.out.println("Total de Vida: " + vida_Facil + "pts");
-                    tipoHeroina = new Cavaleira(nome, vidaMax, vidaAtual, forca_Facil, 1, moeda_facil);
+                    tipoHeroina = new Cavaleira(nome, vidaMax, vida_Facil, forca_Facil, 1, moeda_facil);
                     Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina);
 
                 } else if (dificuldade == 2) {
-                    int vidaMax = heroina.setVidaMax(220);
-                    int forca_Dificil = heroina.setForca(forca);
+                    int vidaMax = tipoHeroina.setVidaMax(220);
+                    int forca_Dificil = tipoHeroina.setForca(forca);
                     System.out.println("Sua força total é: " + forca_Dificil + "pw");
                     int moedas_dificil = 40;
                     System.out.println("Total de moedas: " + moedas_dificil + "diñero");
-                    int vida_Dificil = heroina.setVidaAtual(vidaMax - forca);
+                    int vida_Dificil = tipoHeroina.setVidaAtual(vidaMax - forca);
                     System.out.println("Total de Vida: " + vida_Dificil + "pts");
                     tipoHeroina = new Cavaleira(nome, vidaMax, vida_Dificil, forca_Dificil, 1, moedas_dificil);
                     Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina);
@@ -185,23 +119,23 @@ public class GameController {
                 System.out.println();
                 if (dificuldade == 1) {
 
-                    int vidaMax = heroina.setVidaMax(300);
-                    int forca_Facil = heroina.setForca(forca);
+                    int vidaMax = tipoHeroina.setVidaMax(300);
+                    int forca_Facil = tipoHeroina.setForca(forca);
                     System.out.println("Sua força total é: " + forca_Facil + "pw");
                     int moedas_Facil = 80;
                     System.out.println("Total de moedas: " + moedas_Facil + "diñero");
-                    int vida_Facil = heroina.setVidaAtual(vidaMax - forca);
+                    int vida_Facil = tipoHeroina.setVidaAtual(vidaMax - forca);
                     System.out.println("Total de Vida: " + vida_Facil + "pts");
                     tipoHeroina = new Feiticeira(nome, vidaMax, vida_Facil, forca_Facil, 1, moedas_Facil);
                     Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina);
 
                 } else if (dificuldade == 2) {
-                    int vidaMax = heroina.setVidaMax(220);
-                    int forca_Dificil = heroina.setForca(forca);
+                    int vidaMax = tipoHeroina.setVidaMax(220);
+                    int forca_Dificil = tipoHeroina.setForca(forca);
                     System.out.println("Sua força total é: " + forca_Dificil + "pw");
                     int moedas_dificil = 40;
                     System.out.println("Total de moedas: " + moedas_dificil + "diñero");
-                    int vida_Dificil = heroina.setVidaAtual(vidaMax - forca);
+                    int vida_Dificil = tipoHeroina.setVidaAtual(vidaMax - forca);
                     System.out.println("Total de Vida: " + vida_Dificil + "pts");
                     tipoHeroina = new Feiticeira(nome, vidaMax, vida_Dificil, forca_Dificil, 1, moedas_dificil);
                     Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina);
@@ -218,23 +152,23 @@ public class GameController {
                 System.out.println();
 
                 if (dificuldade == 1) {
-                    int vidaMax = heroina.setVidaMax(300);
-                    int forca_Facil = heroina.setForca(forca);
+                    int vidaMax = tipoHeroina.setVidaMax(300);
+                    int forca_Facil = tipoHeroina.setForca(forca);
                     System.out.println("Sua força total é: " + forca_Facil + "pw");
                     int moedas_Facil = 80;
                     System.out.println("Total de moedas: " + moedas_Facil + "diñero");
-                    int vida_Facil = heroina.setVidaAtual(vidaMax - forca);
+                    int vida_Facil = tipoHeroina.setVidaAtual(vidaMax - forca);
                     System.out.println("Total de Vida: " + vida_Facil + "pts");
                     tipoHeroina = new Arqueira(nome, vidaMax, vida_Facil, forca_Facil, 1, moedas_Facil);
                     Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina);
 
                 } else if (dificuldade == 2) {
-                    int vidaMax = heroina.setVidaMax(220);
-                    int forca_Dificil = heroina.setForca(forca);
+                    int vidaMax = tipoHeroina.setVidaMax(220);
+                    int forca_Dificil = tipoHeroina.setForca(forca);
                     System.out.println("Sua força total é: " + forca_Dificil + "pw");
                     int moedas_dificil = 40;
                     System.out.println("Total de moedas: " + moedas_dificil + "diñero");
-                    int vida_Dificil = heroina.setVidaAtual(vidaMax - forca);
+                    int vida_Dificil = tipoHeroina.setVidaAtual(vidaMax - forca);
                     System.out.println("Total de Vida: " + vida_Dificil + "pts");
                     tipoHeroina = new Arqueira(nome, vidaMax, vida_Dificil, forca_Dificil, 1, moedas_dificil);
                     Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina);

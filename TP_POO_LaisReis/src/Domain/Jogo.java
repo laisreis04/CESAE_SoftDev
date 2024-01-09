@@ -21,8 +21,6 @@ public class Jogo {
         this.heroinaEscolhida = heroinaEscolhida;
     }
 
-
-
     public void setNomeHeroina(String nomeHeroina) {
         this.nomeHeroina = nomeHeroina;
     }
@@ -53,6 +51,9 @@ public class Jogo {
                 "Diante de caminhos perigosos, tome decisões sábias, pois cada escolha moldará seu destino e o desfecho dessa jornada épica.\n" +
                 "\n" +
                 "Prepare-se para a aventura e a luta pela justiça, pois o destino de Salem está em suas mãos!\n");
+
+        System.out.print("Digite seu numero da sorte e clica no enter para inicar....");
+
 
 
         GameController criar = new GameController();

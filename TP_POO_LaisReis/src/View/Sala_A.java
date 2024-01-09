@@ -7,13 +7,18 @@ import java.util.Scanner;
 
 public class Sala_A {
 
-    public Sala_A() {
+    private Heroinas heroinaEscolhida;
+
+    public Sala_A(Heroinas heroinaEscolhida) {
+        this.heroinaEscolhida = heroinaEscolhida;
     }
 
-    public static void menuSala_A() throws IOException, InterruptedException {
 
 
-        System.out.println("A heroína, seguindo o caminho em direção ao Lago Verde, adentra uma paisagem serena e exuberante, \n" +
+    public void menuSala_A() throws IOException, InterruptedException {
+
+
+        System.out.println(heroinaEscolhida.getNome() +" , seguindo o caminho em direção ao Lago Verde, adentra uma paisagem serena e exuberante, \n" +
                 "onde a natureza parece respirar em harmonia. No entanto, à beira do lago, encontra-se um grupo de juízes misteriosos, \n" +
                 "vestidos com mantos ornamentados e olhares penetrantes.\n" +
                 "\n" +
@@ -25,12 +30,6 @@ public class Sala_A {
 
 
 
-
-
-        Heroinas cavaleira = new Cavaleira();
-        Heroinas feiticeira = new Feiticeira();
-        Heroinas arqueira = new Arqueira();
-
         //método de ataque ao inimigo - Segue ataques diferente das diferentes classe, quando a heroina foi instaciada.
         NPC inimigoJuizes = new NPC("Juizes", 80,80,40,100);
 
@@ -40,22 +39,14 @@ public class Sala_A {
         int opcao = input.nextInt();
 
         if(opcao == 1){
-                feiticeira.ataqueNPC(inimigoJuizes);;
-                cavaleira.ataqueNPC(inimigoJuizes);
-                arqueira.ataqueNPC(inimigoJuizes);
+            heroinaEscolhida.ataqueNPC(inimigoJuizes);
 
         }else {
+
             Sala_FInal.salaFinal();
         }
 
-
-
-
-
-
     }
-
-
 
 
 }

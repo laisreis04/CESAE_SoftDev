@@ -17,10 +17,7 @@ public class Menu_Comeco_Missao {
 
 private ArrayList<ItemHeroina> lista;
 
-    public Menu_Comeco_Missao() {
-
-        this.lista = lista;
-    }
+  private Heroinas heroinaEscolhida;
 
     public void primeiraMissao() throws IOException, InterruptedException {
 
@@ -41,8 +38,9 @@ private ArrayList<ItemHeroina> lista;
         switch (opcao){
 
             case 1:
-               Sala_A.menuSala_A();
-                break;
+                Sala_A salaA = new Sala_A(heroinaEscolhida);
+            salaA.menuSala_A();
+            break;
 
             case 2:
                 Sala_B.salaB();
@@ -55,7 +53,8 @@ private ArrayList<ItemHeroina> lista;
                 System.out.println("2. TRILHA VILA CHÃ:\n");
                 opcao = input.nextInt();
                 if(opcao == 1){
-                    Sala_A.menuSala_A();
+                    Sala_A sala = new Sala_A(heroinaEscolhida);
+                    sala.menuSala_A();
                 } else {
                 Sala_B.salaB();
             }

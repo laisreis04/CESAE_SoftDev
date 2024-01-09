@@ -30,15 +30,12 @@ public static void menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOExce
     int opcao;
 
 
-
-
-
     //Colocar aqui o menu da dificuldade
 
 
     System.out.println("\n\n\n" +
-            "Você acabou de chegar a vila e a o seu primeiro encontro é com a a Bruxa Viajante, e com ela estão itens valiosos que \n" +
-            "você pode comprar agora, ou mais tarde\n");
+            "Olá " + heroinaEscolhida.getNome() + "\nVocê acabou de chegar a vila e a o seu primeiro encontro \né com a a Bruxa Viajante, e com ela estão itens valiosos que \n" +
+            "você pode comprar agora, ou mais tarde\n\n");
     System.out.println("1. Falar com bruxa viajante\n");
     System.out.println("2. Não preciso de nada, obrigada!");
     opcao = input.nextInt();
@@ -62,14 +59,6 @@ public static void menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOExce
             System.out.println("Opção Inválida");
 
     }
-
-
-
-
 }
-
-
-
-
 
 }
