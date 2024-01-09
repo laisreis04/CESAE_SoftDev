@@ -27,7 +27,7 @@ class CarroTest {
     void ligar() {
 
 
-        assertEquals(car1.getPotencia());
+
 
 
 
@@ -42,6 +42,10 @@ class CarroTest {
 
 
         assertEquals(1.3,car1.consumo(20));
+        assertEquals(1.3,car1.consumo(-20));
+
+        assertEquals(2.55, car2.consumo(30));
+        assertEquals(2.55, car2.consumo(-30));
 
     }
 }
