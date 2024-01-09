@@ -26,7 +26,9 @@ public class GameController {
 
         int dificuldade, forca;
 
-        System.out.println("Vamos começar o nosos jogo, qual o seu nome ?");
+        System.out.println();
+        System.out.println();
+        System.out.println("Para começar o jogo, qual o seu nome ?");
         String nome = input.next();
 
 

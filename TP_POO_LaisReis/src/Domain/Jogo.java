@@ -52,8 +52,6 @@ public class Jogo {
                 "\n" +
                 "Prepare-se para a aventura e a luta pela justiça, pois o destino de Salem está em suas mãos!\n");
 
-        System.out.print("Digite seu numero da sorte e clica no enter para inicar....");
-
 
 
         GameController criar = new GameController();
