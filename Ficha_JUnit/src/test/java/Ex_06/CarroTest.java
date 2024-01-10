@@ -26,7 +26,7 @@ class CarroTest {
     @Test
     void ligar() {
 
-
+        car1.consumo(20);
 
 
 
