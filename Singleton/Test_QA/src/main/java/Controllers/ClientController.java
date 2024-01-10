@@ -9,9 +9,13 @@ import java.util.ArrayList;
 public class ClientController {
     private ArrayList<Venda> todasVendas;
 
-    public ClientController() throws FileNotFoundException {
-        VendasRepository repository = new VendasRepository("src/main/resources/Ficheiros/minimercado.csv");
+    public ClientController(String path) throws FileNotFoundException {
+        VendasRepository repository = new VendasRepository(path);
         this.todasVendas = repository.getVendaArray();
+    }
+
+    public ArrayList<Venda> getTodasVendas() {
+        return todasVendas;
     }
 
     public Venda produtoMaisCaro() {

@@ -16,25 +16,10 @@ class AdministradorControllerTest {
 
     AdministradorController admin;
 
-    AdministradorController adminNovoCvs;
-
-    Venda venda1;
-    Venda venda2;
-    Venda venda3;
-
-
 
     @BeforeEach
     void setUp() throws FileNotFoundException {
-        admin = new AdministradorController("src/test/resources/minimercadoTest.csv");
-
-
-        //Adicionar novo item para calacular a soma no novo ficheiro
-        venda1 = new Venda("Alimentacao", "Sushi", 50,5.99);
-        venda2 = new Venda("Saude", "Aldi",120,1.0);
-        venda3 = new Venda("Higiene", "copo", 45,9.99);
-
-
+        admin = new AdministradorController("src/test/resources/minimercadoTest2.csv");
 
     }
 
@@ -44,22 +29,24 @@ class AdministradorControllerTest {
     @Test
     void produtoMaisVendidoTest() {
 
-       assertEquals("Cerveja Super Bock",admin.produtoMaisVendido().getProduto());
-       assertEquals("Alimentacao", admin.produtoMaisVendido().getTipoProduto());
+        assertEquals("cerveja", admin.produtoMaisVendido().getProduto());
+        assertEquals("cerveja", admin.produtoMaisVendido().getProduto());
+
+
     }
 
     @Test
     void produtoQueMaisVendeuTest() {
 
-        assertEquals("Cerveja Super Bock",admin.produtoQueMaisVendeu().getProduto());
-        assertEquals("Higiene", admin.produtoQueMaisVendeu().getTipoProduto());
+        assertEquals("cerveja",admin.produtoQueMaisVendeu().getProduto());
+        assertEquals("Bar", admin.produtoQueMaisVendeu().getTipoProduto());
     }
 
     @Test
-    void vendaMaisValor() {
+    void vendaMaisValorTest() {
 
-        assertEquals(300,admin.vendaMaisValor().getPrecoUnitario());
-        assertEquals(40000.99, admin.vendaMaisValor().getPrecoUnitario());
+        assertEquals(1.5,admin.vendaMaisValor().getPrecoUnitario());
+        assertEquals("cerveja", admin.vendaMaisValor().getProduto());
 
     }
 
@@ -69,18 +56,18 @@ class AdministradorControllerTest {
      * @throws IOException
      */
     @Test
-    void adicionarUtilizador() throws IOException {
+    void adicionarUtilizadorTest() throws IOException {
 
-       String filePath = "src/test/resources/login_grandesNegociosTest.csv";
+       String filePath = "src/test/resources/login_grandesNegociosTest2.csv";
 
         admin.adicionarUtilizador(filePath,"Admin","lala","1234");
 
         File file = new File(filePath);
         Scanner sc = new Scanner(file);
 
-        String tipoUtilizador;
-        String userName;
-        String password;
+        String tipoUtilizador = null;
+        String userName = null;
+        String password = null;
 
         while(sc.hasNextLine()){
 
@@ -92,6 +79,12 @@ class AdministradorControllerTest {
             password = linhaSeparada[2];
         }
 
+        assertEquals("Admin",tipoUtilizador);
+        assertEquals("lala", userName);
+        assertEquals("1234", password);
+
+
+
     }
 
     /**
@@ -101,7 +94,7 @@ class AdministradorControllerTest {
     @Test
     void adicionarUtilizadorInavalidTest() throws IOException {
 
-        String filePath = "src/test/resources/login_grandesNegociosTest.csv";
+        String filePath = "src/test/resources/login_grandesNegociosTest2.csv";
 
         assertThrows (IllegalArgumentException.class, () -> {
             admin.adicionarUtilizador(filePath,"Funcionario Fantasma", "Ghost", "1234");
@@ -112,22 +105,22 @@ class AdministradorControllerTest {
     }
 
     @Test
-    void valorVendas() {
+    void valorVendasTest() throws FileNotFoundException {
 
-        //Criar um novo ficheiro
-        // Adicionar os itens ao ficheiro
-        admin.getTodasVendas().add(venda1);
-        admin.getTodasVendas().add(venda2);
-        admin.getTodasVendas().add(venda3);
 
-        // testar metodo
+        assertEquals(751.2,admin.valorVendas());
 
-        assertEquals(869.05,admin.valorVendas());
+
 
 
     }
 
     @Test
-    void mediaVendas() {
+    void mediaVendasTest() {
+
+    assertEquals(93.9,admin.mediaVendas());
+
+
+
     }
 }

@@ -12,13 +12,13 @@ import java.util.ArrayList;
 public class FuncionarioController {
     private ArrayList<Venda> todasVendas;
 
-    public FuncionarioController() throws FileNotFoundException {
-        VendasRepository repository = new VendasRepository("Ficheiros/minimercado.csv");
+    public FuncionarioController(String path) throws FileNotFoundException {
+        VendasRepository repository = new VendasRepository(path);
         this.todasVendas = repository.getVendaArray();
     }
 
-    public void addVenda(String tipoProduto, String nomeProduto, int quantidadeProduto, double precoProduto) throws IOException {
-        File ficheiro = new File("Ficheiros/minimercado.csv");
+    public void addVenda(String tipoProduto, String nomeProduto, int quantidadeProduto, double precoProduto, String path) throws IOException {
+        File ficheiro = new File(path);
 
         FileWriter fw = new FileWriter(ficheiro, true);
         fw.append("\n"+tipoProduto+","+nomeProduto+","+quantidadeProduto+","+precoProduto);
@@ -27,7 +27,7 @@ public class FuncionarioController {
 
     public int consultarStockProduto(String nomeProduto){
         int quantidadeVendida=0;
-        int stock=1200;
+        int stock=0;
         for (Venda vendaAtual : this.todasVendas) {
             if (vendaAtual.getProduto().equals(nomeProduto)){
                 quantidadeVendida += vendaAtual.getQuantidadeVendida();
