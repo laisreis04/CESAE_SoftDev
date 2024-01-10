@@ -9,8 +9,8 @@ import java.util.ArrayList;
 public class LoginController {
     private ArrayList<Utilizador> utilizadoresSistema;
 
-    public LoginController() throws FileNotFoundException {
-        UtilizadorRepository repository = new UtilizadorRepository("Ficheiros/login_grandesNegocios.csv");
+    public LoginController(String path) throws FileNotFoundException {
+        UtilizadorRepository repository = new UtilizadorRepository(path);
         this.utilizadoresSistema = repository.getUtilizadorsSistema();
     }
 
