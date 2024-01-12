@@ -40,7 +40,19 @@ Route::get('/users/add' ,function(){
     return view('users.add_user');
     })->name('users.add_user');
 
+Route::get('/users/all' ,function(){
+    $hello = 'Finalmente vamos para código';
+    $helloAgain = 'Achou';
+$daysOfWeek = ['Segunda', 'Terça', 'Quarta', 'Quinta'];
+
+    return view('users.all_users', compact(
+        'hello',
+        'helloAgain',
+        'daysOfWeek'
+    ));
+    })->name('users.all_user');
+
 
 Route::fallback( function () {
-    return '<h1>Ups, esta página não existe</h1>';
-});
+    return view('Layout.fallback');
+})->name('404page');
