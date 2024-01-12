@@ -1,7 +1,11 @@
 @extends('Layout.femaster')
 
 @section('content2')
-segundo conteudo
+<div class="container">
+    <h5>Nome da escola: </h5><p>{{ $cesaeInfo['name']}}</p>
+    <h5>Endereço: </h5><p>{{ $cesaeInfo['address']}}</p>
+    <h5>Contato: </h5><p>{{ $cesaeInfo['email']}}</p>
+    </div>
 @endsection
 
 
@@ -18,7 +22,10 @@ segundo conteudo
     <li><a href="{{route('users.add_user')}}">Área do Utilizador</a></li>
     <li><a href="{{route('users.all_user')}}">Todxs User</a></li>
 </ul>
+
 </div>
+
+
 @endsection
 
 

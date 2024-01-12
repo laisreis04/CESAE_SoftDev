@@ -1,5 +1,9 @@
 <?php
 
+
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\UserController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +29,9 @@ Route::get('/ola', function () {
 Route::get('/hello/{nome}', function ($nome) {
     return '<h1>Olaaaaa</h1>'.$nome;
 });
-Route::get('/home', function () {
-    return view('main.home');
-})->name('home.index');
+
+
+Route::get('/home', [IndexController::class, 'index'])->name('home.index');
 
 
 Route::get('/home/social' ,function(){
@@ -36,21 +40,9 @@ return view('main.social');
 
 
 //Rotas User
-Route::get('/users/add' ,function(){
-    return view('users.add_user');
-    })->name('users.add_user');
+Route::get('/users/add' , [UserController::class, 'userView'])->name('users.add_user');
 
-Route::get('/users/all' ,function(){
-    $hello = 'Finalmente vamos para código';
-    $helloAgain = 'Achou';
-$daysOfWeek = ['Segunda', 'Terça', 'Quarta', 'Quinta'];
-
-    return view('users.all_users', compact(
-        'hello',
-        'helloAgain',
-        'daysOfWeek'
-    ));
-    })->name('users.all_user');
+Route::get('/users/all' ,[UserController::class, 'allUsers'])->name('users.all_user');
 
 
 Route::fallback( function () {
