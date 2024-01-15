@@ -28,7 +28,7 @@ class LoginControllerTest {
     void validarLogin() throws IOException {
 
         admin.adicionarUtilizador("src/test/resources/login_grandesNegociosTest2.csv", "FUNC", "You Did it", "321!");
-        
+
 
         Scanner sc = new Scanner(new File("src/test/resources/login_grandesNegociosTest2.csv"));
 
