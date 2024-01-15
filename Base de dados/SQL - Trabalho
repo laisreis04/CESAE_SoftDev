@@ -163,40 +163,83 @@ WHERE id_cliente = '11';
  DELETE FROM produto
  WHERE descricao = 'Calha';
 
+
+
+
+
+
+
+
+
  /*EXERCÍCIO 8*/
 
  /*- Ver toda a informação de todos os clientes; */
-
+SELECT *
+FROM cliente
 
 
 /*- Ver todas as cidades dos clientes (sem duplicados); */
+SELECT DISTINCT cidade
+FROM cliente
 
 
 /*- Ver a descrição, preço, preço com iva (23%) de todos os produtos e chame ao 
 último atributo ‘Preço + IVA’; */
+SELECT DISTINCT descricao, preco, preco *1.23 as preco_IVA
+FROM produto
+
 
 /*- Ver todos os clientes que se inscreveram entre ‘2000-01-01’ e ‘2009-01-01’ e 
 com mais de 1000 pontos; */
-
+SELECT DISTINCT nome, pontos /*<-  Aqui posso colocar o que quero ver da tabela*/
+from cliente
+WHERE data_inscricao BETWEEN '2000-01-01' AND '2009-01-01' AND pontos > 1000
 
 /*- Ver produtos com stock igual a 0, 15 e 60; */
+SELECT *
+FROM produto
+WHERE stock IN (0,15,60);
+
 
 
 /*- Ver todos os clientes cujo nome contenha ‘ana’, ordenado por ordem descendente 
 pelo id_cliente; */
+SELECT *
+FROM cliente
+WHERE nome LIKE 'ana%'
+ORDER BY id_cliente DESC
+
+
 
 
 /*- Ver todos os clientes cujo nome seja composto no total por 5 caracteres sendo o 
 último um ‘a’; */
+SELECT *
+FROM cliente
+WHERE nome like '____a'
+
 
 
 /*- Ver todos os produtos cuja descrição comece por ‘P’ ou ‘T’ ou termine em ‘CA’; */
+Select *
+FROM produto
+WHERE descricao LIKE 'P%' OR descricao LIKE 'T%' OR descricao LIKE '%CA'
+
 
 
 /*- Ver apenas o 6º,7º,8º cliente com mais pontos; */
 
+SElect *
+FROM cliente
+ORDER BY pontos DESC
+LIMIT 3
+OFFSET 5
+
 
 /*- Ver as cidades que tenham mais de 1 cliente; */
+
+
+
 
 
 /* Ver quais as vendas que não foi aplicado nenhum desconto; */
