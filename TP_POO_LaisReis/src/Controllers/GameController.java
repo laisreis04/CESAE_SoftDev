@@ -188,7 +188,7 @@ public class GameController {
 
         }
 
-        return tipoHeroina;
+        return Menu_EncontroBruxaViajente.menuPrimeiroEncontro(tipoHeroina);
     }
 
 }

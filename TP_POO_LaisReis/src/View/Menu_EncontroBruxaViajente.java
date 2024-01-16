@@ -1,10 +1,7 @@
 package View;
 
-import Controllers.GameController;
 import Controllers.StoreController;
 import Domain.Heroina.*;
-import Domain.Jogo;
-import Tools.TXTReader;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -13,7 +10,7 @@ public class Menu_EncontroBruxaViajente {
 
 
 
-public static void menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOException, InterruptedException {
+public static Heroinas menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOException, InterruptedException {
 
 
 
@@ -42,12 +39,13 @@ public static void menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOExce
         case 2:
             System.out.println("\nAté logo, você ainda vai precisar da minha ajuda!");
             Menu_Comeco_Missao iniciarMissao = new Menu_Comeco_Missao();
-            iniciarMissao.primeiraMissao(heroinaEscolhida);
+            iniciarMissao.primeiraMissao();
             break;
         default:
             System.out.println("Opção Inválida");
 
     }
+    return heroinaEscolhida;
 }
 
 }

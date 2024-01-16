@@ -15,9 +15,6 @@ import java.util.Scanner;
 
 public class Menu_Comeco_Missao {
 
-private ArrayList<ItemHeroina> lista;
-
- ;
 
     public void primeiraMissao(Heroinas jogadora) throws IOException, InterruptedException {
 
@@ -35,12 +32,12 @@ private ArrayList<ItemHeroina> lista;
         opcao = input.nextInt();
 
 
-        switch (opcao){
+        switch (opcao) {
 
             case 1:
                 Sala_A salaA = new Sala_A();
-            salaA.menuSala_A(jogadora);
-            break;
+                salaA.menuSala_A(jogadora);
+                break;
 
             case 2:
                 Sala_B.salaB();
@@ -52,12 +49,12 @@ private ArrayList<ItemHeroina> lista;
                 System.out.println("1. CAMINHO DO LAGO VERDE:\n");
                 System.out.println("2. TRILHA VILA CHÃ:\n");
                 opcao = input.nextInt();
-                if(opcao == 1){
+                if (opcao == 1) {
                     Sala_A sala = new Sala_A();
                     sala.menuSala_A(jogadora);
                 } else {
-                Sala_B.salaB();
-            }
+                    Sala_B.salaB();
+                }
 
                 break;
 
@@ -65,6 +62,7 @@ private ArrayList<ItemHeroina> lista;
                 System.out.println("Opção Inválida");
 
         }
+
 
     }
 

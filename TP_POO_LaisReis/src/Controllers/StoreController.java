@@ -116,7 +116,7 @@ public class StoreController {
 
             }
         Menu_Comeco_Missao menuMissao = new Menu_Comeco_Missao();
-        menuMissao.primeiraMissao(heroinaJogando);
+        menuMissao.primeiraMissao();
 
         }
 

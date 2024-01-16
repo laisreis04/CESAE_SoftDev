@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class Sala_A {
 
 
-
     public void menuSala_A(Heroinas jogadora) throws IOException, InterruptedException {
 
 
