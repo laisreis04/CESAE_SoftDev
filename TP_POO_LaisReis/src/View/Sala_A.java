@@ -7,18 +7,13 @@ import java.util.Scanner;
 
 public class Sala_A {
 
-    private Heroinas heroinaEscolhida;
-
-    public Sala_A(Heroinas heroinaEscolhida) {
-        this.heroinaEscolhida = heroinaEscolhida;
-    }
 
 
+    public void menuSala_A(Heroinas jogadora) throws IOException, InterruptedException {
 
-    public void menuSala_A() throws IOException, InterruptedException {
 
-
-        System.out.println(heroinaEscolhida.getNome() +" , seguindo o caminho em direção ao Lago Verde, adentra uma paisagem serena e exuberante, \n" +
+       
+        System.out.println("Seguindo o caminho em direção ao Lago Verde, adentra uma paisagem serena e exuberante, \n" +
                 "onde a natureza parece respirar em harmonia. No entanto, à beira do lago, encontra-se um grupo de juízes misteriosos, \n" +
                 "vestidos com mantos ornamentados e olhares penetrantes.\n" +
                 "\n" +
@@ -39,7 +34,7 @@ public class Sala_A {
         int opcao = input.nextInt();
 
         if(opcao == 1){
-            heroinaEscolhida.ataqueNPC(inimigoJuizes);
+            jogadora.ataqueNPC(inimigoJuizes);
 
         }else {
 

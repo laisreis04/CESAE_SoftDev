@@ -21,12 +21,6 @@ public abstract class Heroinas extends Entidade {
         this.inventario = new ArrayList<>();
     }
 
-    public Heroinas () {
-
-
-    }
-
-
     public int getNivel() {
         return nivel;
     }
@@ -64,14 +58,9 @@ public abstract class Heroinas extends Entidade {
      * Método para atacar um NPC
      *
      * @param inimigo
+     * @return
      */
-    public abstract void ataqueNPC(NPC inimigo) throws IOException, InterruptedException;
-
-
-
-
-     public abstract Heroinas criarHeroina();
-
-
-
+    public abstract String ataqueNPC(NPC inimigo) throws IOException, InterruptedException;
 }
+
+

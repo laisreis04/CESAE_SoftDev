@@ -16,25 +16,18 @@ public class Menu_EncontroBruxaViajente {
 public static void menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOException, InterruptedException {
 
 
-    Entidade jogadora = new Entidade() {
-        @Override
-        public String getNome() {
-            return super.getNome();
-        }
-    };
 
-    StoreController store = new StoreController(jogadora);
+    StoreController store = new StoreController(heroinaEscolhida);
 
 
     Scanner input = new Scanner(System.in);
     int opcao;
 
 
-    //Colocar aqui o menu da dificuldade
 
 
     System.out.println("\n\n\n" +
-            "Olá " + heroinaEscolhida.getNome() + "\nVocê acabou de chegar a vila e a o seu primeiro encontro \né com a a Bruxa Viajante, e com ela estão itens valiosos que \n" +
+            "Olá " + heroinaEscolhida.getNome() + "\n Você acabou de chegar a vila e a o seu primeiro encontro \né com a a Bruxa Viajante, e com ela estão itens valiosos que \n" +
             "você pode comprar agora, ou mais tarde\n\n");
     System.out.println("1. Falar com bruxa viajante\n");
     System.out.println("2. Não preciso de nada, obrigada!");
@@ -42,18 +35,14 @@ public static void menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOExce
 
     switch (opcao) {
         case 1:
-
-            System.out.println();
-            System.out.println("Olá guerreira! Você está preparada para a batalha?\nNão me parece muito preprada, mas eu posso ajudar, tenho isso a \n" +
-                    "venda, poucas moedas em troca de uma batalha mais justa");
             store.exibirDetalhesStore();
-            //Fazer menu da loja - imprimir itens da loja
+
 
             break;
         case 2:
-            System.out.println("Até logo, você ainda vai precisar da minha ajuda!");
+            System.out.println("\nAté logo, você ainda vai precisar da minha ajuda!");
             Menu_Comeco_Missao iniciarMissao = new Menu_Comeco_Missao();
-            iniciarMissao.primeiraMissao();
+            iniciarMissao.primeiraMissao(heroinaEscolhida);
             break;
         default:
             System.out.println("Opção Inválida");

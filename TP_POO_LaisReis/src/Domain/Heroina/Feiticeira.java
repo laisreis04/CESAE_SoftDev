@@ -1,10 +1,8 @@
 package Domain.Heroina;
 
-import Domain.Itens.Pocao;
 import Tools.TXTReader;
 import View.Sala_FInal;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Feiticeira extends Heroinas {
@@ -13,14 +11,8 @@ public class Feiticeira extends Heroinas {
         super(nome, vidaMax, vidaAtual, forca, nivel, moedas);
     }
 
-
-
-    public Feiticeira() {
-
-    }
-
     @Override
-    public void ataqueNPC(NPC inimigo) throws IOException, InterruptedException {
+    public String ataqueNPC(NPC inimigo) throws IOException, InterruptedException {
 
         String ganhador = null;
 
@@ -50,12 +42,9 @@ public class Feiticeira extends Heroinas {
             }
         }
 
+        return ganhador;
     }
 
-    @Override
-    public Heroinas criarHeroina() {
-        return new Feiticeira(this.getNome(),this.getVidaMax(),this.getVidaAtual(), this.getForca(),1,this.getMoedas());
-    }
 }
 
 

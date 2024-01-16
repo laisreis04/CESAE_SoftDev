@@ -12,23 +12,7 @@ public class Cavaleira extends Heroinas {
     }
 
     @Override
-    public String toString() {
-        return "Cavaleira{" +
-                "inventario=" + inventario +
-                '}';
-    }
-
-    public Cavaleira() {
-
-    }
-
-    @Override
-    public Heroinas criarHeroina() {
-        return new Cavaleira(this.getNome(),this.getVidaMax(),this.getVidaAtual(),this.getForca(),this.getNivel(),this.getMoedas());
-    }
-
-    @Override
-    public void ataqueNPC(NPC inimigo) throws IOException, InterruptedException {
+    public String ataqueNPC(NPC inimigo) throws IOException, InterruptedException {
 
         String ganhador = null;
 
@@ -58,6 +42,6 @@ public class Cavaleira extends Heroinas {
 
         }
 
-
+        return ganhador;
     }
 }

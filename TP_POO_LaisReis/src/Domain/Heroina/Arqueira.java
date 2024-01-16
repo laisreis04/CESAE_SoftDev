@@ -12,12 +12,8 @@ public class Arqueira extends Heroinas{
     }
 
 
-    public Arqueira() {
-
-    }
-
     @Override
-    public void ataqueNPC(NPC inimigo) throws IOException, InterruptedException {
+    public String ataqueNPC(NPC inimigo) throws IOException, InterruptedException {
 
 
         String ganhador = null;
@@ -50,12 +46,9 @@ public class Arqueira extends Heroinas{
 
         }
 
+        return ganhador;
     }
 
-    @Override
-    public Heroinas criarHeroina() {
-        return new Arqueira(this.getNome(),this.getVidaMax(),this.getVidaAtual(), this.getForca(),1,this.getMoedas());
-    }
 
 
 }
