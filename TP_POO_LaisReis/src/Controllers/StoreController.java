@@ -24,7 +24,7 @@ public class StoreController {
     private Heroinas heroinaJogando;
 
 
-    public StoreController(Heroinas jogadora) throws FileNotFoundException {
+    public StoreController(Entidade jogadora) throws FileNotFoundException {
         WitchStoreRepository repository = new WitchStoreRepository("src/Files/ItensHeroiRPG.csv");
         this.itemHeroinas = repository.getItensLista();
     }
@@ -116,7 +116,7 @@ public class StoreController {
 
             }
         Menu_Comeco_Missao menuMissao = new Menu_Comeco_Missao();
-        menuMissao.primeiraMissao();
+        menuMissao.primeiraMissao(heroinaJogando);
 
         }
 

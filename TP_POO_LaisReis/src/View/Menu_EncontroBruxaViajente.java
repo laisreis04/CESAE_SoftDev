@@ -9,18 +9,20 @@ import java.util.Scanner;
 public class Menu_EncontroBruxaViajente {
 
 
-
-public static Heroinas menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOException, InterruptedException {
-
+    public static void menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOException, InterruptedException {
 
 
-    StoreController store = new StoreController(heroinaEscolhida);
+        Entidade jogadora = new Entidade() {
+            @Override
+            public String getNome() {
+                return super.getNome();
+            }
+        };
 
+        StoreController store = new StoreController(jogadora);
 
-    Scanner input = new Scanner(System.in);
-    int opcao;
-
-
+        Scanner input = new Scanner(System.in);
+        int opcao;
 
 
     System.out.println("\n\n\n" +
@@ -39,13 +41,13 @@ public static Heroinas menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IO
         case 2:
             System.out.println("\nAté logo, você ainda vai precisar da minha ajuda!");
             Menu_Comeco_Missao iniciarMissao = new Menu_Comeco_Missao();
-            iniciarMissao.primeiraMissao();
+            iniciarMissao.primeiraMissao(heroinaEscolhida);
             break;
         default:
             System.out.println("Opção Inválida");
 
     }
-    return heroinaEscolhida;
+
 }
 
 }

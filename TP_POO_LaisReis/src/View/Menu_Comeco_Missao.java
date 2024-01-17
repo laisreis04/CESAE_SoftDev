@@ -1,6 +1,7 @@
 package View;
 
 import Controllers.GameController;
+import Domain.Heroina.Entidade;
 import Domain.Heroina.Heroinas;
 import Domain.Heroina.NPC;
 import Domain.Itens.ItemHeroina;
@@ -16,7 +17,7 @@ import java.util.Scanner;
 public class Menu_Comeco_Missao {
 
 
-    public void primeiraMissao(Heroinas jogadora) throws IOException, InterruptedException {
+    public void primeiraMissao(Entidade jogadora) throws IOException, InterruptedException {
 
         Scanner input = new Scanner(System.in);
 
@@ -44,7 +45,8 @@ public class Menu_Comeco_Missao {
                 break;
 
             case 3:
-
+                System.out.println("VIDA =" + jogadora.getVidaAtual());
+                System.out.println("Força =" + jogadora.getForca());
                 System.out.println("Escolher caminho:\n");
                 System.out.println("1. CAMINHO DO LAGO VERDE:\n");
                 System.out.println("2. TRILHA VILA CHÃ:\n");

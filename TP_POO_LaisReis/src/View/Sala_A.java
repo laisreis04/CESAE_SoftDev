@@ -8,10 +8,12 @@ import java.util.Scanner;
 public class Sala_A {
 
 
-    public void menuSala_A(Heroinas jogadora) throws IOException, InterruptedException {
+    private Heroinas heroinas;
+
+    public void menuSala_A(Entidade jogadora) throws IOException, InterruptedException {
 
 
-       
+        System.out.println(jogadora.getNome());
         System.out.println("Seguindo o caminho em direção ao Lago Verde, adentra uma paisagem serena e exuberante, \n" +
                 "onde a natureza parece respirar em harmonia. No entanto, à beira do lago, encontra-se um grupo de juízes misteriosos, \n" +
                 "vestidos com mantos ornamentados e olhares penetrantes.\n" +
@@ -33,7 +35,7 @@ public class Sala_A {
         int opcao = input.nextInt();
 
         if(opcao == 1){
-            jogadora.ataqueNPC(inimigoJuizes);
+            heroinas.ataqueNPC(inimigoJuizes);
 
         }else {
 
