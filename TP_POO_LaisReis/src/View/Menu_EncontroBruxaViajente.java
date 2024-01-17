@@ -9,17 +9,15 @@ import java.util.Scanner;
 public class Menu_EncontroBruxaViajente {
 
 
+    /**
+     * Método para apresentar o menu da loja
+     * @param heroinaEscolhida
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public static void menuPrimeiroEncontro(Heroinas heroinaEscolhida) throws IOException, InterruptedException {
 
-
-        Entidade jogadora = new Entidade() {
-            @Override
-            public String getNome() {
-                return super.getNome();
-            }
-        };
-
-        StoreController store = new StoreController(jogadora);
+        StoreController store = new StoreController();
 
         Scanner input = new Scanner(System.in);
         int opcao;
@@ -41,7 +39,7 @@ public class Menu_EncontroBruxaViajente {
         case 2:
             System.out.println("\nAté logo, você ainda vai precisar da minha ajuda!");
             Menu_Comeco_Missao iniciarMissao = new Menu_Comeco_Missao();
-            iniciarMissao.primeiraMissao(heroinaEscolhida);
+            iniciarMissao.primeiraMissao();
             break;
         default:
             System.out.println("Opção Inválida");

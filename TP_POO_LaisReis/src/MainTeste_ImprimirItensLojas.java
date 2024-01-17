@@ -13,9 +13,9 @@ public class MainTeste_ImprimirItensLojas {
 
 
 
-        Heroinas heroina = new Cavaleira("Lais",100,100,20,5,2);
+        //Heroinas heroina = new Cavaleira("Lais",100,100,20,5,2);
 
-        StoreController lojinha = new StoreController(heroina);
+        StoreController lojinha = new StoreController();
 
         lojinha.exibirDetalhesStore();
 

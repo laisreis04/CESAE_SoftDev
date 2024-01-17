@@ -16,8 +16,15 @@ import java.util.Scanner;
 
 public class Menu_Comeco_Missao {
 
+    private Entidade jogadora;
 
-    public void primeiraMissao(Entidade jogadora) throws IOException, InterruptedException {
+
+    /**
+     * Método para abrir o menu da escolha dos caminhos
+     * @throws IOException
+     * @throws InterruptedException
+     */
+    public void primeiraMissao() throws IOException, InterruptedException {
 
         Scanner input = new Scanner(System.in);
 
@@ -37,7 +44,7 @@ public class Menu_Comeco_Missao {
 
             case 1:
                 Sala_A salaA = new Sala_A();
-                salaA.menuSala_A(jogadora);
+                salaA.menuSala_A();
                 break;
 
             case 2:
@@ -53,7 +60,7 @@ public class Menu_Comeco_Missao {
                 opcao = input.nextInt();
                 if (opcao == 1) {
                     Sala_A sala = new Sala_A();
-                    sala.menuSala_A(jogadora);
+                    sala.menuSala_A();
                 } else {
                     Sala_B.salaB();
                 }

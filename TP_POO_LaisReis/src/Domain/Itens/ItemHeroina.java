@@ -32,9 +32,10 @@ public  abstract class ItemHeroina {
      * @param heroinaNova - Recebe a heroina
      */
     public void addHeroinas(String heroinaNova) {
-        this.heroinaPermitida.add(heroinaNova);
 
+        this.heroinaPermitida.add(heroinaNova);
     }
+
 
     public int getForca() {
         return forca;
@@ -58,6 +59,10 @@ public  abstract class ItemHeroina {
 
 
     //Exibir detalhes
+
+    /**
+     * Método para imprimir detalhes da loja
+     */
     public void exibirDetalhes (){
         System.out.print("Nome: " + this.nome + " \n" );
         System.out.print("Preço: " + precoItem + " \n\t");
