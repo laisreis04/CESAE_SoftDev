@@ -237,41 +237,92 @@ OFFSET 5
 
 
 /*- Ver as cidades que tenham mais de 1 cliente; */
-
-
-
+/*temos que usar funções de agregação*/
+Select cidade, count (cidade)
+FROM cliente
+GROUP BY cidade
+HAVING count (cidade)>1
 
 
 /* Ver quais as vendas que não foi aplicado nenhum desconto; */
 
 
-/*- Ver o top 3 produtos mais caros; */
 
+/*- Ver o top 3 produtos mais caros; */
+select *
+FROM produto
+order by preco
 
 
 /* - Ver todas as vendas que tiveram um desconto superior a 10%;  */
-
+select * 
+from venda
+WHERE desconto > .11
 
 
 /* - Ver todos os id_vendas, Nomes de cliente e Localidade de cliente;  */
-
-
+select * 
+FROM cliente as c
+JOIN venda as v
+ON c.id_cliente = v.id_cliente
 
 /* - Ver todos as descrições e preço unitário de produtos da venda nr 9;  */
-
+select p.descricao, p.preco
+FROM produto as P
+JOIN linha_venda AS lv
+ON p.id_produto=lv.id_produto
+join venda as v
+on lv.id_venda=id_venda
+WHERE v.id_venda=9
 
 /* - Ver todas as descrições, preço unitário e quantidade da venda nr 10;  */
-
+select p.descricao, p.preco,p.quantidade
+FROM produto as P
+JOIN linha_venda AS lv
+ON p.id_produto = lv.id_produto
+join venda as v
+on lv.id_venda=id_venda
+WHERE v.id_venda = 10
 
 /* - Ver exatamente os mesmos atributos que o ponto anterior, acrescentando uma 
 coluna chamada ‘Total por Produto’ que multiplica o preço unitário e quantidade;  */
-
+select p.descricao, p.preco,p.quantidade,
+CONCAT (ROUND (p.preco*lv.quantidade,2), ' €') AS 'Total por produto'
+FROM produto as P
+JOIN linha_venda AS lv
+ON p.id_produto=lv.id_produto
+join venda as v
+on lv.id_venda=id_venda
+WHERE v.id_venda=9
 
 /* - Ver todos os produtos vendidos entre '2021-05-01' e '2021-08-01';  */
-
+select p.*
+FROM produto as P
+JOIN linha_venda AS lv
+ON p.id_produto=lv.id_produto
+join venda as v
+on lv.id_venda=id_venda
+WHERE .v.data_venda BETWEEN'2021-05-01' AND '2021-08-01'
 
 /* - Ver o total faturado em cada venda, sem desconto aplicado (ter atenção ao group 
 by);  */
+select v.id_venda, p.descricao,SUM(ROUND(p.preco*lv.quantidade) )
+as 'Total Faturado'
+FROM produto as P
+JOIN linha_venda AS lv
+ON p.id_produto=lv.id_produto
+join venda as v
+on lv.id_venda=id_venda
+GROUP BY v.id_venda;
 
 
 /* - Ver quais os produtos vendidos a clientes de ‘Gaia’; */
+selct *
+from cliente as c
+JOIN venda as v 
+ON c.id_cliente=v.id_cliente
+JOIN linha_venda as lv
+on v.id_venda=lv.id_venda
+JOIN produto as p
+on lv.id_produto=p.id_produto
+WHERE c.cidade='Gaia'
