@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'amc',
@@ -10,7 +10,17 @@ import { Component } from '@angular/core';
 export class MeuComponenteComponent {
 // Colocar coisas do Javascript
 
-meuNome = 'Mochi'
+// É possivel usar de outras formas
+// @Input({alias:'meu-nome'}) meuNome: string = 'Mochi';
+
+@Input(
+   'meu-nome'
+) meuNome: string = 'Mochi';
+
+@Output() mudancaContador = new EventEmitter<number>();
+contador: number = 0;
+
+
 mensagem ='fui sequestrado na rua '
 imagem = 'https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?w=500'
 
@@ -29,6 +39,12 @@ imagens: string[] = [
 // ]
 
 
+
+
+pCorTexto: string = '#EC008C';
+pCorFundo: string = '#262473';
+pAlterarCores: boolean = true;
+
 alterarImagem(): void{
   this.imagem = this.imagens[1];
 
@@ -38,5 +54,22 @@ alterarImagem(): void{
 alterarImagem2(): void {
   this.imagem = this.imagens[2];
 }
+
+alterarCores(): void {
+  let cor: string = this.pCorTexto;
+  this.pCorTexto = this.pCorFundo;
+  this.pCorFundo = cor;
+}
+
+alterarAtivo(): void{
+this.pAlterarCores = false;
+}
+
+incrementar(): void{
+this.contador++;
+this.mudancaContador.emit(this.contador);
+
+}
+
 }
 

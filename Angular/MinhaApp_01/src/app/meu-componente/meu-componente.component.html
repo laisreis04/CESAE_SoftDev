@@ -8,3 +8,19 @@
 <button (click) = "alterarImagem()"> Before Drugs</button>
 
 <button (click)="alterarImagem2()">After Drugs</button>
+
+<br>
+<p [style.color]="pCorTexto"
+[style.backgroundColor]="pCorFundo">
+  Também gosto e cães!
+</p>
+
+<br><br>
+<button (click)="alterarCores()" [disabled]="!pAlterarCores">Alterar cor texto fundo</button>
+<button (click)="alterarAtivo()">Desativar</button>
+
+<hr>
+<h3>{{ contador }}</h3>
+<button (click)="incrementar()">Incrementar</button>
+
+

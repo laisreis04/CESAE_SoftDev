@@ -1,5 +1,23 @@
+
+<nav>
+  <ul>
+    <li><a href="/Primeira" routerlinkactive="active">Primeira Página</a></li>
+    <li><a href="/Segunda" routerlinkactive="active">Segunda Página</a></li>
+
+  </ul>
+</nav>
+
 <router-outlet />
-<h1>Fala caralho!</h1>
+<h1>OI!!</h1>
 
 
-<amc></amc>
+<amc meu-nome = 'Laura'></amc>
+
+<amc [meu-nome] = 'meuNomePai'></amc>
+
+<amc (mudancaContador)="atualizar($event)" ></amc>
+
+<div style="background-color: pink;">
+<p>Contador: {{contadorPai}}</p>
+</div>
+
