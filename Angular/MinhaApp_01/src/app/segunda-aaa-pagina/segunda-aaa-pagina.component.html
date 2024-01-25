@@ -1,3 +1,98 @@
 
-<p>segunda-aaa-pagina works!</p>
-<router-outlet />
+<h2>Estruturas consicionais</h2>
+<hr>
+<div>
+  <h3>If</h3>
+
+  <div *ngIf="valor >= 0">Valor maior ou igual a 0 (1)</div>
+
+<!-- ou -->
+<ng-template [ngIf]="valor == 0" >
+
+  <div>Valor igual a ZERO (2)</div>
+
+</ng-template>
+
+@if (valor >= 0) {
+  O valor é maior ou igual a zero (3)
+}
+
+</div>
+
+<hr>
+
+<div>
+  <h3>Else</h3>
+
+  <div *ngIf="valor >= 0; else elseBlock">
+    Valor maior ou igual a 0 (1)
+  </div>
+
+  <ng-template #elseBlock>
+    O valor é menor que zero (2)
+  </ng-template>
+<br>
+<!-- ou -->
+<ng-template [ngIf]="valor == 0" [ngIfElse]="elseBlock_2">
+
+  <div>Valor igual a ZERO (2)</div>
+
+</ng-template>
+
+<ng-template #elseBlock_2> O valor é maior que zero (3) </ng-template>
+<br>
+@if (valor >= 0) {
+  O valor é maior ou igual a zero (4)
+}
+
+</div>
+
+<hr>
+<div>
+  <h3>Else If</h3>
+
+  <div *ngIf="valor > 0; else elseBlock">
+    Valor maior ou igual a 0 (1)
+  </div>
+<!-- ou -->
+<ng-template [ngIf]="valor === 0" [ngIfElse]="elseBlock">
+  <div>Valor igual a ZERO (2)</div>
+</ng-template>
+
+<ng-template >
+  <div *ngIf="valor >= 0; else elseBlock_2">
+    O valor é maior que zero (3)
+</div> </ng-template>
+<ng-template #elseBlock_2>Valor Bloco 2  </ng-template>
+<br>
+</div>
+
+@if (valor > 0) {
+  O valor é maior ou igual a zero(if)
+}@else if (valor === 0) {
+  Valor igual a Zero
+}@else {
+  Valor maior que zero
+}
+<hr>
+<div>
+  <h3>Switch</h3>
+<div [ngSwitch]="true">
+    <div *ngSwitchCase="valor > 1">O valor é maior  que 0.</div>
+    <div *ngSwitchCase="valor === 0">O valor é igual a 0.</div>
+    <div *ngSwitchDefault>O valor é menor que zero.</div>
+</div>
+</div>
+
+@switch (valor) {
+
+  @case (0) {
+    <div>Valor igual a zero</div>
+  }
+  @case (-1) {
+    <div>Valor é igual a -1</div>
+  }
+  @case (1) {
+  <div>O valor é igual a 1</div>
+  }
+}
