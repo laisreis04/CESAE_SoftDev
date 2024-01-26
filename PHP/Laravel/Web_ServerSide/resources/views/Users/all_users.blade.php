@@ -30,15 +30,18 @@
             <th scope="col">Nome</th>
             <th scope="col">Phone</th>
             <th scope="col">Email</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           <tr>
             @foreach ($userInfo as $user)
-            <th scope="row">{{$user['id']}}</th>
-            <td>{{$user['nome']}}</td>
-            <td>{{$user['phone']}}</td>
-            <td>{{$user['email']}}</td>
+            <th scope="row">{{$user->id}}</th>
+            <td>{{$user->name}}</td>
+            <td>{{$user->phone}}</td>
+            <td>{{$user->email}}</td>
+            <td><a href="{{ route('users.view', $user->id................................................................................................................................................................) }}" class="btn btn-info">Ver</a></td>
+            <td><a href="" class="btn btn-info">Delete</a></td>..............................................................................................................................................
           </tr>
 
 

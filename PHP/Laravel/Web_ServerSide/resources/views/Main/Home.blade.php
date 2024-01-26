@@ -21,6 +21,7 @@
     <li><a href="{{route('youtube')}}">Quero ver social media</a></li>
     <li><a href="{{route('users.add_user')}}">Área do Utilizador</a></li>
     <li><a href="{{route('users.all_user')}}">Todxs User</a></li>
+    <li><a href="{{route('tasks.tasks')}}">Tarefas</a></li>
 </ul>
 
 </div>

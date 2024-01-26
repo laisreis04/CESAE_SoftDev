@@ -1,10 +1,11 @@
 <?php
 
 
-use App\Http\Controllers\IndexController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\TasksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +45,14 @@ Route::get('/users/add' , [UserController::class, 'userView'])->name('users.add_
 
 Route::get('/users/all' ,[UserController::class, 'allUsers'])->name('users.all_user');
 
+//'/users/view{id}' dentro das chaves vai mostrar na barra de pesquisa o id da pessoa
+Route::get('/users/view{id}' ,[UserController::class, 'viewUser'])->name('users.view');
 
 Route::fallback( function () {
     return view('Layout.fallback');
 })->name('404page');
+
+
+//Rota para tasks
+
+Route::get('/tasks',[TasksController::class, 'tasksView'])->name('tasks.tasks');
