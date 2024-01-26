@@ -40,8 +40,8 @@
             <td>{{$user->name}}</td>
             <td>{{$user->phone}}</td>
             <td>{{$user->email}}</td>
-            <td><a href="{{ route('users.view', $user->id................................................................................................................................................................) }}" class="btn btn-info">Ver</a></td>
-            <td><a href="" class="btn btn-info">Delete</a></td>..............................................................................................................................................
+            <td><a href="{{ route('users.view', $user->id) }}" class="btn btn-info">Ver</a></td>
+            <td><a href="" class="btn btn-info">Delete</a></td>
           </tr>
 
 
