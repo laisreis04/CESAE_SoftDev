@@ -1,0 +1,13 @@
+<li>
+  <b>{{ cidade.nome }}</b>,
+  <small>
+    (Pop.:
+    @if (cidade.populacao>=2000000){
+      <b>{{ cidade.populacao }}</b>
+    }@else{
+      {{ cidade.populacao }}
+    }
+    )
+  </small>
+</li>
+
