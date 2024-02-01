@@ -25,7 +25,7 @@
 <ul>
   <li *ngFor="let item of arr; index as i; first as ePrimeiro">
 {{ item }} ({{ i }})
-<b *ngFor="ePrimeiro">Primeiro</b>
+<b *ngIf="ePrimeiro">Primeiro</b>
   </li>
 </ul>
 

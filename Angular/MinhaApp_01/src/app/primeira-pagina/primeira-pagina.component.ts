@@ -23,4 +23,8 @@ export class PrimeiraPaginaComponent {
 
   }
 
+  changesMeuNomePai(){
+    this.meuNomePai = 'Lais'
+  }
+
 }

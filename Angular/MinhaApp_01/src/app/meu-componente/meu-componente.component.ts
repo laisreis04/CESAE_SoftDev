@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'amc',
@@ -7,7 +7,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './meu-componente.component.html',
   styleUrl: './meu-componente.component.scss'
 })
-export class MeuComponenteComponent {
+export class MeuComponenteComponent implements OnChanges {
+
 // Colocar coisas do Javascript
 
 // É possivel usar de outras formas
@@ -16,6 +17,7 @@ export class MeuComponenteComponent {
 @Input(
    'meu-nome'
 ) meuNome: string = 'Mochi';
+
 
 @Output() mudancaContador = new EventEmitter<number>();
 contador: number = 0;
@@ -44,6 +46,13 @@ imagens: string[] = [
 pCorTexto: string = '#EC008C';
 pCorFundo: string = '#262473';
 pAlterarCores: boolean = true;
+
+ngOnChanges(changes: SimpleChanges){
+
+  if(changes['meu-nome']){
+    console.log('O nome foi alterado para ' + changes['meu-nome'].currentValue)
+  }
+}
 
 alterarImagem(): void{
   this.imagem = this.imagens[1];
