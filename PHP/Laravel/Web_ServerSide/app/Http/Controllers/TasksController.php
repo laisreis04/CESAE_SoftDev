@@ -33,9 +33,6 @@ private function getTasks(){
     ->select('tasks.*', 'users.name as username' )
     ->get();
 
-
-
-
     return $tasks;
 }
 

@@ -4,8 +4,10 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserController extends Controller{
@@ -100,7 +102,7 @@ private function getContacts(){
 
 
     $userInfo = DB::table('users')
-->whereNull('updated_at')
+// ->whereNull('updated_at')
     ->get();
 
     // $userInfo = User::get();
@@ -121,8 +123,49 @@ public function viewUser($id){
     return view('users.view', compact ('myUser'));
 }
 
+public function deleteUser($id){
+Db::table('users')
+->where('id', ($id))
+->delete();
+
+return back();
+
+}
+
+public function createUser(Request $request){
+
+// dd($request->all());
+
+    $request->validate([
+        'email' => 'required|unique:users',
+        'name' => 'required|string|max:15'
+    ]);
+
+    User::insert([
+
+        // lado esquerdo o nome da coluna na basa de dados / lado direito paramentros que vem do request
+'name'=> $request->name,
+'email'=> $request->email,
+'password'=> Hash::make($request->password),
+
+    ]);
+
+    return redirect()->route('users.all_user')->with('message', 'Utlizador adicionado');
+}
+
+public function updateUser(Request $request){
+
+    User::where('id', $request->id)->update([
+'name'=>$request->name,
+'email'=> $request->email,
+'address'=> $request->address,
+'phone'=> $request->phone,
 
 
+    ]);
+
+    return redirect()->route('users.all_user')->with('message', 'Utlizador Atualizado');
+}
 
 }
 

@@ -1,47 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('CSS/stylesheet.css')}}">
-    <title>Adicionar User</title>
-</head>
-<body>
-    <div class="wrapper bg-white">
-        <div class="h2 text-center">Girls Code</div>
-        <div class="h4 text-muted text-center pt-2">Enter your login details</div>
-        <form class="pt-3">
-            <div class="form-group py-2">
-                <div class="input-field">
-                    <span class="far fa-user p-2"></span>
-                    <input type="text" placeholder="Username or Email Address" required class="">
-                </div>
-            </div>
-            <div class="form-group py-1 pb-2">
-                <div class="input-field">
-                    <span class="fas fa-lock p-2"></span>
-                    <input type="text" placeholder="Enter your Password" required class="">
-                    <button class="btn bg-white text-muted">
-                        <span class="far fa-eye-slash"></span>
-                    </button>
-                </div>
-            </div>
-            <div class="d-flex align-items-start">
-                <div class="remember">
-                    <label class="option text-muted"> Remember me
-                        <input type="radio" name="radio">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-                <div class="ml-auto">
-                    <a href="#" id="forgot">Forgot Password?</a>
-                </div>
-            </div>
-            <button class="btn btn-block text-center my-3">Log in</button>
-            <div class="text-center pt-3 text-muted">Not a member? <a href="#">Sign up</a></div>
-        </form>
-    </div>
-</body>
-</html>
+@extends('Layout.femaster')
+@section('content')
+<div class="container">
+    <br>
+    <h2>Adicionar Utilizadores</h2>
+    <br>
 
+
+    <form method="POST" action="{{ route('users.create') }}">
+@csrf
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nome</label>
+
+
+        <input name="name" value="{{ old('name') }}" type="texto" class="form-control" id="exampleFormControlInput1" placeholder="Nome" required>
+        @error('name')
+        <div class="alert alert-danger">
+            O nome que colocou é inválido.
+        </div>
+    @enderror
+    </div>
+
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input name="email" value="{{ old('email') }}" type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@exemplo.com" required>
+            @error('email')
+            <div class="alert alert-danger">
+                O mail que colocou já está registado
+            </div>
+        @enderror
+        </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input name="password" type="password" class="form-control" id="exampleFormControlInput1" placeholder="Password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    <br>
+    <a class="btn btn-success" href="{{route('home.index')}}">Voltar</a>
+    <br>
+    <br>
+
+    </div>
+
+@endsection

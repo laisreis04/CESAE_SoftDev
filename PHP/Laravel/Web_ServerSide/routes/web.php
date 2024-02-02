@@ -42,11 +42,14 @@ return view('main.social');
 
 //Rotas User
 Route::get('/users/add' , [UserController::class, 'userView'])->name('users.add_user');
+Route::post('/users/create', [UserController::class, 'createUser'])->name('users.create');
+Route::post('/users/upsate', [UserController::class, 'updateUser'])->name('users.update');
 
 Route::get('/users/all' ,[UserController::class, 'allUsers'])->name('users.all_user');
 
 //'/users/view{id}' dentro das chaves vai mostrar na barra de pesquisa o id da pessoa
 Route::get('/users/view{id}' ,[UserController::class, 'viewUser'])->name('users.view');
+Route::get('/users/delete{id}' ,[UserController::class, 'deleteUser'])->name('users.delete');
 
 Route::fallback( function () {
     return view('Layout.fallback');
@@ -56,3 +59,4 @@ Route::fallback( function () {
 //Rota para tasks
 
 Route::get('/tasks',[TasksController::class, 'tasksView'])->name('tasks.tasks');
+Route::post('/tasks',[TasksController::class, 'tasksView'])->name('tasks.tasks');

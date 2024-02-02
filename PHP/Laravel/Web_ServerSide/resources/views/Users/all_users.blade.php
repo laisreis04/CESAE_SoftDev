@@ -5,14 +5,14 @@
 <div class= container>
 <h1>Olá todos users!!</h1>
 
-<p>{{ $hello}}</p>
+{{-- <p>{{ $hello}}</p>
 <p>{{ $helloAgain}}</p>
 
 <p>{{ $daysOfWeek[2]}}</p>
 
 <p>{{ $courseInfo['name']}}</p>
 
-<p>{{ $courseInfo['modules'][0]}}</p>
+<p>{{ $courseInfo['modules'][0]}}</p> --}}
 
 
 
@@ -22,6 +22,12 @@
 @endsection
 
 @section('content2')
+
+@if(session('message'))
+<div class="alert alert-success">
+{{ (session('message')) }}
+</div>
+@endif
 <ul>
     <table class="table">
         <thead>
@@ -41,7 +47,7 @@
             <td>{{$user->phone}}</td>
             <td>{{$user->email}}</td>
             <td><a href="{{ route('users.view', $user->id) }}" class="btn btn-info">Ver</a></td>
-            <td><a href="" class="btn btn-info">Delete</a></td>
+            <td><a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger">Delete</a></td>
           </tr>
 
 
