@@ -60,3 +60,7 @@ Route::fallback( function () {
 
 Route::get('/tasks',[TasksController::class, 'tasksView'])->name('tasks.tasks');
 Route::post('/tasks',[TasksController::class, 'tasksView'])->name('tasks.tasks');
+//Rota para ViewTasks
+Route::get('/tasks/view{id}',[TasksController::class, 'tasksView'])->name('tasks.viewTask');
+Route::get('/tasks/view{id}',[TasksController::class, 'tasksView'])->name('tasks.delete');
+//Rota para adicionar

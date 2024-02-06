@@ -36,4 +36,34 @@ private function getTasks(){
     return $tasks;
 }
 
+public function viewTask($id){
+
+    $myTask = DB::table('tasks')
+    ->where('id', ($id))
+    ->first();
+
+    return view('Tasks.tasks', compact ('myTask'));
+
+}
+
+
+
+public function createTask(Request $request){
+
+    $request->validate([
+        'nome' => 'required|unique:users',
+        'descricao' => 'required|string|max:140'
+    ]);
+
+    Task::insert([
+        'nome'=>$request->$nome,
+        'descrcao' =>$request->$descricao,
+        'status'=>$request->$status
+    ]);
+
+    return redirect()->route('tasks.tasks')->with('message', 'Tarefa adiconada com sucesso !');
+}
+
+
+
 }
