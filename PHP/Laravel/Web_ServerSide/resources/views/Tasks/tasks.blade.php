@@ -2,9 +2,10 @@
 
 @section('content')
 
-
-
-<h1>Adicionar Tarefas</h1>
+@if(session('message'))
+<div class="alert alert-success">{{ session('message') }}</div>
+@endif
+<h1>Suas tarefas</h1>
 
 
 <ul>

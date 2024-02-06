@@ -24,6 +24,12 @@ public function tasksView(){
 
 }
 
+public function addTask(){
+
+return view('Tasks.addTask');
+
+}
+
 
 
 private function getTasks(){
@@ -42,9 +48,18 @@ public function viewTask($id){
     ->where('id', ($id))
     ->first();
 
-    return view('Tasks.tasks', compact ('myTask'));
+    return view('tasks.viewTask', compact ('myTask'));
 
 }
+
+public function deleteTask($id){
+    Db::table('tasks')
+    ->where('id', ($id))
+    ->delete();
+
+    return back();
+
+    }
 
 
 
@@ -52,7 +67,8 @@ public function createTask(Request $request){
 
     $request->validate([
         'nome' => 'required|unique:users',
-        'descricao' => 'required|string|max:140'
+        'descricao' => 'required|string|max:140',
+        'status'=> 'required|string'
     ]);
 
     Task::insert([
