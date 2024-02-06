@@ -1,0 +1,30 @@
+<p>formulario-cidade-td works!</p>
+
+
+<div>
+  <label for="nome">Nome cidade:</label><br>
+  <input type="text" id="nome" [(ngModel)]="nomeCidade" />
+</div>
+<br>
+
+<div>
+  <label for="pais">Nome país:</label><br>
+  <input type="text" id="nomePais" [(ngModel)]="paisCidade" placeholder="Insira o país"/>
+</div>
+<br>
+
+<div>
+  <label for="populacao">População:</label><br>
+  <input type="text" id="populacaoCidade" [(ngModel)]="populacaoCidade" />
+</div>
+<br>
+
+<div>
+  O nome escrito foi: {{ nomeCidade }}
+</div>
+
+<div>
+<button type="button" (click)="formSubmit()">Enviar</button>
+</div>
+
+

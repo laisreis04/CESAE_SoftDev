@@ -2,21 +2,20 @@ import { Component } from '@angular/core';
 import { MinhaListaItemComponent } from '../minha-lista-item/minha-lista-item.component';
 import { CidadesService } from '../services/cidades.service';
 import { ICidade } from '../models/cidade.model';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-minha-lista',
   standalone: true,
-  imports: [MinhaListaItemComponent],
+  imports: [MinhaListaItemComponent, RouterLink],
   templateUrl: './minha-lista.component.html',
   styleUrl: './minha-lista.component.scss'
 })
 export class MinhaListaComponent {
 
-cidades: Array<ICidade> = [
+cidades: Array<ICidade> = [];
 
-];
-
-constructor(private cidadesService: CidadesService){
+constructor(private cidadesService: CidadesService, private router: Router){
 
 console.log('MinhaListaComponent.constructor()');
 
@@ -42,15 +41,22 @@ dados de entrada, como fazer requisições HTTP, atribuir
 valores a propriedades, etc…*/
   console.log('MinhaListaComponent.ngOnInit()');
 
-
+this.cidadesService.readAll();
   this.cidades = this.cidadesService.cidades;
 
 }
 
 adicionarCidade(){
-  this.cidadesService.create({nome: 'Guarujá', pais:'Brasil',populacao: 87895});
-  this.cidadesService.create({nome: 'Brasilía', pais:'Brasil',populacao:4589666});
+  // this.cidadesService.create({nome: 'Guarujá', pais:'Brasil',populacao: 87895});
+  // this.cidadesService.create({nome: 'Brasilía', pais:'Brasil',populacao:4589666});
 }
+
+irAdicionarCidade(){
+
+  this.router.navigate(['/formulario-cidade-td']);
+
+}
+
 
 ngOnCheck(){
 
@@ -94,5 +100,6 @@ destrua o componente ou diretiva. É usado para realizar
 operações de limpeza, como cancelar subscrições, desalocar
 recursos, remover event listeners, etc… */
 }
+
 
 }

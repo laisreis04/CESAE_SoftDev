@@ -7,6 +7,7 @@ import { SegundaBbbPaginaComponent } from './segunda-bbb-pagina/segunda-bbb-pagi
 import { MinhaListaComponent } from './minha-lista/minha-lista.component';
 import { MinhaListaItemComponent } from './minha-lista-item/minha-lista-item.component';
 import { ListaAnimaisComponent } from './lista-animais/lista-animais.component';
+import { FormularioCidadeTdComponent } from './formulario-cidade-td/formulario-cidade-td.component';
 
 
 export const routes: Routes = [
@@ -26,6 +27,9 @@ children: [
 {
   path: 'lista-animais', title:'Animais', component:ListaAnimaisComponent
 },
+{
+  path: 'formulario-cidade-td', title:'Formulario Cidade', component:FormularioCidadeTdComponent
+},
 //Esse é o caminho para redirecionar uma página em branco/vazia
 {
   path: '',redirectTo: '/primeira', pathMatch: 'full'
@@ -33,5 +37,6 @@ children: [
 {
   path: '**', title:'404 - página não encontrada', component: PageNotFoundComponent
 }
+
 
 ];

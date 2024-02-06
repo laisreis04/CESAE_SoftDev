@@ -1,7 +1,17 @@
 <h1>Lista de Cidades</h1>
+
+
+
 <div>
-  <button type="button" (click)="adicionarCidade()">Adiconar nova cidade</button>
+  <button type="button" (click)="irAdicionarCidade()">Adiconar nova cidade (Via Objeto)</button>
 </div>
+<br>
+<div>
+  <button routerLink="/formulario-cidade-td" routerLinkActive="active" >Formulário (via routerLink)</button>
+
+</div>
+
+
 <div>
   <ul>
     @for (cidade of cidades; track $index) {

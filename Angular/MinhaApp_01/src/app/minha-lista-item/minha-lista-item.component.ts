@@ -9,7 +9,7 @@ import { ICidade } from '../models/cidade.model';
   styleUrl: './minha-lista-item.component.scss'
 })
 export class MinhaListaItemComponent {
-  @Input({required: true}) cidade: ICidade = {nome: '',pais: '',populacao:0}
+  @Input({required: true}) cidade: ICidade = {id:0, nome: '',pais: '',populacao:0}
 
 }
 
