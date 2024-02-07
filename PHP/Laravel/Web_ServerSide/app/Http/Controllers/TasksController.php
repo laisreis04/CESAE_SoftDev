@@ -27,12 +27,12 @@ public function tasksView(){
 public function addTask(){
 
 return view('Tasks.addTask');
-
 }
 
 
 
-private function getTasks(){
+
+public function getTasks(){
 
     $tasks = DB::table ('tasks')
     ->join('users', 'user_id','users.id')
@@ -65,6 +65,8 @@ public function deleteTask($id){
 
 public function createTask(Request $request){
 
+    // dd($request->all());
+
     $request->validate([
         'nome' => 'required|unique:users',
         'descricao' => 'required|string|max:140',
@@ -78,6 +80,19 @@ public function createTask(Request $request){
     ]);
 
     return redirect()->route('tasks.tasks')->with('message', 'Tarefa adiconada com sucesso !');
+}
+
+public function updateTask(Request $request){
+
+    Task::where('id', $request->id)->update([
+        'nome'=>$request->$nome,
+        'descrcao' =>$request->$descricao,
+        'status'=>$request->$status
+    ]);
+
+    return redirect()->route('tasks.tasks')->with('message', 'Tarefa Atualizada');
+
+
 }
 
 

@@ -59,11 +59,12 @@ Route::fallback( function () {
 //Rota para tasks
 
 Route::get('/tasks',[TasksController::class, 'tasksView'])->name('tasks.tasks');
-Route::post('/tasks',[TasksController::class, 'tasksView'])->name('tasks.tasks');
+// Route::post('/tasks',[TasksController::class, 'tasksView'])->name('tasks.tasks');
 //Rota para ViewTasks
 Route::get('/tasks/view{id}',[TasksController::class, 'viewTask'])->name('tasks.viewTask');
-Route::get('/tasks/view{id}',[TasksController::class, 'viewTask'])->name('tasks.delete');
+Route::get('/tasks/view{id}',[TasksController::class, 'deleteTask'])->name('tasks.delete');
 //Rota para adicionar
 Route::get('/tasks/add',[TasksController::class, 'addTask'])->name('tasks.addTask');
 //Rota para criar uma tarefas
 Route::post('/tasks/create',[TasksController::class, 'createTask'])->name('tasks.create');
+Route::post('/tasks/update',[TasksController::class, 'updateTask'])->name('tasks.update');
