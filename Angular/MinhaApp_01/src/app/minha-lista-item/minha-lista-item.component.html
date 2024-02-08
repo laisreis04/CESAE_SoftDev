@@ -1,7 +1,7 @@
 <li>
   <b>{{ cidade.nome }}</b>,
   {{ cidade.pais }}
-  <small>
+  <small><i>
     (Pop.:
     @if (cidade!.populacao &&  cidade.populacao>=2000000){
       <b>{{ cidade.populacao }}</b>
@@ -9,6 +9,8 @@
       {{ cidade.populacao }}
     }
     )
-  </small>
+  </i></small>
+
+  <a routerLink="/formulario-cidade-td/{{ cidade.id }} ">Editar</a>
 </li>
 

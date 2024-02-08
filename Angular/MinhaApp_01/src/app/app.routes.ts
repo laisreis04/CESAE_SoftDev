@@ -19,17 +19,49 @@ children: [
   { path: 'bbb', title:'Segunda Página BBB', component:SegundaBbbPaginaComponent}
 ]},
 {
-  path: 'minha-lista', title:'Minha Lista', component:MinhaListaComponent
+  path: 'minha-lista',
+  title:'Minha Lista',
+  component:MinhaListaComponent
 },
 {
-  path:'minha-lista-item',title:'Itens', component:MinhaListaItemComponent
+  path:'minha-lista-item',
+  title:'Itens',
+  component:MinhaListaItemComponent
 },
 {
-  path: 'lista-animais', title:'Animais', component:ListaAnimaisComponent
+  path: 'lista-animais',
+  title:'Animais',
+  component:ListaAnimaisComponent
+},
+// {
+//   path: 'formulario-cidade-td',
+//   title:'Criar - Formulario Cidade (Template-driven forms)',
+//   component:FormularioCidadeTdComponent
+// },
+// {
+//   path: 'formulario-cidade-td/:id',
+//   title:'Editar - Formulario Cidade (Template-driven forms)',
+//   component:FormularioCidadeTdComponent
+// },
+
+{
+  path:'formulario-cidade-td',
+  children: [
+{
+  path:':id',
+  title:'Editar - Formulario Cidade (Template-driven forms)',
+  component:FormularioCidadeTdComponent
 },
 {
-  path: 'formulario-cidade-td', title:'Formulario Cidade', component:FormularioCidadeTdComponent
+  path: '',
+  title:'Criar - Formulario Cidade (Template-driven forms)',
+  component:FormularioCidadeTdComponent
+}
+
+  ]
 },
+
+
 //Esse é o caminho para redirecionar uma página em branco/vazia
 {
   path: '',redirectTo: '/primeira', pathMatch: 'full'

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MinhaListaItemComponent } from '../minha-lista-item/minha-lista-item.component';
-import { CidadesService } from '../services/cidades.service';
+import { CidadesService } from '../services/cidades-ls.service';
 import { ICidade } from '../models/cidade.model';
 import { Router, RouterLink } from '@angular/router';
 
@@ -21,6 +21,7 @@ console.log('MinhaListaComponent.constructor()');
 
 
 }
+
 
 
 ngOnChange(){
@@ -54,6 +55,13 @@ adicionarCidade(){
 irAdicionarCidade(){
 
   this.router.navigate(['/formulario-cidade-td']);
+
+}
+
+limparDados(): void{
+
+  this.cidadesService.limpardados();
+
 
 }
 
