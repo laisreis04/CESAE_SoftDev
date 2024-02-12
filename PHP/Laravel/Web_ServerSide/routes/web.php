@@ -44,27 +44,35 @@ return view('main.social');
 Route::get('/users/add' , [UserController::class, 'userView'])->name('users.add_user');
 Route::post('/users/create', [UserController::class, 'createUser'])->name('users.create');
 Route::post('/users/upsate', [UserController::class, 'updateUser'])->name('users.update');
-
 Route::get('/users/all' ,[UserController::class, 'allUsers'])->name('users.all_user');
-
 //'/users/view{id}' dentro das chaves vai mostrar na barra de pesquisa o id da pessoa
 Route::get('/users/view{id}' ,[UserController::class, 'viewUser'])->name('users.view');
 Route::get('/users/delete{id}' ,[UserController::class, 'deleteUser'])->name('users.delete');
 
-Route::fallback( function () {
-    return view('Layout.fallback');
-})->name('404page');
+
+
+// Rota de proteção Dashboard
+Route::get('/backoffice' ,[DashboardController::class, 'viewBackOffice'])->name('backoffice.view')->middleware('auth');
 
 
 //Rota para tasks
 
 Route::get('/tasks',[TasksController::class, 'tasksView'])->name('tasks.tasks');
-// Route::post('/tasks',[TasksController::class, 'tasksView'])->name('tasks.tasks');
-//Rota para ViewTasks
-Route::get('/tasks/view{id}',[TasksController::class, 'viewTask'])->name('tasks.viewTask');
-Route::get('/tasks/view{id}',[TasksController::class, 'deleteTask'])->name('tasks.delete');
-//Rota para adicionar
-Route::get('/tasks/add',[TasksController::class, 'addTask'])->name('tasks.addTask');
-//Rota para criar uma tarefas
+Route::get('/tasks/add',[TasksController::class, 'addTask'])->name('tasks.addTasks');
 Route::post('/tasks/create',[TasksController::class, 'createTask'])->name('tasks.create');
 Route::post('/tasks/update',[TasksController::class, 'updateTask'])->name('tasks.update');
+// Route::post('/tasks',[TasksController::class, 'tasksView'])->name('tasks.tasks');
+// // Rota para ViewTasks
+Route::get('/tasks/view{id}',[TasksController::class, 'viewTask'])->name('tasks.viewTask');
+Route::get('/tasks/view{id}',[TasksController::class, 'deleteTask'])->name('tasks.delete');
+// //Rota para adicionar
+Route::get('/tasks/add',[TasksController::class, 'addTask'])->name('tasks.addTask');
+// //Rota para criar uma tarefas
+
+
+
+
+
+Route::fallback( function () {
+    return view('Layout.fallback');
+})->name('404page');

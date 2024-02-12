@@ -49,10 +49,19 @@ public function allUsers(){
     // //Função acessória
     $courseInfo = $this ->courseInfo();
 
+    $search =request()->query('search') ? request()->query('search'):null;
 
-    $userInfo = $this -> getContacts();
+    // dd($search);
+    $userInfo = DB::table('users');
+    if($search){
+        $userInfo = $userInfo
+        ->where('name','like', $search);
+    };
 
-    $user = $this -> getContacts();
+       $userInfo = $userInfo ->get();
+
+
+    // $user = $this -> getContacts();
 
 
 

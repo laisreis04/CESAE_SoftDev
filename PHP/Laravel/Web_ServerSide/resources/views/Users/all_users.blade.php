@@ -14,7 +14,10 @@
 
 <p>{{ $courseInfo['modules'][0]}}</p> --}}
 
-
+<form method="GET" >
+    <input type="text" name="search" id="" value="">
+    <button class="btn btn-info" type="submit">Procurar</button>
+</form>
 
 
 </div>

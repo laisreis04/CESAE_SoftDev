@@ -12,7 +12,13 @@
 
 @section('content')
 <div class="container">
-<h3>Hello World, estamos na views</h3>
+
+@auth
+<h1>Olá, {{ Auth::user()->name }}</h1>
+
+@endauth
+
+
 <h5>Tem disponivel os seguintes links:</h5>
 
 

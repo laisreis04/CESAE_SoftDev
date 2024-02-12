@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\TasksController;
@@ -26,7 +27,9 @@ public function tasksView(){
 
 public function addTask(){
 
-return view('Tasks.addTask');
+    $users=DB::table('users')->get();
+
+return view('Tasks.tasks');
 }
 
 
@@ -46,9 +49,13 @@ public function viewTask($id){
 
     $myTask = DB::table('tasks')
     ->where('id', ($id))
+    ->leftJoin('users', 'users.name', '=', 'user_id')
+    ->select('tasks*','user.name as usname' )
     ->first();
 
-    return view('tasks.viewTask', compact ('myTask'));
+    $users =DB::table('users')->get();
+
+    return view('tasks.viewTask', compact ('myTask','users'));
 
 }
 
@@ -68,26 +75,28 @@ public function createTask(Request $request){
     // dd($request->all());
 
     $request->validate([
-        'nome' => 'required|unique:users',
-        'descricao' => 'required|string|max:140',
-        'status'=> 'required|string'
+        'nome' => 'required|string|max:10',
+        'descricao' => 'string|max:140',
+        'user_id'=>'required|integer|exists:users,id'
     ]);
 
     Task::insert([
-        'nome'=>$request->$nome,
-        'descrcao' =>$request->$descricao,
-        'status'=>$request->$status
+        'nome'=>$request->nome,
+        'descricao' =>$request->descricao,
+        'user_id'=>$request->user_id,
+        'status'=>1,
+        'due_at'=>now()
     ]);
 
-    return redirect()->route('tasks.tasks')->with('message', 'Tarefa adiconada com sucesso !');
+    return redirect()->route('tasks.tasks')->with('message', 'Tarefa adicionada com sucesso !');
 }
 
 public function updateTask(Request $request){
 
     Task::where('id', $request->id)->update([
-        'nome'=>$request->$nome,
-        'descrcao' =>$request->$descricao,
-        'status'=>$request->$status
+        'nome'=>$request->nome,
+        'descricao' =>$request->descricao,
+        'user_id'=>$request->user_id
     ]);
 
     return redirect()->route('tasks.tasks')->with('message', 'Tarefa Atualizada');
