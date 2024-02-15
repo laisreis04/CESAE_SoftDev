@@ -1,7 +1,9 @@
 <p>formulario-cidade-td works!</p>
 
+<h1>Formulário Cidades</h1>
 
-<div>
+
+<!-- <div>
   <label for="nome">Nome cidade:</label><br>
   <input type="text" id="nome" [(ngModel)]="nomeCidade" />
 </div>
@@ -25,6 +27,29 @@
 
 <div>
 <button type="button" (click)="formSubmit()">Enviar</button>
+</div> -->
+
+<form #form="ngForm" (ngSubmit)="formSubmit()">
+<div>
+  <label for="nome">Nome cidade:</label><br>
+  <input type="text" id="nome" [(ngModel)]="minhaCidade.nome" name="nome" required="">
 </div>
+<span *ngIf="form.controls['nome']?.invalid && form.controls['nome'].touched">O nome é obrigatório</span>
+
+
+<div>
+  <label for="pais">Nome Pais:</label><br>
+  <input type="text" id="pais" [(ngModel)]="minhaCidade.pais" name="pais">
+</div>
+
+<div>
+  <label for="populacao">População:</label><br>
+  <input type="text" id="populacao" [(ngModel)]="minhaCidade.populacao" name="populacao">
+</div>
+
+<div>
+  <button type="submit" [disabled]="form.invalid">Ok</button>
+</div>
+</form>
 
 

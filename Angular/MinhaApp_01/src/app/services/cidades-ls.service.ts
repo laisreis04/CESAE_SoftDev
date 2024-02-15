@@ -63,7 +63,7 @@ return this.cidades.filter(x=> x.id === id)[0];
 
    limpardados(): void{
 localStorage.removeItem('cidades');
-this.cidades = []; 
+this.cidades = [];
 this.reporDados();
 
 
@@ -92,11 +92,17 @@ readAll(): void{
    }
 
 update(cidade: ICidade): void{
+  let index: number
 
 
 }
 
 delete(cidade: ICidade): void{
+
+  let index: number = this.cidades.findIndex((x: ICidade) => x.id === cidade.id);
+  this.cidades.splice(index, 1);
+
+  localStorage.setItem('cidades', JSON.stringify(this.cidades));
 
 }
 
