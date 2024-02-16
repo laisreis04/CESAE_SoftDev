@@ -1,10 +1,10 @@
-@extends('lauout.femaster')
+@extends('layout.femaster')
 
 @section('content')
 
-<h1>Olá, {{ Auth::user()->name }} </h1>
+<h1>Olá, {{ Auth::user()->name }} você está no BackOffice</h1>
 
-{{-- Autenticação, aparece cquando o user é autenticado --}}
+{{-- Autenticação, aparece quando o user é autenticado --}}
 
 @auth
     @if(Auth::user()->user_type == 1)

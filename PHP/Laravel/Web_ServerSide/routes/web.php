@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\TasksController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
