@@ -48,7 +48,7 @@ ngOnInit(){
 formSubmit(){
   console.log('nome', this.minhaCidade.nome);
 
-  
+
   this.cidadeService.create(this.minhaCidade);
   this.router.navigate(['minha-lista'])
 

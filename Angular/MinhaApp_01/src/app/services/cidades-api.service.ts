@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ICidade } from '../models/cidade.model';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ export class CidadesService {
 
   cidades : Array<ICidade> = [];
 
-  constructor(){
+  constructor(private http: HttpClient){
   }
 
 
@@ -19,9 +21,14 @@ limparDados(): void{}
 
 repordadis():void{}
 
-readAll():void{}
+readAll():Observable<any> {
 
-read(id: number){}
+  return this.http.get('http://localhost:3000/cidades')
+}
+
+read(id: number): Observable<any>{
+  return this.http.get('http://localhost:3000/cidades/' + id)
+}
 
 udpate():void{}
 

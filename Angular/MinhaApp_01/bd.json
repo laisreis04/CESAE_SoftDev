@@ -1,0 +1,12 @@
+{
+  "cidades":[
+    {"id": 1,"nome":"Aveiro", "pais":"Portugal","populacao":45450},
+    {"id": 2,"nome":"Barcelona", "pais":"espanha","populacao":578450},
+    {"id": 3,"nome":"Porto", "pais":"Portugal","populacao":450789},
+    {"id": 4,"nome":"Paris", "pais":"França","populacao":58965547},
+    {"id": 5,"nome":"São Paulo", "pais":"Brasil","populacao":11548798}
+
+  ]
+
+
+}

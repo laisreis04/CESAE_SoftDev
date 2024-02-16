@@ -268,3 +268,18 @@ BEGIN
 END //
 
 DELIMITER ;
+
+-- 5.B
+DELIMITER //
+
+CREATE PROCEDURE GetAutoresPorPais(IN pais VARCHAR(25))
+BEGIN
+    SELECT l.autor, a.pais
+    FROM livro AS l
+    JOIN autor AS a ON l.id_autor = a.id_autor
+    WHERE a.pais
+    
+
+END //
+
+DELIMITER ;

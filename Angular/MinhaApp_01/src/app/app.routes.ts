@@ -8,6 +8,7 @@ import { MinhaListaComponent } from './minha-lista/minha-lista.component';
 import { MinhaListaItemComponent } from './minha-lista-item/minha-lista-item.component';
 import { ListaAnimaisComponent } from './lista-animais/lista-animais.component';
 import { FormularioCidadeTdComponent } from './formulario-cidade-td/formulario-cidade-td.component';
+import { FormApiComponent } from './form-api/form-api.component';
 
 
 export const routes: Routes = [
@@ -56,6 +57,23 @@ children: [
   path: '',
   title:'Criar - Formulario Cidade (Template-driven forms)',
   component:FormularioCidadeTdComponent
+}
+
+  ]
+},
+
+{
+  path:'form-api',
+  children: [
+{
+  path:':id',
+  title:'Editar - Formulario Cidade (reactive forms)',
+  component:FormApiComponent
+},
+{
+  path: '',
+  title:'Criar - Formulario Cidade (reactive forms)',
+  component:FormApiComponent
 }
 
   ]

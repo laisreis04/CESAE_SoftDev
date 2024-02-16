@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { MinhaListaItemComponent } from '../minha-lista-item/minha-lista-item.component';
-import { CidadesService } from '../services/cidades-ls.service';
+import { CidadesService } from '../services/cidades-api.service';
 import { ICidade } from '../models/cidade.model';
 import { Router, RouterLink } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-minha-lista',
   standalone: true,
-  imports: [MinhaListaItemComponent, RouterLink],
+  imports: [MinhaListaItemComponent, RouterLink, HttpClientModule],
+  providers:[CidadesService],
   templateUrl: './minha-lista.component.html',
   styleUrl: './minha-lista.component.scss'
 })
@@ -42,7 +44,9 @@ dados de entrada, como fazer requisições HTTP, atribuir
 valores a propriedades, etc…*/
   console.log('MinhaListaComponent.ngOnInit()');
 
-this.cidadesService.readAll();
+this.cidadesService.readAll().subscribe((cidades)=> {
+  this.cidades = cidades
+});
   this.cidades = this.cidadesService.cidades;
 
 }
