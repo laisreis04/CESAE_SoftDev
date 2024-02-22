@@ -62,12 +62,12 @@ irAdicionarCidade(){
 
 }
 
-limparDados(): void{
+// limparDados(): void{
 
-  this.cidadesService.limpardados();
+//   this.cidadesService.limpardados();
 
 
-}
+// }
 
 
 ngOnCheck(){

@@ -18,12 +18,12 @@ export class MinhaListaItemComponent {
 
   }
 
-  del(){
+  // del(){
 
-    this.cidadesService.delete(this.cidade)
+  //   this.cidadesService.delete(this.cidade)
 
-    console.log('aqui')
-  }
+  //   console.log('aqui')
+  // }
 
 }
 
