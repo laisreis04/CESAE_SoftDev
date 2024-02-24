@@ -57,8 +57,10 @@ handleUpdate(): void {
       }
 
 
-  ngOnInit() {
-    this.marcacaoId = this.route.snapshot.paramMap.get('id') || '';
+ 
+
+  ngOnDestroy() {
+    this.criarSubscription?.unsubscribe();
   }
 
 }
