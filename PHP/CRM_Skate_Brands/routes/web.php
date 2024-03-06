@@ -19,10 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Rota Brands
+//Rota Brands/about
 
 Route::get('/brands', [BrandController::class, 'brandView'])->name('brand.view');
-
+Route::get('/about', [BrandController::class, 'aboutView'])->name('about.view');
 
 //Rota Login
 

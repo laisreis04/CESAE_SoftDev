@@ -14,5 +14,10 @@ return view ('Brands.brands', compact('brands'));
 
 }
 
+public function aboutView(){
+    
+    return view ('Content.about', compact('about'));
+}
+
 
 }

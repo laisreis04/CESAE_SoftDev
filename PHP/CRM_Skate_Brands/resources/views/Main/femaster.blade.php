@@ -31,13 +31,7 @@
                         <a class="nav-link" href="">Skateboard Brands</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Users</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="">Skaters</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Adicionar tarefas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">BackOffice</a>
